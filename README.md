@@ -43,7 +43,7 @@ The C Programming Language *by Brian Kernighan and Dennis Ritchie*
 
 ### Common Beginner Mistakes
 
-##### Array overflow
+#### Array overflow
 C does not perform boundary checking when using arrays.  
 If you access outside the bounds of a stack based array it will just access another part of already allocated stack space, like in this example:
 
@@ -56,8 +56,11 @@ void    somefunction3(void)
 }
 ```
 
-##### Segmentation Fault
-Many potential reasons for this. One commonly reason is that you declared a loop and either 1/ forgot to increment the counter or 2/ forgot the exit condition:
+#### Segmentation Fault
+Many potential reasons for this.
+
+##### A/ Loop segfault
+One commonly reason is that you declared a loop and either 1/ forgot to increment the counter or 2/ forgot the exit condition:
 ```c
 int i = 0;
 
@@ -100,7 +103,81 @@ while (c < 150)
 }
 ```
 
-##### Accessing value of a local variable
+##### B/ Accessing the next link in a chained-list without checking the current one
+Another example with linked-lists
+```c
+typedef struct  s_list {
+      void      *data;
+      t_list    *next;
+ }              t_list;
+
+/*
+** function to go 2 links further in a chained-list
+*/
+
+void somefunction(t_list *list)
+{
+    if (list->next != NULL)
+    {
+        list = list->next->next;
+    }
+}
+```
+
+if the current link of list is null you will get a segfault. The correct way is to always check the current link before the next one:
+
+```c
+void somefunction(t_list *list)
+{
+    if (list && list->next) // if both list and list->next exist
+    {
+        list = list->next->next;
+    }
+}
+```
+
+##### C/ Accessing an index in a loop for program with either graphics or a board game
+```c
+int somefunction(int y_max, int x_max, int array[y_max][x_max]);
+{
+    int y;
+    int x;
+
+    y  = 0;
+    while (y < y_max)
+    {
+        x = 0;
+        while (x < x_max)
+        {
+            if (array[y][x-1] > array[y][x]) // don't you see there is a problem ?
+            {
+                array[y][x] = array[y][x-1];
+            }
+            if (array[y+1][x] > array[y][x]) // don't you see there is another problem ?
+            {
+                array[y][x] = array[y+1][x];
+            }
+        }
+
+    }
+}
+```
+
+These lines should be corrected the following way:
+```c
+if (x > 0 && array[y][x-1] > array[y][x])
+if (y < y_max - 1 && array[y+1][x] > array[y][x]) // strictly inferior to last possible index which is y_max - 1,
+// you may also write y <= y_max - 2
+```
+
+You may also notice that we can even do better by changing the starting value of x or the exit condition of the y loop **in the case that we were to check only one of the two if conditions.**
+```c
+x = 1;
+while (y < y_max - 1)
+```
+
+
+#### Accessing value of a local variable
 Local variable value are allocated on the stack, which is cleaned once you exit the function.
 ```c
 void increment_a(int a)
@@ -146,7 +223,7 @@ int solve(void)
 }
 ```
 
-##### Unprotected malloc
+#### Unprotected malloc
 Do NOT leave a malloc unprotected:
 ```c
 int allocate_memory(void)
@@ -166,7 +243,8 @@ int somefunction(void)
 }
 ```
 
-Protect the malloc and also its return value:
+Protect both the malloc **and its return value**:
+It is not good enough to protect the malloc in the callee function (the function called) if the returned value is not also protected in the caller function (the function 'above')
 ```c
 int allocate_memory(void)
 {
@@ -187,7 +265,7 @@ int somefunction(void)
 }
 ```
 
-##### Freeing memory that has already been fred
+#### Freeing memory that has already been fred
 
 Following the previous example, if you don't need the variable matrix anymore you can free it just by using:
 ```c
@@ -237,20 +315,42 @@ int main(void)
 
 This is "legal" in 42 (it is not a global variable, it is a structure passed along functions), it "works", but it is a very poor architecture choice. It is okay for beginner to do this but as your skill grows you should find more clever ways to architecture your programs.
 
-##### VLA - Variable Length Arrays
+#### VLA - Variable Length Arrays
 The following example is a VLA and this is bad for many reasons, the most critical being that the memory is allocated on the stack which has a limited size.
 ```c
 int somefunction(int y, int x, int array[y][x]);
 ```
 [Waiter! There's a VLA in my C!](http://ayekat.ch/blog/vla)
 
-##### using ft_ prefix for all functions
+#### using ft_ prefix for all functions
 
 *ft_* is intended for functions you want to add to the libft project and use along your projects, not for specific program functions.
 
+---
 ### Good practices
 
-##### Using flag for projects' options
+#### Using structure for basic items
+
+If you are using coordinates it might be interesting to create a structure 'point' or 'coord'
+
+```
+typedef struct s_point
+{
+    int y;
+    int x;
+}           t_point;
+
+void somefunction(void){
+    t_point p;
+
+    p.x = 2;
+    p.y = 5;
+
+    //alternatively:  p = {5, 2};
+}
+```
+
+#### Using flag for projects' options
 For each project you will often have to parse flag input. In Linux the flag usually come after a '-' and allow for extra functionalities.
 It is quite useful know how you can store such critical information into only 4 bytes *which is sizeof(integer)*
 ```c
