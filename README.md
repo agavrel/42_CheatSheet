@@ -31,9 +31,18 @@ As this cheatsheet is intended for 42 students I will not talk too much about th
 |LS|System|Parsing, Recursion, Chained-Lists|[The Good Old Manual](http://man7.org/linux/man-pages/man1/ls.1.html)|
 |Minishell|System|Environment Variables, Shell|[Bourne Shell](https://en.wikipedia.org/wiki/Bourne_shell)|
 |Malloc|System|Algo, Memory, HashCollision|[The Good Old Manual](http://man7.org/linux/man-pages/man3/malloc.3.html)|
-|FDF|Infographics|Parsing, Creativity|[Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)|
+|FDF|Infographics|Parsing, Creativity|[Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm), [Use of Graphics Library](https://en.wikipedia.org/wiki/Graphics_library), [Trigonometry](https://en.wikipedia.org/wiki/Trigonometry), [Rotations](https://en.wikipedia.org/wiki/Rotation_(mathematics)), [3D Projection](https://en.wikipedia.org/wiki/3D_projection), [ARGB Color Space](https://en.wikipedia.org/wiki/RGBA_color_space)|
 |Fractol|Infographics|Fractals, Mathematics, ARGB, HUV|[Mandelbrot Set](https://en.wikipedia.org/wiki/Mandelbrot_set)|
 |Wolfenstein 3d|Infographics|Raytracing, Rotation|[About the original Wolfenstein 3d](https://en.wikipedia.org/wiki/Wolfenstein_3D)|
+
+**How to choose your specialization**
+There are currently 4 main branches: [Infographics](https://en.wikipedia.org/wiki/Infographic), Algorithms, System and Web.
+All branchs are interesting and you should try to explore each branch's initial project:
+* If you are aiming to work in the video game industry then you should go for Infographics. Remember that this path is tough and not necessarily as rewarding as the other ones, but you will have the luxury to work in the video game industry.
+* The Algorithm branch gradation is/was mainly based on flawless parsing and not so much on algorithm quality. Fortunately with the nomination of Benny as the head of the Pedagogy there will be more efforts to reward smart algorithms. Algorithms is the best one if you want to join a prestigious company like Google
+* System is the best for those who like security, network and how computers truly work since you will have to ultimately recode your own operating system.
+* Web is good for those who like to build websites, perhaps mobile app as well (react native) and want to become a freelancer.
+
 
 ### C Must-Read Books
 *Download if you are a petty thief like me, adding the "torrent" or "pdf" keyword behind:*
@@ -329,6 +338,8 @@ int somefunction(int y, int x, int array[y][x]);
 ---
 ### Good practices
 
+Now some guidelines that should hopefully help your coding style
+
 #### Using structure for basic items
 
 If you are using coordinates it might be interesting to create a structure 'point' or 'coord'
@@ -349,6 +360,16 @@ void somefunction(void){
     //alternatively:  p = {5, 2};
 }
 ```
+
+#### Naming conventions
+
+I once met a developer who was using hp and mp instead of x and y for coordinates.  
+It was surely funny, original and a very good reference to JRPG... but it was not suitable name.  
+The function name should always be:
+* In English, forget about chauvinism!
+* At least 5 letters. It is okay to have shorter exceptionally for well-known variables like int index -> int i, temporary -> tmp and pointer -> ptr.
+* Self-explanatory: build_graph instead of graph or build_it
+* For long name use either camel case (saveClientConfig) or snake case (save_client_config) and stick to one style.
 
 #### Using flag for projects' options
 For each project you will often have to parse flag input. In Linux the flag usually come after a '-' and allow for extra functionalities.
@@ -425,10 +446,61 @@ void    somefunction2(int *flags)
 ```
 gcc -Wall -Wextra -Werror -O2
 ```
-* O2 will improve performance  
+* O2 will improve performance  ##Create a new repository on the command line
 * pedantic is not requested but is a good one to check ISO C compliance
 
 > Issue all the warnings demanded by strict ISO C and ISO C++; reject all programs that use forbidden extensions, and some other programs that do not follow ISO C and ISO C++. For ISO C, follows the version of the ISO C standard specified by any -std option used.
 
 
 You can read the details about each flag on [gccgnu website](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
+
+#### Using preprocessor DEBUG macros
+
+You can improve the performance of your program by using what we call preprocessor macros
+
+# define DEBUG true
+
+
+#### Setting up a new Git Repository using CLI (command line interface)
+
+It can be done easily using the following command line:  
+```
+reponame='docker'
+mkdir $reponame
+touch README.md
+git init
+git add README.md
+git commit -m "[INIT] First commit"
+git remote add origin git@github.com:agavrel/$reponame.git
+git push -u origin master
+```
+
+#### [Run Commands in Background](https://linuxize.com/post/how-to-run-linux-commands-in-background/) (could be used to recompile automatically each time .c are saved)
+
+You can have multiple processes running in the background at the same time with ```&``` after the command.  
+However the background process will continue to write messages to the terminal from which you invoked the command.  
+
+To suppress the stdout and stderr messages use the following syntax:  
+```
+command > /dev/null 2>&1 &
+```
+
+```>/dev/null 2>&1``` means redirect ```stdout``` to ```/dev/null``` and ```stderr``` to ```stdout```
+
+Use the jobs utility to display the status of all stopped and background jobs in the current shell session:
+```
+jobs -l
+```
+_NB: a Job is the process running thanks to the command execution_
+
+To bring the job to the foreground use :
+```
+fg %ID
+```
+NB: you can use ```bg``` to do the reverse, from foreground to background.
+
+To kill the process use:
+```
+kill -9 ID
+```
+Obviously replace ```ID``` in the above examples with the job ID you got from ```jobs -l```.
