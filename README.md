@@ -1,4 +1,4 @@
-# 42 School Cheat Sheet by [Antonin GAVREL](www.github.com/agavrel)
+# 42 School Cheat Sheet by [agavrel](https://www.github.com/agavrel)
 
 *Intended for 42 current and future 42 students*
 
