@@ -185,6 +185,22 @@ x = 1;
 while (y < y_max - 1)
 ```
 
+##### C/ Using assignation instead of comparison operators
+
+Very classic mistake: If you have a loop and crucial condition that allows the function to return use an assignation instead of comparison
+
+```c
+int i = 0;
+
+while (list)
+{
+    if (list = NULL) // You want to use if (list == NULL)
+        return i;
+    i++;
+    list=list->next;
+}
+return -1; // will always return -1
+```
 
 #### Accessing value of a local variable
 Local variable value are allocated on the stack, which is cleaned once you exit the function.
