@@ -6,13 +6,17 @@
 
 > 42 is more than just a disruptive educational model and coding school. What makes us unique and a major player in the tech world are the defining characteristics of the 42 culture. Every element of 42 shows our culture, from the students, to the curriculum structure and content, to the $0 tuition and innovative admissions process.
 
-That's right, the school is free, founded and funded by generous billionaire [Xaviel Niel](https://en.wikipedia.org/wiki/Xavier_Niel)
+That's right, the school is FREE, originally funded and founded in Paris by generous philanthropist billionaire [Xaviel Niel](https://en.wikipedia.org/wiki/Xavier_Niel)
 
-Most of the cursus is done in C language.
+Most of the entrance exam and early cursus is done in C language.
 
 > *“Nevertheless, C retains the basic philosophy that programmers know what they are doing; it only requires that they state their intentions explicitly.”* ― Brian W. Kernighan, The C Programming Language
 
-C is indeed one of the best language to understand the basis of programming: Conditions {if, elseif, else}, loops {while, do while, for}, and pointers and memory allocation. C will hence act as an educational tool to develop your skill.
+### What you will learn
+
+> "When you say 'I wrote a program that crashed Windows,' people just stare at you blankly and say 'Hey, I got those with the system, for free.'" ― Linus Torvalds
+
+C is indeed one of the best language to understand the basis of programming: Conditions {if, elseif, else}, loops {while, do while, for}, pointers and memory allocation. C will hence act as an educational tool to develop your skill.
 
 Later on you can specialize in other languages: Python will suit data scientists and devops, javascript for frontend development and C# for careers in finance.
 
@@ -41,6 +45,9 @@ Although the school advise you to "come as you are", and this is what I did, it 
 
 ---
 ### For Accepted Students: 42 Projects Guides
+
+> "Do what you think is interesting, do something that you think is fun and worthwhile, because otherwise you won’t do it well anyway." ― *Brian W. Kernighan*
+
 |Name|Track|Hashtags|What you will learn|
 |-|-|-|-|
 |Fillit|General|Architecture, Parsing, Algo|[Description from a student](https://medium.com/@bethnenniger/fillit-solving-for-the-smallest-square-of-tetrominos-c6316004f909)|
@@ -51,9 +58,11 @@ Although the school advise you to "come as you are", and this is what I did, it 
 |LS|System|Parsing, Recursion, Chained-Lists|[The Good Old Manual](http://man7.org/linux/man-pages/man1/ls.1.html)|
 |Minishell|System|Environment Variables, Shell|[Bourne Shell](https://en.wikipedia.org/wiki/Bourne_shell)|
 |Malloc|System|Algo, Memory, HashCollision|[The Good Old Manual](http://man7.org/linux/man-pages/man3/malloc.3.html)|
-|FDF|Infographics|Parsing, Creativity|[Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm), [Use of Graphics Library](https://en.wikipedia.org/wiki/Graphics_library), [Trigonometry](https://en.wikipedia.org/wiki/Trigonometry), [Rotations](https://en.wikipedia.org/wiki/Rotation_(mathematics)), [3D Projection](https://en.wikipedia.org/wiki/3D_projection), [ARGB Color Space](https://en.wikipedia.org/wiki/RGBA_color_space)|
-|Fractol|Infographics|Fractals, Mathematics, ARGB, HUV|[Mandelbrot Set](https://en.wikipedia.org/wiki/Mandelbrot_set)|
-|Wolfenstein 3d|Infographics|Raytracing, Rotation|[About the original Wolfenstein 3d](https://en.wikipedia.org/wiki/Wolfenstein_3D)|
+|FDF|Computer Graphics|Parsing, Creativity|[Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm), [Use of Graphics Library](https://en.wikipedia.org/wiki/Graphics_library), [Trigonometry](https://en.wikipedia.org/wiki/Trigonometry), [Rotations](https://en.wikipedia.org/wiki/Rotation_(mathematics)), [3D Projection](https://en.wikipedia.org/wiki/3D_projection), [ARGB Color Space](https://en.wikipedia.org/wiki/RGBA_color_space)|
+|Fractol|Computer Graphics|Fractals, Mathematics, ARGB, HUV|[Mandelbrot Set](https://en.wikipedia.org/wiki/Mandelbrot_set)|
+|Wolfenstein 3d|Computer Graphics|Raytracing, Rotation|[About the original Wolfenstein 3d](https://en.wikipedia.org/wiki/Wolfenstein_3D)|
+|NmOtool|System|Symbol Table, .dll .so|[Implement List the symbols in a .so file](https://stackoverflow.com/questions/34732/how-do-i-list-the-symbols-in-a-so-file)
+|LibftAsm|System|x86 Assembly Instructions|[Refer to the Intel Bible](https://software.intel.com/en-us/articles/intel-sdm)
 
 ---
 **How to choose your specialization**
@@ -66,14 +75,16 @@ All branchs are interesting and you should try to explore each branch's initial 
 
 ---
 ### Must-Read Books and Links
-*Only petty thieves would illegaly download, using "torrent" or "pdf" keywords, real gentlemen will purchase a physical or digital copy*
+*Only petty thieves would illegaly download, using "torrent" or "pdf" keywords, real Gentlemen will purchase a digital copy*
 
-#### 0x00 General C knowledge
+#### 0x00 C Knowledge
 * [The C Programming Language 2nd Ed Subsequent Edition](https://www.goodreads.com/book/show/515601.The_C_Programming_Language) *by Brian Kernighan and Dennis Ritchie*
 
 * [Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)
 
 * [Obscure C Features](https://multun.net/obscure-c-features.html)  
+
+* [Characters, Symbols and the Unicode Miracle - Computerphile](https://www.youtube.com/watch?v=MijmeoH9LT4)
 
 #### 0x01 Algorithm
 * [Nailing the Coding Interview by Antonin Gavrel](https://github.com/agavrel/Nailing-the-Coding-Interview)
@@ -81,6 +92,9 @@ All branchs are interesting and you should try to explore each branch's initial 
 * [A tour of the top 5 sorting algorithms with Python code](https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889)  
 
 #### 0x02 Bits
+
+> "The word bit is a contraction of binary digit that was coined by the statistician John Tukey in the mid 1940s." ― *Brian W. Kernighan, D Is for Digital*
+
 * [Hacker's Delight](https://doc.lagout.org/security/Hackers%20Delight.pdf) *by Henry S. Warren Jr.*
 
 * [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html) *by Sean Eron Anderson*
@@ -89,11 +103,13 @@ All branchs are interesting and you should try to explore each branch's initial 
 
 #### 0x03 Network
 
-* [Next Generation Kernel Network Tunnel - WireGuard by JA Donenfeld](https://www.wireguard.com/papers/wireguard.pdf)
-
 > I would tell you a joke about UDP but I’m afraid you wouldn’t get it.
 
-* [TCP Meltdown - Computerphile](https://www.youtube.com/watch?v=AAssk2N_oPk)
+* [Next Generation Kernel Network Tunnel - WireGuard by JA Donenfeld](https://www.wireguard.com/papers/wireguard.pdf)
+
+* [TCP Meltdown](https://www.youtube.com/watch?v=AAssk2N_oPk) *by Computerphile*
+
+* [Onion Routing](https://www.youtube.com/watch?v=QRYzre4bf7I) *by Computerphile*
 
 
 #### 0x04 Hacking & Security
@@ -115,7 +131,7 @@ All branchs are interesting and you should try to explore each branch's initial 
 * [LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)
 
 
-#### 0x05 Infographic
+#### 0x05 Computer Graphics
 
 * [3d Fractal Flame Wisps (pdf)](https://pdfs.semanticscholar.org/f7c4/7cda24b288a1c6624bb683f3c205629c98e5.pdf)  
 
@@ -123,13 +139,22 @@ All branchs are interesting and you should try to explore each branch's initial 
 
 * [Exponentiation by Squaring](https://en.wikipedia.org/wiki/Exponentiation_by_squaring)  
 
+* [Light and Shadows in Graphics](https://www.youtube.com/watch?v=LUjXAoP5GG0) *by Computerphile*
+
+* [Screen Space Ambient Occlusion Tutorial](http://john-chapman-graphics.blogspot.com/2013/01/ssao-tutorial.html)
+
 
 #### 0x06 Optimization with Vectorization
+
+> "People say that you should not micro-optimize. But if what you love is micro-optimization... that's what you should do." ― *Linus Torvalds*
 
 * [Automatic Vectorization](https://www.codingame.com/playgrounds/283/sse-avx-vectorization/autovectorization)
 
 
-#### 0x07 In-Depth C++ Optimization  
+#### 0x07 In-Depth C++ Optimization
+
+> "C++ is a horrible language. It's made more horrible by the fact that a lot of substandard programmers use it, to the point where it's much much easier to generate total and utter crap with it" ― *Linus Torvalds 2007*
+
 * [C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features)  
 
 * [Optimizing software in C++](https://www.agner.org/optimize/optimizing_cpp.pdf) *by Agner Fog*
@@ -169,10 +194,15 @@ All branchs are interesting and you should try to explore each branch's initial 
 
 #### 0x0b Debugging
 
+> "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?"
+― *Brian W. Kernighan*
+
 * [GDB Tutorial](https://www.cs.cmu.edu/~gilpin/tutorial/)  
 
 ---
 ### Common Beginner Mistakes
+
+> "Don’t comment bad code—rewrite it." ― *Brian W. Kernighan, The Elements of Programming Style*
 
 #### Array overflow
 C does not perform boundary checking when using arrays.  
@@ -233,6 +263,8 @@ while (c < 150)
     c++;
 }
 ```
+
+> "Talk is cheap. Show me the code." ― Linus Torvalds
 
 ##### B/ Accessing the next link in a chained-list without checking the current one
 Another example with linked-lists
@@ -424,6 +456,10 @@ free(matrix); // do not attempt to free twice or to free a stack based variable
 ```
 
 ##### Do Not use global variables
+
+> "Theory and practice sometimes clash. And when that happens, theory loses.  
+Every single time." ― Linus Torvalds
+
 Global variables are forbidden in 42 School except for a few exceptions, see this interesting article: [Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)
 However many students, me including, found a way to circumvent this interdiction: you first declare a structure in the header that will contain all our variables:
 ```c
@@ -674,3 +710,11 @@ or
 ```
 source ~/.bashrc
 ```
+
+---
+## Broken Link ? Question ? Wanna contribute ?
+*Email me or submit a pull request*
+
+---
+## Author
+Antonin GAVREl
