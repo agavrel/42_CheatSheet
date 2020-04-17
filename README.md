@@ -1,26 +1,46 @@
 # 42 School Cheat Sheet by [agavrel](https://www.github.com/agavrel)
 
-*Intended for 42 current and future 42 students*
+:two_hearts: *Intended for 42 alumni, current students and candidates*
 
 ### Introduction to 42
 
-Description from the US School official website:
 > 42 is more than just a disruptive educational model and coding school. What makes us unique and a major player in the tech world are the defining characteristics of the 42 culture. Every element of 42 shows our culture, from the students, to the curriculum structure and content, to the $0 tuition and innovative admissions process.
 
-Most of the course are about C coding.
+That's right, the school is free, founded and funded by generous billionaire [Xaviel Niel](https://en.wikipedia.org/wiki/Xavier_Niel)
 
-### About the "Piscine"
+Most of the cursus is done in C language.
+
+> *“Nevertheless, C retains the basic philosophy that programmers know what they are doing; it only requires that they state their intentions explicitly.”* ― Brian W. Kernighan, The C Programming Language
+
+C is indeed one of the best language to understand the basis of programming: Conditions {if, elseif, else}, loops {while, do while, for}, and pointers and memory allocation. C will hence act as an educational tool to develop your skill.
+
+Later on you can specialize in other languages: Python will suit data scientists and devops, javascript for frontend development and C# for careers in finance.
+
+### For Candidates: About the "Piscine"
 The piscine is the entrance exam that consists of 4 weeks fully dedicated at solving exercises and submitting group and solo projects.  
 Although the school advise you to "come as you are", and this is what I did, it does certainly help to prepare beforehand.  
-You can find the [subject on github](https://github.com/Binary-Hackers/42_Subjects/tree/master/01_Piscines/C/EN), courtesy of my friend binary hacker.
-As this cheatsheet is intended for 42 students I will not talk too much about this. Few things to know:
 
-**Guidelines to succeed:**
-* It does not matter if you fail a project, an exam or a day as long as you keep striving. Someone who has never been interested before in Computer Science would never be able to complete everything in time, yet he will not prevent from being successful.
-* My opinion on what are the criteria to succeed are: 1/ How far you went on the 4 exams session, knowing that the 3 firsts exams are limited in term of how far you can go, 2/ to have an acceptable percentage of review from peers (probably 80% is enough, but you would get 90 to 97% if you are nice). 3/ The logging time has no or very little influence, but it certainly directly influence your skills, 4/ it is strongly advised to succeed at least one group project.
-* There is a special and unique achievement awarded to the most helpful/smart student. This achievement does not show up on the student profile until he asks for it.
+#### Guidelines to succeed
 
-### 42 Projects Guides
+**It does not matter if you fail a project, an exam or a day as long as you keep striving**. Someone who has never been interested before in Computer Science would never be able to complete everything in time, yet he will not prevent from being successful.
+
+#### My guess on the success criteria
+* **0x00 Come as you are** ... or forget this shit and prepare with [subject on github](https://github.com/Binary-Hackers/42_Subjects/tree/master/01_Piscines/C/EN), courtesy of my friend binary hacker.
+
+* **0x01 Prepare to nail the exams** on the 4 exams session, knowing that the 3 firsts exams are limited in term of how far you can go and it is not a big deal to miss the first 3 exams as the most important is IMHO the maximum level you can reach. **Succeeding the first 4 exercises (36 pts)** should be enough to make sure you quality.
+
+* **0x02 Get an acceptable percentage of review from peers** (probably 80% is enough, but you would get 90 to 97% if you are nice). *Don't be too nice, but don't be a dick with [vim .swp files](https://lmgtfy.com/?q=What+is+the+purpose+of+swap+files%3F) and .DS_Store*.
+
+>  [.DS_Store](https://en.wikipedia.org/wiki/.DS_Store) – The name of a file in the Apple OS X operating system for storing custom attributes of a folder such as the position of icons or the choice of a background image. These files are created when you manipulate your files with the [Finder GUI](https://en.wikipedia.org/wiki/Graphical_user_interface).
+
+* **0x03 The logging time has no or very little influence**, I know it as a fact for seeing people constantly logged in (but slacking) failing the piscine and students barely present being accepted. However the more time you spend in 42 school will certainly directly influence your skills and positively impact other related topics
+
+* **0x04 It is strongly recommended to succeed at least one group project**, especially the first one that is really easy.
+
+* **0x05 There is a special and unique achievement awarded to the most helpful/smart student.** This achievement does not show up on the student profile until he asks for it.
+
+---
+### For Accepted Students: 42 Projects Guides
 |Name|Track|Hashtags|What you will learn|
 |-|-|-|-|
 |Fillit|General|Architecture, Parsing, Algo|[Description from a student](https://medium.com/@bethnenniger/fillit-solving-for-the-smallest-square-of-tetrominos-c6316004f909)|
@@ -35,21 +55,123 @@ As this cheatsheet is intended for 42 students I will not talk too much about th
 |Fractol|Infographics|Fractals, Mathematics, ARGB, HUV|[Mandelbrot Set](https://en.wikipedia.org/wiki/Mandelbrot_set)|
 |Wolfenstein 3d|Infographics|Raytracing, Rotation|[About the original Wolfenstein 3d](https://en.wikipedia.org/wiki/Wolfenstein_3D)|
 
+---
 **How to choose your specialization**
 There are currently 4 main branches: [Infographics](https://en.wikipedia.org/wiki/Infographic), Algorithms, System and Web.
 All branchs are interesting and you should try to explore each branch's initial project:
-* If you are aiming to work in the video game industry then you should go for Infographics. Remember that this path is tough and not necessarily as rewarding as the other ones, but you will have the luxury to work in the video game industry.
-* The Algorithm branch gradation is/was mainly based on flawless parsing and not so much on algorithm quality. Fortunately with the nomination of Benny as the head of the Pedagogy there will be more efforts to reward smart algorithms. Algorithms is the best one if you want to join a prestigious company like Google
-* System is the best for those who like security, network and how computers truly work since you will have to ultimately recode your own operating system.
-* Web is good for those who like to build websites, perhaps mobile app as well (react native) and want to become a freelancer.
+* If you are aiming to work in the video game industry and like Mathematics then you should go for **Infographics**. Remember that this path is tough and not necessarily as rewarding as the other ones, but you will have the luxury to work in the video game industry.
+* **Algorithm branch** is/was mainly based on flawless parsing and not so much on algorithm quality. Fortunately with the nomination of Benny as the head of the Pedagogy there will be more efforts to reward smart algorithms. Algorithms is the best one if you want to join a prestigious company like Google
+* **System** is the best for those who like security, network and how computers truly work since you will have to ultimately recode your own operating system.
+* **Web** is good for those who like to build websites, perhaps mobile app as well (react native) and want to become a freelancer.
+
+---
+### Must-Read Books and Links
+*Only petty thieves would illegaly download, using "torrent" or "pdf" keywords, real gentlemen will purchase a physical or digital copy*
+
+#### 0x00 General C knowledge
+* [The C Programming Language 2nd Ed Subsequent Edition](https://www.goodreads.com/book/show/515601.The_C_Programming_Language) *by Brian Kernighan and Dennis Ritchie*
+
+* [Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)
+
+* [Obscure C Features](https://multun.net/obscure-c-features.html)  
+
+#### 0x01 Algorithm
+* [Nailing the Coding Interview by Antonin Gavrel](https://github.com/agavrel/Nailing-the-Coding-Interview)
+
+* [A tour of the top 5 sorting algorithms with Python code](https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889)  
+
+#### 0x02 Bits
+* [Hacker's Delight](https://doc.lagout.org/security/Hackers%20Delight.pdf) *by Henry S. Warren Jr.*
+
+* [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html) *by Sean Eron Anderson*
+
+* [De Bruijn Sequence](https://www.chessprogramming.org/De_Bruijn_Sequence)
+
+#### 0x03 Network
+
+* [Next Generation Kernel Network Tunnel - WireGuard by JA Donenfeld](https://www.wireguard.com/papers/wireguard.pdf)
+
+> I would tell you a joke about UDP but I’m afraid you wouldn’t get it.
+
+* [TCP Meltdown - Computerphile](https://www.youtube.com/watch?v=AAssk2N_oPk)
 
 
-### C Must-Read Books
-*Download if you are a petty thief like me, adding the "torrent" or "pdf" keyword behind:*
+#### 0x04 Hacking & Security
 
-The C Programming Language *by Brian Kernighan and Dennis Ritchie*  
-[[C++] Optimizing software in C++ - Agner Fog (pdf)](https://www.agner.org/optimize/optimizing_cpp.pdf)  
+* [Smashing The Stack For Fun And Profit](http://www-inst.eecs.berkeley.edu/~cs161/fa08/papers/stack_smashing.pdf) *by Aleph One*
 
+* [Exploiting Format String Vulnerabilities](http://www.cis.syr.edu/~wedu/Teaching/cis643/Papers/formatstring-1.2.pdf)
+
+* [Secure Programming HOWTO](https://dwheeler.com/secure-programs/Secure-Programs-HOWTO.pdf) *by David A. Wheeler*
+
+* [Buffer Overflow, Race Condition, Input Validation, Format String](http://www.cis.syr.edu/~wedu/Teaching/cis643/schedule.html) *by Wenliang (Kevin) Du*
+
+* [Efficiently Generating Python Hash Collisions](https://www.leeholmes.com/blog/2019/07/23/efficiently-generating-python-hash-collisions/)  
+
+* [Stochastic Process Wikipedia](https://en.wikipedia.org/wiki/Stochastic_process)  
+
+* [Gimli: a cross-platform permutation](https://eprint.iacr.org/2017/630.pdf)  
+
+* [LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)
+
+
+#### 0x05 Infographic
+
+* [3d Fractal Flame Wisps (pdf)](https://pdfs.semanticscholar.org/f7c4/7cda24b288a1c6624bb683f3c205629c98e5.pdf)  
+
+* [Geometry Caching Optimizations in Halo 5: Guardians](https://www.youtube.com/watch?v=uYAjUOlEgwI)  
+
+* [Exponentiation by Squaring](https://en.wikipedia.org/wiki/Exponentiation_by_squaring)  
+
+
+#### 0x06 Optimization with Vectorization
+
+* [Automatic Vectorization](https://www.codingame.com/playgrounds/283/sse-avx-vectorization/autovectorization)
+
+
+#### 0x07 In-Depth C++ Optimization  
+* [C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features)  
+
+* [Optimizing software in C++](https://www.agner.org/optimize/optimizing_cpp.pdf) *by Agner Fog*
+
+* [Bjarne Stroustrup: Why I Created C++](https://www.youtube.com/watch?v=JBjjnqG0BP8)  
+
+* [Intel Intrinsics Guide](https://software.intel.com/sites/landingpage/IntrinsicsGuide/) ([What is it](https://en.wikipedia.org/wiki/Intrinsic_function))
+
+* [Carl Cook "Low Latency C++ for Fun and Profit"](https://www.youtube.com/watch?v=BxfT9fiUsZ4)  
+
+* [CppCon 2018: Olivier Giroux “High-Radix Concurrent C++”](https://www.youtube.com/watch?v=75LcDvlEIYw)  
+
+
+#### 0x08 In-Depth Assembly Optimization
+
+* [Breaking the x86 Instruction Set](https://www.youtube.com/watch?v=KrksBdWcZgQ)  
+
+* [Optimizing subroutines in assembly language: An optimization guide for x86 platforms](https://www.agner.org/optimize/optimizing_assembly.pdf) *by Agner Fog*
+
+* [Intel® 64 and IA-32 architectures software developer’s manual combined volumes: 1, 2, 3 and 4](https://software.intel.com/en-us/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4)
+
+#### 0x09 Computer Vision
+
+* [OpenCV Tutorial](https://docs.opencv.org/2.4/opencv_tutorials.pdf)
+
+
+#### 0x0a Misc
+* [Why Java Suck](https://tech.jonathangardner.net/wiki/Why_Java_Sucks)  
+
+* [XOR Linked List – A Memory Efficient Doubly Linked List](http://en.wikipedia.org/wiki/XOR_linked_list)  
+* [XOR Linked List – C Implementation](https://stackoverflow.com/questions/3531972/c-code-for-xor-linked-list)  
+
+* [Math for Game Programmers: Dark Secrets of the RNG](https://www.youtube.com/watch?v=J5qnnxFoBss)  
+
+* [A Super Mario 64 decompilation, brought to you by a bunch of clever folks](https://github.com/agavrel/sm64)
+
+
+#### 0x0b Debugging
+
+* [GDB Tutorial](https://www.cs.cmu.edu/~gilpin/tutorial/)  
+
+---
 ### Common Beginner Mistakes
 
 #### Array overflow
@@ -356,6 +478,9 @@ int somefunction(int y, int x, int array[y][x]);
 
 Now some guidelines that should hopefully help your coding style
 
+> “Don’t comment bad code, rewrite it.” Brian W. Kernighan, The Elements of Programming Style
+
+
 #### Using structure for basic items
 
 If you are using coordinates it might be interesting to create a structure 'point' or 'coord'
@@ -520,3 +645,32 @@ To kill the process use:
 kill -9 ID
 ```
 Obviously replace ```ID``` in the above examples with the job ID you got from ```jobs -l```.
+
+
+#### [Add a a new binary in the PATH environment variable on linux](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix)
+
+Example with terraform:
+```
+sudo mkdir /opt/terraform
+unzip ~/Downloads/terraform_0.12.13_linux_amd64.zip /opt/terraform
+```
+
+add to PATH environment variable:
+```
+export PATH="$PATH:/opt/terraform"
+```
+
+then create simlink in /user/bin
+```
+cd /usr/bin
+sudo ln -s /opt/terraform terraform
+```
+
+Update path for current session
+```
+source ~/.profile
+```
+or
+```
+source ~/.bashrc
+```
