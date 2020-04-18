@@ -6,7 +6,7 @@
 
 *A minimalist c program that will puzzle beginners, write it in a file named a.c and create a.out with ```gcc a.c && ./a.out```*
 ```c
-#include <stdio.h>
+#include <unistd.h>
 
 void	ft_putchar(char c)
 {
