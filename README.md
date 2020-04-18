@@ -20,24 +20,29 @@ int	main(void) {
 ```
 
 
+---
 ## Introduction to 42
 
 > 42 is more than just a disruptive educational model and coding school. What makes us unique and a major player in the tech world are the defining characteristics of the 42 culture. Every element of 42 shows our culture, from the students, to the curriculum structure and content, to the $0 tuition and innovative admissions process.
 
 That's right, the school is FREE, originally funded and founded in Paris by generous philanthropist billionaire [Xaviel Niel](https://en.wikipedia.org/wiki/Xavier_Niel)
 
-Most of the entrance exam and early cursus is done in C language.
-
 > *“Nevertheless, C retains the basic philosophy that programmers know what they are doing; it only requires that they state their intentions explicitly.”* ― Brian W. Kernighan, The C Programming Language
 
+Most of the entrance exam and early cursus is done in C language.
+
+
+---
 ## What you will learn
 
 > "When you say 'I wrote a program that crashed Windows,' people just stare at you blankly and say 'Hey, I got those with the system, for free.'" ― Linus Torvalds
 
 C is indeed one of the best language to understand the basis of programming: Conditions {if, elseif, else}, loops {while, do while, for}, pointers and memory allocation. C will hence act as an educational tool to develop your skill.
 
-Later on you can specialize in other languages: Python will suit data scientists and devops, javascript for frontend development and C# for careers in finance.
+Later on you can specialize in other languages: Python will suit data scientists and devops, javascript for frontend developers and C# for those looking for a career in finance.
 
+
+---
 ## For Candidates: About the "Piscine"
 The piscine is the entrance exam that consists of 4 weeks fully dedicated at solving exercises and submitting group and solo projects.  
 Although the school advise you to "come as you are", and this is what I did, it does certainly help to prepare beforehand.  
@@ -63,7 +68,7 @@ Although the school advise you to "come as you are", and this is what I did, it 
 * **0x05 There is a special and unique achievement awarded to the most helpful/smart student.** This achievement does not show up on the student profile until he asks for it.
 
 ---
-### For Accepted Students: 42 Projects Guides
+## For Accepted Students: 42 Projects Guides
 
 > "Do what you think is interesting, do something that you think is fun and worthwhile, because otherwise you won’t do it well anyway." ― *Brian W. Kernighan*
 
@@ -84,6 +89,8 @@ Although the school advise you to "come as you are", and this is what I did, it 
 |LibftAsm|System|x86 Assembly Instructions|[Refer to the Intel Bible](https://software.intel.com/en-us/articles/intel-sdm)
 
 ---
+### Choosing your Path
+
 **How to choose your specialization**
 There are currently 4 main branches: [Infographics](https://en.wikipedia.org/wiki/Infographic), Algorithms, System and Web.
 All branchs are interesting and you should try to explore each branch's initial project:
@@ -93,11 +100,11 @@ All branchs are interesting and you should try to explore each branch's initial 
 * **Web** is good for those who like to build websites, perhaps mobile app as well (react native) and want to become a freelancer.
 
 ---
-### Curated list of recommended Manuals, Books, Videos, Blog Articles and Tutorials
+## Curated list of recommended Manuals, Books, Videos, Blog Articles and Tutorials
 
 *Only petty thieves would google "torrent" or "pdf" keywords, real Gentlemen would purchase a digital copy*
 
-#### 0x00 C Knowledge
+### 0x00 C Knowledge
 
 > "C is quirky, flawed, and an enormous success." ― *[Dennis Ritchie, Creator of the C language](https://en.wikipedia.org/wiki/Dennis_Ritchie)*
 
@@ -112,7 +119,7 @@ Title | How Interesting | Author
 **[The Practice of Programing](http://index-of.co.uk/Etc/The.Practice.of.Programming.-.B.W..Kernighan..pdf)** | :star::star::star: | *by Brian W. Kernighan and Rob Pike*
 **[Duff's Device](http://www.lysator.liu.se/c/duffs-device.html)** | :star::star::star: | *by Tom Duff*
 
-#### 0x01 Algorithm
+### 0x01 Algorithm
 
 Title | How Interesting | Author
 ---|---|---
@@ -121,7 +128,7 @@ Title | How Interesting | Author
 **[A tour of the top 5 sorting algorithms with Python code](https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889)** | :star::star: | *by George Seif*
 
 
-#### 0x02 Bits
+### 0x02 Bits
 
 > "The word bit is a contraction of binary digit that was coined by the statistician John Tukey in the mid 1940s." ― *Brian W. Kernighan, D Is for Digital*
 
@@ -132,7 +139,7 @@ Title | How Interesting | Author
 **[De Bruijn Sequence](https://www.chessprogramming.org/De_Bruijn_Sequence)** | :star::star:
 
 
-#### 0x03 Network
+### 0x03 Network
 
 > I would tell you a joke about UDP but I’m afraid you wouldn’t get it.
 
@@ -143,14 +150,14 @@ Title | How Interesting | Author
 **[Onion Routing](https://www.youtube.com/watch?v=QRYzre4bf7I)** | :star::star::star::star: | *by Computerphile*
 
 
-#### 0x04 Hacking & Security
+### 0x04 Hacking & Security
 
 > "Never underestimate the determination of a kid who is time-rich and cash-poor." ― *Cory Doctorow, Little Brother*
 
 Title | How Interesting | Author
 ---|---|---
 **[Smashing The Stack For Fun And Profit](http://www-inst.eecs.berkeley.edu/~cs161/fa08/papers/stack_smashing.pdf)** | :two_hearts: | *by Aleph One*
-**[Breaking the x86 Instruction Set](https://www.youtube.com/watch?v=KrksBdWcZgQ)** | :star::star:star::star::star: | *[by Domas](https://github.com/xoreaxeaxeax)*
+**[Breaking the x86 Instruction Set](https://www.youtube.com/watch?v=KrksBdWcZgQ)** | :star::star::star::star::star: | *[by Domas](https://github.com/xoreaxeaxeax)*
 **[Buffer Overflow, Race Condition, Input Validation, Format String](http://www.cis.syr.edu/~wedu/Teaching/cis643/schedule.html)** | :star::star::star::star: | *by Wenliang (Kevin) Du*
 **[Secure Programming HOWTO](https://dwheeler.com/secure-programs/Secure-Programs-HOWTO.pdf)** | :star::star::star: | *by David A. Wheeler*
 **[Efficiently Generating Python Hash Collisions](https://www.leeholmes.com/blog/2019/07/23/efficiently-generating-python-hash-collisions/)** | :star::star:
@@ -159,7 +166,7 @@ Title | How Interesting | Author
 **[LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)** | :star::star:
 
 
-#### 0x05 Computer Graphics
+### 0x05 Computer Graphics
 
 Title | How Interesting | Author
 ---|---|---
@@ -171,14 +178,14 @@ Title | How Interesting | Author
 **[Screen Space Ambient Occlusion Tutorial](http://john-chapman-graphics.blogspot.com/2013/01/ssao-tutorial.html)** | :star::star: | *by John Chapman*
 
 
-#### 0x06 Computer Vision & AI
+### 0x06 Computer Vision & AI
 
 Title | How Interesting | Author
 ---|---|---
 **[OpenCV Tutorial](https://docs.opencv.org/2.4/opencv_tutorials.pdf)** | :star::star::star:
 
 
-#### 0x07 In-Depth C++ Optimization
+### 0x07 In-Depth C++ Optimization
 
 > "C++ is a horrible language. It's made more horrible by the fact that a lot of substandard programmers use it, to the point where it's much much easier to generate total and utter crap with it" ― *Linus Torvalds 2007*
 
@@ -187,24 +194,25 @@ Title | How Interesting | Author
 **[C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features)**
 **[Optimizing software in C++](https://www.agner.org/optimize/optimizing_cpp.pdf)** | :two_hearts: | *by Agner Fog*
 **[Intel Intrinsics Guide](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)** *[What is it](https://en.wikipedia.org/wiki/Intrinsic_function)* | :star::star::star::star: | *Intel*
-**["Low Latency C++ for Fun and Profit"](https://www.youtube.com/watch?v=BxfT9fiUsZ4)** | :star::star::star::star | *by Carl Cook*
+**["Low Latency C++ for Fun and Profit"](https://www.youtube.com/watch?v=BxfT9fiUsZ4)** | :star::star::star::star: | *by Carl Cook*
 **[Why I Created C++](https://www.youtube.com/watch?v=JBjjnqG0BP8)** | :star::star::star: | *Bjarne Stroustrup*
 **[CppCon 2018 “High-Radix Concurrent C++”](https://www.youtube.com/watch?v=75LcDvlEIYw)** | :star::star::star: | *Olivier Giroux*
 
 
-#### 0x08 In-Depth Assembly Optimization
+### 0x08 In-Depth Assembly Optimization
 
 > "People say that you should not micro-optimize. But if what you love is micro-optimization... that's what you should do." ― *Linus Torvalds*
 
 Title | How Interesting | Author
 ---|---|---
-**[Optimizing subroutines in assembly language: An optimization guide for x86 platforms](https://www.agner.org/optimize/optimizing_assembly.pdf)** | :two_hearts: | *by Agner Fog*
-**[Intel® 64 and IA-32 architectures software developer’s manual combined volumes: 1, 2, 3 and 4](https://software.intel.com/en-us/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4)** | :two_hearts: | *Intel*
+**[Optimizing subroutines in assembly x86 language](https://www.agner.org/optimize/optimizing_assembly.pdf)** | :two_hearts: | *by Agner Fog*
+**[Intel® 64 and IA-32 architectures software developer’s manual](https://software.intel.com/en-us/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4)** | :two_hearts: | *Intel*
 **[The Art of Assembly Language](http://www.staroceans.org/kernel-and-driver/The.Art.of.Assembly.Language.2nd.Edition.pdf)** | :star::star: | *by Randal Hyde*
 **[GDB Tutorial](https://www.cs.cmu.edu/~gilpin/tutorial/)** | :star::star: | *by Andrew Gilpin*
+**[Tips for Golfing in x86/x64 Bytecode](https://codegolf.stackexchange.com/questions/132981/tips-for-golfing-in-x86-x64-machine-code)** | :star::star::star: | *by StackExchange*
 
 
-#### 0x09 Misc
+### 0x09 Misc
 
 > "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?" ― *Brian W. Kernighan*
 
@@ -220,7 +228,7 @@ Title | How Interesting | Author
 ---
 ## Common Beginner Mistakes
 
-> Experience is the name everyone gives to their mistakes.” – *Oscar Wilde*
+> "Experience is the name everyone gives to their mistakes." – *[Oscar Wilde](https://en.wikipedia.org/wiki/The_Picture_of_Dorian_Gray)*
 
 ---
 ### 0x00 Array overflow
