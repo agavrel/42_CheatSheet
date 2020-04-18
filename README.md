@@ -1,8 +1,26 @@
 # 42 School Cheat Sheet by [agavrel](https://www.github.com/agavrel)
 
-:two_hearts: *Intended for 42 alumni, current students and candidates*
+## :two_hearts: *Intended for 42 alumni, current students and candidates*
 
-### Introduction to 42
+> Truth can only be found in one place: the code. – *Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship*
+
+*A minimalist c program that will puzzle beginners, write it in a file named a.c and create a.out with ```gcc a.c && ./a.out```*
+```c
+#include <stdio.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int	main(void) {
+	ft_putchar(42);
+	return 0;
+}
+```
+
+
+## Introduction to 42
 
 > 42 is more than just a disruptive educational model and coding school. What makes us unique and a major player in the tech world are the defining characteristics of the 42 culture. Every element of 42 shows our culture, from the students, to the curriculum structure and content, to the $0 tuition and innovative admissions process.
 
@@ -12,7 +30,7 @@ Most of the entrance exam and early cursus is done in C language.
 
 > *“Nevertheless, C retains the basic philosophy that programmers know what they are doing; it only requires that they state their intentions explicitly.”* ― Brian W. Kernighan, The C Programming Language
 
-### What you will learn
+## What you will learn
 
 > "When you say 'I wrote a program that crashed Windows,' people just stare at you blankly and say 'Hey, I got those with the system, for free.'" ― Linus Torvalds
 
@@ -20,15 +38,16 @@ C is indeed one of the best language to understand the basis of programming: Con
 
 Later on you can specialize in other languages: Python will suit data scientists and devops, javascript for frontend development and C# for careers in finance.
 
-### For Candidates: About the "Piscine"
+## For Candidates: About the "Piscine"
 The piscine is the entrance exam that consists of 4 weeks fully dedicated at solving exercises and submitting group and solo projects.  
 Although the school advise you to "come as you are", and this is what I did, it does certainly help to prepare beforehand.  
 
-#### Guidelines to succeed
+
+### Guidelines to succeed
 
 **It does not matter if you fail a project, an exam or a day as long as you keep striving**. Someone who has never been interested before in Computer Science would never be able to complete everything in time, yet he will not prevent from being successful.
 
-#### My guess on the success criteria
+### My guess on the success criteria
 * **0x00 Come as you are** ... or forget this shit and prepare with [subject on github](https://github.com/Binary-Hackers/42_Subjects/tree/master/01_Piscines/C/EN), courtesy of my friend binary hacker.
 
 * **0x01 Prepare to nail the exams** on the 4 exams session, knowing that the 3 firsts exams are limited in term of how far you can go and it is not a big deal to miss the first 3 exams as the most important is IMHO the maximum level you can reach. **Succeeding the first 4 exercises (36 pts)** should be enough to make sure you quality.
@@ -74,199 +93,264 @@ All branchs are interesting and you should try to explore each branch's initial 
 * **Web** is good for those who like to build websites, perhaps mobile app as well (react native) and want to become a freelancer.
 
 ---
-### Must-Read Books and Links
-*Only petty thieves would illegaly download, using "torrent" or "pdf" keywords, real Gentlemen will purchase a digital copy*
+### Curated list of recommended Manuals, Books, Videos, Blog Articles and Tutorials
+
+*Only petty thieves would google "torrent" or "pdf" keywords, real Gentlemen would purchase a digital copy*
 
 #### 0x00 C Knowledge
-* [The C Programming Language 2nd Ed Subsequent Edition](https://www.goodreads.com/book/show/515601.The_C_Programming_Language) *by Brian Kernighan and Dennis Ritchie*
 
-* [Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)
+> "C is quirky, flawed, and an enormous success." ― *[Dennis Ritchie, Creator of the C language](https://en.wikipedia.org/wiki/Dennis_Ritchie)*
 
-* [Obscure C Features](https://multun.net/obscure-c-features.html)  
-
-* [Characters, Symbols and the Unicode Miracle - Computerphile](https://www.youtube.com/watch?v=MijmeoH9LT4)
+Title | How Interesting | Author
+---|---|---
+**[The C Programming Language 2nd Ed Subsequent Edition](https://www.goodreads.com/book/show/515601.The_C_Programming_Language)** | :two_hearts: | *by Brian Kernighan and Dennis Ritchie*
+**[Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)** | :star: | *StackOverFlow*
+**[Obscure C Features](https://multun.net/obscure-c-features.html)** | :star::star::star::star::star: | *[by Multun](https://github.com/multun)*
+**[Characters, Symbols and the UTF-8 Miracle - Computerphile](https://www.youtube.com/watch?v=MijmeoH9LT4)** | :star::star::star::star: | *by Tom Scott*
+**[Automatic Vectorization](https://www.codingame.com/playgrounds/283/sse-avx-vectorization/autovectorization)** | :star::star::star::star: | *[by Marchete](https://github.com/marchete)*
+**[Writing Solid Code](http://cs.brown.edu/courses/cs190/2008/documents/restricted/Writing%20Solid%20Code.pdf)** | :star::star::star::star: | *by Steve Maguire*
+**[The Practice of Programing](http://index-of.co.uk/Etc/The.Practice.of.Programming.-.B.W..Kernighan..pdf)** | :star::star::star: | *by Brian W. Kernighan and Rob Pike*
+**[Duff's Device](http://www.lysator.liu.se/c/duffs-device.html)** | :star::star::star: | *by Tom Duff*
 
 #### 0x01 Algorithm
-* [Nailing the Coding Interview by Antonin Gavrel](https://github.com/agavrel/Nailing-the-Coding-Interview)
 
-* [A tour of the top 5 sorting algorithms with Python code](https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889)  
+Title | How Interesting | Author
+---|---|---
+**[A curated list of Awesome Competitive Programming](https://codeforces.com/blog/entry/23054)** | :star::star::star: | *by Inishan (Jasmine Chen)*
+**[Nailing the Coding Interview](https://github.com/agavrel/Nailing-the-Coding-Interview)** | :kr: | *by Antonin Gavrel*
+**[A tour of the top 5 sorting algorithms with Python code](https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889)** | :star::star: | *by George Seif*
+
 
 #### 0x02 Bits
 
 > "The word bit is a contraction of binary digit that was coined by the statistician John Tukey in the mid 1940s." ― *Brian W. Kernighan, D Is for Digital*
 
-* [Hacker's Delight](https://doc.lagout.org/security/Hackers%20Delight.pdf) *by Henry S. Warren Jr.*
+Title | How Interesting | Author
+---|---|---
+**[Hacker's Delight](https://doc.lagout.org/security/Hackers%20Delight.pdf)** | :two_hearts: | *by Henry S. Warren Jr.*
+**[Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)** | :two_hearts: | *by Sean Eron Anderson*
+**[De Bruijn Sequence](https://www.chessprogramming.org/De_Bruijn_Sequence)** | :star::star:
 
-* [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html) *by Sean Eron Anderson*
-
-* [De Bruijn Sequence](https://www.chessprogramming.org/De_Bruijn_Sequence)
 
 #### 0x03 Network
 
 > I would tell you a joke about UDP but I’m afraid you wouldn’t get it.
 
-* [Next Generation Kernel Network Tunnel - WireGuard by JA Donenfeld](https://www.wireguard.com/papers/wireguard.pdf)
-
-* [TCP Meltdown](https://www.youtube.com/watch?v=AAssk2N_oPk) *by Computerphile*
-
-* [Onion Routing](https://www.youtube.com/watch?v=QRYzre4bf7I) *by Computerphile*
+Title | How Interesting | Author
+---|---|---
+**[Next Generation Kernel Network Tunnel - WireGuard](https://www.wireguard.com/papers/wireguard.pdf)** | :two_hearts: | by JA Donenfeld |
+**[TCP Meltdown](https://www.youtube.com/watch?v=AAssk2N_oPk)** | :star::star: | *by Computerphile*
+**[Onion Routing](https://www.youtube.com/watch?v=QRYzre4bf7I)** | :star::star::star::star: | *by Computerphile*
 
 
 #### 0x04 Hacking & Security
 
-* [Smashing The Stack For Fun And Profit](http://www-inst.eecs.berkeley.edu/~cs161/fa08/papers/stack_smashing.pdf) *by Aleph One*
+> "Never underestimate the determination of a kid who is time-rich and cash-poor." ― *Cory Doctorow, Little Brother*
 
-* [Exploiting Format String Vulnerabilities](http://www.cis.syr.edu/~wedu/Teaching/cis643/Papers/formatstring-1.2.pdf)
-
-* [Secure Programming HOWTO](https://dwheeler.com/secure-programs/Secure-Programs-HOWTO.pdf) *by David A. Wheeler*
-
-* [Buffer Overflow, Race Condition, Input Validation, Format String](http://www.cis.syr.edu/~wedu/Teaching/cis643/schedule.html) *by Wenliang (Kevin) Du*
-
-* [Efficiently Generating Python Hash Collisions](https://www.leeholmes.com/blog/2019/07/23/efficiently-generating-python-hash-collisions/)  
-
-* [Stochastic Process Wikipedia](https://en.wikipedia.org/wiki/Stochastic_process)  
-
-* [Gimli: a cross-platform permutation](https://eprint.iacr.org/2017/630.pdf)  
-
-* [LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)
+Title | How Interesting | Author
+---|---|---
+**[Smashing The Stack For Fun And Profit](http://www-inst.eecs.berkeley.edu/~cs161/fa08/papers/stack_smashing.pdf)** | :two_hearts: | *by Aleph One*
+**[Breaking the x86 Instruction Set](https://www.youtube.com/watch?v=KrksBdWcZgQ)** | :star::star:star::star::star: | *[by Domas](https://github.com/xoreaxeaxeax)*
+**[Buffer Overflow, Race Condition, Input Validation, Format String](http://www.cis.syr.edu/~wedu/Teaching/cis643/schedule.html)** | :star::star::star::star: | *by Wenliang (Kevin) Du*
+**[Secure Programming HOWTO](https://dwheeler.com/secure-programs/Secure-Programs-HOWTO.pdf)** | :star::star::star: | *by David A. Wheeler*
+**[Efficiently Generating Python Hash Collisions](https://www.leeholmes.com/blog/2019/07/23/efficiently-generating-python-hash-collisions/)** | :star::star:
+**[Stochastic Process Wikipedia](https://en.wikipedia.org/wiki/Stochastic_process)** | :star::star:
+**[Gimli: a cross-platform permutation](https://eprint.iacr.org/2017/630.pdf)** | :star::star:
+**[LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)** | :star::star:
 
 
 #### 0x05 Computer Graphics
 
-* [3d Fractal Flame Wisps (pdf)](https://pdfs.semanticscholar.org/f7c4/7cda24b288a1c6624bb683f3c205629c98e5.pdf)  
+Title | How Interesting | Author
+---|---|---
+**[Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root)** | :two_hearts: | attributed to John Carmack (Quake III)
+**[3d Fractal Flame Wisps](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses)** | :star::star::star: | *[by Yujie Shu](https://www.semanticscholar.org/author/Yujie-Shu/11523322)*
+**[Geometry Caching Optimizations in Halo 5](https://www.youtube.com/watch?v=uYAjUOlEgwI)** | :star::star::star: | *by Zabir Hoque and Ben Laidlaw*
+**[Exponentiation by Squaring](https://en.wikipedia.org/wiki/Exponentiation_by_squaring)**  | :star: | *Wikipedia*
+**[Light and Shadows in Graphics](https://www.youtube.com/watch?v=LUjXAoP5GG0)** | :star::star: | *by John Chapman*
+**[Screen Space Ambient Occlusion Tutorial](http://john-chapman-graphics.blogspot.com/2013/01/ssao-tutorial.html)** | :star::star: | *by John Chapman*
 
-* [Geometry Caching Optimizations in Halo 5: Guardians](https://www.youtube.com/watch?v=uYAjUOlEgwI)  
 
-* [Exponentiation by Squaring](https://en.wikipedia.org/wiki/Exponentiation_by_squaring)  
+#### 0x06 Computer Vision & AI
 
-* [Light and Shadows in Graphics](https://www.youtube.com/watch?v=LUjXAoP5GG0) *by Computerphile*
-
-* [Screen Space Ambient Occlusion Tutorial](http://john-chapman-graphics.blogspot.com/2013/01/ssao-tutorial.html)
-
-
-#### 0x06 Optimization with Vectorization
-
-> "People say that you should not micro-optimize. But if what you love is micro-optimization... that's what you should do." ― *Linus Torvalds*
-
-* [Automatic Vectorization](https://www.codingame.com/playgrounds/283/sse-avx-vectorization/autovectorization)
+Title | How Interesting | Author
+---|---|---
+**[OpenCV Tutorial](https://docs.opencv.org/2.4/opencv_tutorials.pdf)** | :star::star::star:
 
 
 #### 0x07 In-Depth C++ Optimization
 
 > "C++ is a horrible language. It's made more horrible by the fact that a lot of substandard programmers use it, to the point where it's much much easier to generate total and utter crap with it" ― *Linus Torvalds 2007*
 
-* [C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features)  
-
-* [Optimizing software in C++](https://www.agner.org/optimize/optimizing_cpp.pdf) *by Agner Fog*
-
-* [Bjarne Stroustrup: Why I Created C++](https://www.youtube.com/watch?v=JBjjnqG0BP8)  
-
-* [Intel Intrinsics Guide](https://software.intel.com/sites/landingpage/IntrinsicsGuide/) ([What is it](https://en.wikipedia.org/wiki/Intrinsic_function))
-
-* [Carl Cook "Low Latency C++ for Fun and Profit"](https://www.youtube.com/watch?v=BxfT9fiUsZ4)  
-
-* [CppCon 2018: Olivier Giroux “High-Radix Concurrent C++”](https://www.youtube.com/watch?v=75LcDvlEIYw)  
+Title | How Interesting | Author
+---|---|---
+**[C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features)**
+**[Optimizing software in C++](https://www.agner.org/optimize/optimizing_cpp.pdf)** | :two_hearts: | *by Agner Fog*
+**[Intel Intrinsics Guide](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)** *[What is it](https://en.wikipedia.org/wiki/Intrinsic_function)* | :star::star::star::star: | *Intel*
+**["Low Latency C++ for Fun and Profit"](https://www.youtube.com/watch?v=BxfT9fiUsZ4)** | :star::star::star::star | *by Carl Cook*
+**[Why I Created C++](https://www.youtube.com/watch?v=JBjjnqG0BP8)** | :star::star::star: | *Bjarne Stroustrup*
+**[CppCon 2018 “High-Radix Concurrent C++”](https://www.youtube.com/watch?v=75LcDvlEIYw)** | :star::star::star: | *Olivier Giroux*
 
 
 #### 0x08 In-Depth Assembly Optimization
 
-* [Breaking the x86 Instruction Set](https://www.youtube.com/watch?v=KrksBdWcZgQ)  
+> "People say that you should not micro-optimize. But if what you love is micro-optimization... that's what you should do." ― *Linus Torvalds*
 
-* [Optimizing subroutines in assembly language: An optimization guide for x86 platforms](https://www.agner.org/optimize/optimizing_assembly.pdf) *by Agner Fog*
-
-* [Intel® 64 and IA-32 architectures software developer’s manual combined volumes: 1, 2, 3 and 4](https://software.intel.com/en-us/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4)
-
-#### 0x09 Computer Vision
-
-* [OpenCV Tutorial](https://docs.opencv.org/2.4/opencv_tutorials.pdf)
-
-
-#### 0x0a Misc
-* [Why Java Suck](https://tech.jonathangardner.net/wiki/Why_Java_Sucks)  
-
-* [XOR Linked List – A Memory Efficient Doubly Linked List](http://en.wikipedia.org/wiki/XOR_linked_list)  
-* [XOR Linked List – C Implementation](https://stackoverflow.com/questions/3531972/c-code-for-xor-linked-list)  
-
-* [Math for Game Programmers: Dark Secrets of the RNG](https://www.youtube.com/watch?v=J5qnnxFoBss)  
-
-* [A Super Mario 64 decompilation, brought to you by a bunch of clever folks](https://github.com/agavrel/sm64)
+Title | How Interesting | Author
+---|---|---
+**[Optimizing subroutines in assembly language: An optimization guide for x86 platforms](https://www.agner.org/optimize/optimizing_assembly.pdf)** | :two_hearts: | *by Agner Fog*
+**[Intel® 64 and IA-32 architectures software developer’s manual combined volumes: 1, 2, 3 and 4](https://software.intel.com/en-us/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4)** | :two_hearts: | *Intel*
+**[The Art of Assembly Language](http://www.staroceans.org/kernel-and-driver/The.Art.of.Assembly.Language.2nd.Edition.pdf)** | :star::star: | *by Randal Hyde*
+**[GDB Tutorial](https://www.cs.cmu.edu/~gilpin/tutorial/)** | :star::star: | *by Andrew Gilpin*
 
 
-#### 0x0b Debugging
+#### 0x09 Misc
 
-> "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?"
-― *Brian W. Kernighan*
+> "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?" ― *Brian W. Kernighan*
 
-* [GDB Tutorial](https://www.cs.cmu.edu/~gilpin/tutorial/)  
+Title | How Interesting | Author
+---|---|---
+**[A Super Mario 64 decompilation](https://github.com/agavrel/sm64)** | :star::star::star::star::star: | *by a bunch of clever folks*
+**[Math for Game Programmers: Dark Secrets of the RNG](https://www.youtube.com/watch?v=J5qnnxFoBss)** | :star::star::star: | *by Shay Pierce*
+**[Why Java Suck](https://tech.jonathangardner.net/wiki/Why_Java_Sucks)** | :star: | *by Jonathan Gardner*
+**[XOR Linked List – A Memory Efficient Doubly Linked List](http://en.wikipedia.org/wiki/XOR_linked_list)** | :star: | *Wikipedia* 
+**[XOR Linked List – C Implementation](https://stackoverflow.com/questions/3531972/c-code-for-xor-linked-list)** | :star: | *StackOverFlow*
+
 
 ---
-### Common Beginner Mistakes
+## Common Beginner Mistakes
 
-> "Don’t comment bad code—rewrite it." ― *Brian W. Kernighan, The Elements of Programming Style*
+> Experience is the name everyone gives to their mistakes.” – *Oscar Wilde*
 
-#### Array overflow
-C does not perform boundary checking when using arrays.  
-If you access outside the bounds of a stack based array it will just access another part of already allocated stack space, like in this example:
+---
+### 0x00 Array overflow
+
+In C the index of an array starts at 0. Because C does not perform boundary checking when using arrays, if you access outside the bounds of a stack based array it will just access another part of already allocated stack space, like in this example:
 
 ```c
+#include <stdio.h>
 void    somefunction3(void)
 {
     int a[5];
 
-    printf("%d\n", a[5]); // as 5 it is a size of the array and you try to access it it will overflow. Remember that the maximum array index you can ever access is its size minus 1.
+    printf("%d\n", a[5]);
+}
+```
+In this example, 5 is the size of the array and if you try to access it it will overflow. Remember that the maximum array index you can ever access is its size minus 1.
+
+I would suggest to use as much as possible a const :
+```c
+#include <stdio.h>
+
+void    somefunction3(void)
+{
+	const int len = 5;
+	int a[len] = {1,3,5,7,9};
+	for (int i = 0; i < len; i++) // safe
+		printf("%d\n", a[i]);
 }
 ```
 
-#### Segmentation Fault
-Many potential reasons for this.
+---
+### 0x01 Segmentation Fault
 
-##### A/ Loop segfault
-One commonly reason is that you declared a loop and either 1/ forgot to increment the counter or 2/ forgot the exit condition:
+> "There are two ways to write error-free programs; only the third one works." – *Alan J. Perlis*
+
+*Many potential reasons for this...*
+
+
+---
+### Loop segfault
+One common mistake is that you had declared a loop and either:
+
+#### Forgot to increment the counter
+
 ```c
 int i = 0;
 
 while (i < 10)
 {
-    {some stuff}
-    // but where is i++ ?
+	write(1, &i + '0', 1);
+	// but where is i++ ?
 }
 ```
 
+#### Correct way
+
+```c
+int i = 0;
+
+while (i < 10)
+{
+	write(1, &i + '0', 1);
+    	i++;
+}
+```
+
+#### Forgot the exit condition:
+
 ```c
 int somevariable = 0;
-while (42) // always true
+while (42) // always True ! You will be 42 for life ;)
 {
-    {some stuff}
+    // call to some stuff that never succeed to set someVariable to 1;
     if (somevariable == 1) // make sure that somevariable will equal 1 at some point.
         break ;
 }
 ```
 
-Correct way:
+#### Used an assignation = instead of a boolean expression != == <= >=
+
+```c
+#include <stdio.h>
+
+int main(void) {
+	unsigned int x = 10;
+
+	while (--x != 0)
+	{
+		printf("0 0 0 1 0 1 0 1 0 ");
+		if (x = 1) {			// oopsie !!
+			printf("* ");
+			x--;
+		}
+	}
+	return 0;
+}
+```
+PS: will you be able to fix this code ?
+
+Also classic with lists:  you have a loop and its crucial condition that allows the function to return, but used an assignation instead of comparison
 ```c
 int i = 0;
 
-while (i < 10)
+while (list)
 {
-    {some stuff}
+    if (list = NULL) // You want to use if (list == NULL)
+        return i;
     i++;
+    list=list->next;
 }
+return -1; // will always return -1
 ```
 
-*Practice: what about this loop ?*
+#### Quizz: What will print this loop ?
+
 ```c
 unsigned char c = 0;
 
 while (c < 150)
 {
-    {some stuff}
-    c++;
+	write(1, &c, 1);
+	c++;
 }
 ```
 
 > "Talk is cheap. Show me the code." ― Linus Torvalds
 
-##### B/ Accessing the next link in a chained-list without checking the current one
+
+#### Accessing the next link in a chained-list without checking the current one
+
 Another example with linked-lists
 ```c
 typedef struct  s_list {
@@ -288,7 +372,6 @@ void somefunction(t_list *list)
 ```
 
 if the current link of list is null you will get a segfault. The correct way is to always check the current link before the next one:
-
 ```c
 void somefunction(t_list *list)
 {
@@ -299,7 +382,7 @@ void somefunction(t_list *list)
 }
 ```
 
-##### C/ Accessing an index in a loop for program with either graphics or a board game
+#### Accessing an index in a loop for program with either graphics or a board game
 ```c
 int somefunction(int y_max, int x_max, int array[y_max][x_max]);
 {
@@ -339,24 +422,9 @@ x = 1;
 while (y < y_max - 1)
 ```
 
-##### C/ Using assignation instead of comparison operators
+---
+### 0x01 Modifying value of a local variable given as function parameter
 
-Very classic mistake: If you have a loop and crucial condition that allows the function to return use an assignation instead of comparison
-
-```c
-int i = 0;
-
-while (list)
-{
-    if (list = NULL) // You want to use if (list == NULL)
-        return i;
-    i++;
-    list=list->next;
-}
-return -1; // will always return -1
-```
-
-#### Accessing value of a local variable
 Local variable value are allocated on the stack, which is cleaned once you exit the function.
 ```c
 void increment_a(int a)
@@ -402,7 +470,8 @@ int solve(void)
 }
 ```
 
-#### Unprotected malloc
+### 0x02 Unprotected malloc
+
 Do NOT leave a malloc unprotected:
 ```c
 int allocate_memory(void)
@@ -416,9 +485,9 @@ int allocate_memory(void)
 
 int somefunction(void)
 {
-    int *matrix;
+	int *matrix;
 
-    matrix = allocate_memory();
+	matrix = allocate_memory();
 }
 ```
 
@@ -427,41 +496,47 @@ It is not good enough to protect the malloc in the callee function (the function
 ```c
 int allocate_memory(void)
 {
-    int *matrix;
+	int *matrix;
 
-    if (!(matrix = malloc(sizeof(int) * 9))) // this is short for matrix = malloc(sizeof(int) * 9; if (matrix == NULL)
+	if (!(matrix = malloc(sizeof(int) * 9))) // this is short for matrix = malloc(sizeof(int) * 9; if (matrix == NULL)
 		return NULL;   // the malloc is now protected,
 
-    return matrix;
+	return matrix;
 }
 
 int somefunction(void)
 {
-    int *matrix;
+	int *matrix;
 
-    if ((matrix = allocate_memory()) == NULL) // the return value is also protected
-        exit(); // note that often you can't or don't want to use exit() and will need to return 0 along all the functions up to the main function.
+	if ((matrix = allocate_memory()) == NULL) // the return value is also protected
+        	exit(); // note that often you can't or don't want to use exit() and will need to return 0 along all the functions up to the main function.
+	free(matrix);
 }
 ```
 
-#### Freeing memory that has already been fred
+---
+### 0x03 Freeing memory that has already been fred
 
-Following the previous example, if you don't need the variable matrix anymore you can free it just by using:
+In the previous example, if you don't need the variable matrix anymore you can free it.  
+
+However do not attempt to free twice or to free a stack based variable:
 ```c
-free(matrix); // do not attempt to free twice or to free a stack based variable
+free(matrix);
+free(matrix)
 ```
 
-```c
-free(matrix); // do not attempt to free twice or to free a stack based variable
-```
 
-##### Do Not use global variables
+---
+### 0x04 Do Not use global variables
 
 > "Theory and practice sometimes clash. And when that happens, theory loses.  
 Every single time." ― Linus Torvalds
 
 Global variables are forbidden in 42 School except for a few exceptions, see this interesting article: [Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)
 However many students, me including, found a way to circumvent this interdiction: you first declare a structure in the header that will contain all our variables:
+
+> "Don’t comment bad code—rewrite it." ― *Brian W. Kernighan, The Elements of Programming Style*
+
 ```c
 typedef struct s_env
 {
@@ -498,7 +573,10 @@ int main(void)
 
 This is "legal" in 42 (it is not a global variable, it is a structure passed along functions), it "works", but it is a very poor architecture choice. It is okay for beginner to do this but as your skill grows you should find more clever ways to architecture your programs.
 
-#### VLA - Variable Length Arrays
+
+---
+### 0x05 VLA - Variable Length Arrays
+
 The following example is a VLA and this is bad for many reasons, the most critical being that the memory is allocated on the stack which has a limited size.
 ```c
 int somefunction(int y, int x, int array[y][x]);
@@ -509,19 +587,21 @@ int somefunction(int y, int x, int array[y][x]);
 
 *ft_* is intended for functions you want to add to the libft project and use along your projects, not for specific program functions.
 
+
 ---
-### Good practices
+## Good practices
 
 Now some guidelines that should hopefully help your coding style
 
 > “Don’t comment bad code, rewrite it.” Brian W. Kernighan, The Elements of Programming Style
 
 
-#### Using structure for basic items
+---
+### 0x00 Using structure for basic items
 
 If you are using coordinates it might be interesting to create a structure 'point' or 'coord'
 
-```
+```c
 typedef struct s_point
 {
     int y;
@@ -538,7 +618,8 @@ void somefunction(void){
 }
 ```
 
-#### Naming conventions
+---
+### 0x01 Naming conventions
 
 I once met a developer who was using hp and mp instead of x and y for coordinates.  
 It was surely funny, original and a very good reference to JRPG... but it was not suitable name.  
@@ -548,7 +629,8 @@ The function name should always be:
 * Self-explanatory: build_graph instead of graph or build_it
 * For long name use either camel case (saveClientConfig) or snake case (save_client_config) and stick to one style.
 
-#### Using flag for projects' options
+---
+### 0x02 Using flags for projects' options
 For each project you will often have to parse flag input. In Linux the flag usually come after a '-' and allow for extra functionalities.
 It is quite useful know how you can store such critical information into only 4 bytes *which is sizeof(integer)*
 ```c
@@ -602,12 +684,13 @@ You can then test if the flag was on by using the following:
 #define FLAG_A  0b001
 #define FLAG_L  0b010
 #define FLAG_RR 0b100
+
 #include <stdio.h>
 
 void    somefunction(int *flags)
 {
-    if (flags & FLAG_A)
-        printf("Flag a is set!\n");    
+	if (flags & FLAG_A)
+		printf("Flag a is set!\n");    
 }
 ```
 
@@ -615,11 +698,37 @@ You can unset a flag by clearing the corresponding bit the following way:
 ```c
 void    somefunction2(int *flags)
 {
-    flags &= ~FLAG_A;
+	flags &= ~FLAG_A;
 }
 ```
 
-##### Using gcc flags for Makefile
+> "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live." – *John Woods*
+
+A more readable (aka: better) approach suggested by Nicolas Iragne from 42 is to declare a struct using bitfield:
+
+```c
+struct 	flags_t
+{
+	int a : 1;
+	int b : 1;
+	int c : 1;
+	//etc
+}
+
+#include <stdio.h>
+
+int	main(void) {
+	struct flags_t flags = {0};
+	t.a = 1;
+	if (t.a)
+		write(1, "flag a is set\n", 14);
+	return 0;
+}
+```
+PS: Of course rename flags' name with more meaningful
+
+
+### Using gcc flags for Makefile
 ```
 gcc -Wall -Wextra -Werror -O2
 ```
@@ -631,14 +740,14 @@ gcc -Wall -Wextra -Werror -O2
 
 You can read the details about each flag on [gccgnu website](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
 
-#### Using preprocessor DEBUG macros
+### Using preprocessor DEBUG macros
 
 You can improve the performance of your program by using what we call preprocessor macros
 
 # define DEBUG true
 
 
-#### Setting up a new Git Repository using CLI (command line interface)
+### Setting up a new Git Repository using CLI (command line interface)
 
 It can be done easily using the following command line:  
 ```
@@ -652,7 +761,7 @@ git remote add origin git@github.com:agavrel/$reponame.git
 git push -u origin master
 ```
 
-#### [Run Commands in Background](https://linuxize.com/post/how-to-run-linux-commands-in-background/) (could be used to recompile automatically each time .c are saved)
+### [Run Commands in Background](https://linuxize.com/post/how-to-run-linux-commands-in-background/) (could be used to recompile automatically each time .c are saved)
 
 You can have multiple processes running in the background at the same time with ```&``` after the command.  
 However the background process will continue to write messages to the terminal from which you invoked the command.  
@@ -683,7 +792,7 @@ kill -9 ID
 Obviously replace ```ID``` in the above examples with the job ID you got from ```jobs -l```.
 
 
-#### [Add a a new binary in the PATH environment variable on linux](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix)
+### [Add a a new binary in the PATH environment variable on linux](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix)
 
 Example with terraform:
 ```
@@ -717,4 +826,4 @@ source ~/.bashrc
 
 ---
 ## Author
-Antonin GAVREl
+Antonin GAVREL
