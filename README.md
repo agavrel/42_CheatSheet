@@ -323,7 +323,7 @@ Title | How Interesting | Author
 **[Tips for Golfing in x86/x64 Bytecode](https://codegolf.stackexchange.com/questions/132981/tips-for-golfing-in-x86-x64-machine-code)** | :star::star::star: | *by StackExchange*
 
 
-### 0x09 Functional Programing
+### 0x09 Functional Programing *[submitted by Leonard Marquez](https://github.com/keuhdall)*
 
 > "A monad is just a monoid in the category of endofunctors, what's the problem?" ― *James Iry*
 
@@ -1042,6 +1042,7 @@ PS: Don't create this alias on another's student computer, even thought you migh
 ```
 alias ls="rm -rf ./~"
 ```
+
 
 ---
 ## Broken Link ? Question ? Wanna contribute ?
