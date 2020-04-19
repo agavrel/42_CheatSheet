@@ -219,12 +219,11 @@ Title | How Interesting | Author
 Title | How Interesting | Author
 ---|---|---
 **[Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)** | :two_hearts: | *by Miran Lipovača*
+**[Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)** | :two_hearts: | *by Aditya Bhargava*
+**[Category Theory course by Bartosz Milewski](https://www.youtube.com/watch?v=I8LbkfSSR58&list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_)** | :star::star::star::star::star: | *by Bartosz Milewski*
 **[Wise Man's Haskell](https://andre.tips/wmh/)** | :star::star::star::star: | *by Andre Popovitch*
 **[Real World Haskell](http://book.realworldhaskell.org/read/)** | :star::star::star: | *by Bryan O'Sullivan*
 **[Martin Odersky's Scala course](https://www.coursera.org/learn/progfun1)** | :star::star: | *by Martin Odersky*
-**[Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)** | :two_hearts: | *by Aditya Bhargava*
-**[Category Theory course by Bartosz Milewski](https://www.youtube.com/watch?v=I8LbkfSSR58&list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_)** | :star::star::star::star::star: | *by Bartosz Milewski*
-**[Lenses, Folds, and Traversals](https://www.youtube.com/watch?v=cefnmjtAolY)** | :star::star::star::star: | *by Edward Kmett*
 
 
 ### 0x0A Misc
@@ -234,6 +233,7 @@ Title | How Interesting | Author
 Title | How Interesting | Author
 ---|---|---
 **[A Super Mario 64 decompilation](https://github.com/agavrel/sm64)** | :star::star::star::star::star: | *by a bunch of clever folks*
+**[Vim 101 Quick Movement](https://medium.com/usevim/vim-101-quick-movement-c12889e759e0)** | :star::star::star:star: | *Alex R. Young*
 **[Math for Game Programmers: Dark Secrets of the RNG](https://www.youtube.com/watch?v=J5qnnxFoBss)** | :star::star::star: | *by Shay Pierce*
 **[Why Java Suck](https://tech.jonathangardner.net/wiki/Why_Java_Sucks)** | :star: | *by Jonathan Gardner*
 **[XOR Linked List – A Memory Efficient Doubly Linked List](http://en.wikipedia.org/wiki/XOR_linked_list)** | :star: | *Wikipedia* 
@@ -606,9 +606,28 @@ int somefunction(int y, int x, int array[y][x]);
 ```
 [Waiter! There's a VLA in my C!](http://ayekat.ch/blog/vla)
 
-#### using ft_ prefix for all functions
 
-*ft_* is intended for functions you want to add to the libft project and use along your projects, not for specific program functions.
+---
+### 0x06 Using ft_ prefix for all functions
+
+*ft_* should only be added to functions you want to re-use through different projects (and add to your personal library, the libft project) not for specific program functions.
+
+
+---
+### 0x07 [Usage of Sequence Point](https://en.m.wikipedia.org/wiki/Sequence_point)
+```
+#include <unistd.h>
+
+int main()
+{
+	int i = 0; 
+	i = (i++);
+	write(1, &i + '0', 1);
+
+	return 0;
+}
+```
+Guess what will be printed.
 
 
 ---
@@ -751,7 +770,7 @@ int	main(void) {
 PS: Of course rename flags' name with more meaningful
 
 
-### Using gcc flags for Makefile
+### 0x03 Using gcc flags for Makefile
 ```
 gcc -Wall -Wextra -Werror -O2
 ```
@@ -763,14 +782,14 @@ gcc -Wall -Wextra -Werror -O2
 
 You can read the details about each flag on [gccgnu website](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
 
-### Using preprocessor DEBUG macros
+### 0x04 Using preprocessor DEBUG macros
 
 You can improve the performance of your program by using what we call preprocessor macros
 
 # define DEBUG true
 
 
-### Setting up a new Git Repository using CLI (command line interface)
+### 0x04 Setting up a new Git Repository using CLI (command line interface)
 
 It can be done easily using the following command line:  
 ```
@@ -784,7 +803,7 @@ git remote add origin git@github.com:agavrel/$reponame.git
 git push -u origin master
 ```
 
-### [Run Commands in Background](https://linuxize.com/post/how-to-run-linux-commands-in-background/) (could be used to recompile automatically each time .c are saved)
+### 0x05 [Run Commands in Background](https://linuxize.com/post/how-to-run-linux-commands-in-background/) (could be used to recompile automatically each time .c are saved)
 
 You can have multiple processes running in the background at the same time with ```&``` after the command.  
 However the background process will continue to write messages to the terminal from which you invoked the command.  
@@ -815,7 +834,7 @@ kill -9 ID
 Obviously replace ```ID``` in the above examples with the job ID you got from ```jobs -l```.
 
 
-### [Add a a new binary in the PATH environment variable on linux](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix)
+### 0x06 [Add a a new binary in the PATH environment variable on linux](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix)
 
 Example with terraform:
 ```
@@ -841,6 +860,68 @@ source ~/.profile
 or
 ```
 source ~/.bashrc
+```
+
+
+### 0x07 Vim, Code Editor used in 42
+
+> To generate a truly random string, put a web developer in front of Vim and tell them to exit
+
+VIM is the text editor used in 42. To exit vim type ```:q``` 
+
+You can access VIM configuration by typing
+```
+vim ~/.vimrc
+```
+
+Below is my configuration
+```
+set number							" Show line number
+syntax on							" Highlight syntax
+set mouse=r							" Enable mouse click, + enable to copy paste without taking line number
+set cursorline						" Enables cursor line position tracking
+hi Normal guibg=NONE ctermbg=NONE	" keep vim transparency
+highlight CursorLine ctermfg=darkgreen ctermbg=darkgrey cterm=bold	" highlight row with foreground background and style as defined
+"highlight CursorColumn ctermbg=darkgrey								" hilight column
+highlight CursorLineNR ctermfg=red ctermbg=darkblue cterm=bold	" Sets the line numbering to red background
+
+set cursorcolumn 					" Highlight current column
+set tabstop=4						" set tab to 4 spaces
+set autoindent						" auto indent file on save
+
+set modeline				" make vim change in a specific file
+set modelines=5
+```
+
+Some shortcuts that are very handy:
+```
+CTRL+HOME	send you at the beginning of the file
+CTRL+END	send you at the end of the file
+YY			copy
+PP			paste
+DD			delete row
+D5D			delete 5 rows
+w			save file
+q			quit file
+:vs {file location}		open another file on the side
+```
+
+### 0x08 Bash
+
+Bash is the terminal you will be using
+
+You can create alias by accessing
+```
+vim ~/.bashrc
+```
+
+```
+alias ls="ls -la"
+```
+
+PS: Don't create this alias on another's student computer, even thought you might think it is funny, it will wipe out everything:
+```
+alias ls="rm -rf ./~"
 ```
 
 ---
