@@ -4,20 +4,6 @@
 
 > Truth can only be found in one place: the code. – *Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship*
 
-*A minimalist c program that will puzzle beginners, write it in a file named a.c and create a.out with ```gcc a.c && ./a.out```*
-```c
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-int	main(void) {
-	ft_putchar(42);
-	return 0;
-}
-```
 
 
 ---
@@ -29,26 +15,28 @@ That's right, the school is FREE, originally funded and founded in Paris by gene
 
 > *“Nevertheless, C retains the basic philosophy that programmers know what they are doing; it only requires that they state their intentions explicitly.”* ― Brian W. Kernighan, The C Programming Language
 
-Most of the entrance exam and early cursus is done in C language.
+Most of the entrance exam and early cursus is done in C language.  
 
+C is indeed one of the best language to understand the basis of programming: Conditions {if, elseif, else}, loops {while, do while, for}, pointers and memory allocation. C will hence act as an educational tool to develop your skill.
+
+Later on you can specialize in other languages: Python will suit data scientists and devops, javascript for frontend developers and C# for those looking for a career in finance.
 
 ---
 ## What you will learn
 
 > "When you say 'I wrote a program that crashed Windows,' people just stare at you blankly and say 'Hey, I got those with the system, for free.'" ― Linus Torvalds
 
-C is indeed one of the best language to understand the basis of programming: Conditions {if, elseif, else}, loops {while, do while, for}, pointers and memory allocation. C will hence act as an educational tool to develop your skill.
-
-Later on you can specialize in other languages: Python will suit data scientists and devops, javascript for frontend developers and C# for those looking for a career in finance.
-
+In Short: You will create magic and learn to do what Muggles were only able to do accidentally.
 
 ---
 ## For Candidates: About the "Piscine"
-The piscine is the entrance exam that consists of 4 weeks fully dedicated at solving exercises and submitting group and solo projects.  
+The piscine is the entrance exam that consists of **4 weeks fully dedicated at coding**, solving exercises and submitting group and solo projects.  
+
 Although the school advise you to "come as you are", and this is what I did, it does certainly help to prepare beforehand.  
 
 
-### Guidelines to succeed
+---
+### 0x00 Guidelines to succeed
 
 **It does not matter if you fail a project, an exam or a day as long as you keep striving**. Someone who has never been interested before in Computer Science would never be able to complete everything in time, yet he will not prevent from being successful.
 
@@ -66,6 +54,129 @@ Although the school advise you to "come as you are", and this is what I did, it 
 * **0x04 It is strongly recommended to succeed at least one group project**, especially the first one that is really easy.
 
 * **0x05 There is a special and unique achievement awarded to the most helpful/smart student.** This achievement does not show up on the student profile until he asks for it.
+
+* **0x06 Be aware of the different rules** : Many things are forbidden like declaring and assigning a variable in the same line, using printf or using for loops. The daily assignment must be pushed on git before Day + 1 at 11pm42.
+
+* **0x07 You can sleep in the school during the selection** - *I recommended you to not do it, you will have very poor sleep.* - If you still go for it here is a list of essential items you should bring: **a toothpaste, a toothbrush, a soap and a towel on top of your phone, charger and mattress. Oh and a credit card also, unless you prefer to bring 10kg of cookies**
+
+#### :star: List of Essential Items
+
+:sleeping_bed: Mattress or equivalent and Pillow  
+:electric_plug: Phone charger  
+:iphone: Phone  
+:droplet: Toothpaste and Toothbrush  
+:bathtub: Soap and 2-4 Towels  
+:money_mouth_face: Credit Card  
+:heart: Kleenex  
+
+---
+### 0x01 Things to prepare
+
+#### First by installing a C compiler on your computer
+* On Windows it is a bit tricky, you will have to install [Mingw](http://www.mingw.org/)
+* On Linux it is pretty straightforward since it is only installed and if not ```apt-get``` will make it easy.
+* On MAC it is not much more difficult, google how to do it.
+
+You should then try to recode basic C functions
+
+#### ft_putchar
+
+*A minimalist c program that will puzzle beginners, write it in a file named a.c and create a.out with ```gcc a.c && ./a.out```*
+
+The following program will print a char by making use of [write](http://man7.org/linux/man-pages/man2/write.2.html)
+
+```c
+#include <unistd.h>
+
+void	ft_putchar(char c) // void because the function does not return any value, it writes directly, char is the type of the variable c that is given as parameter to the function ft_putchar by the main function.
+{
+	write(1, &c, 1);			// ssize_t write(int fd, const void *buf, size_t count); or in human language: write count letters of buf (which is a pointer) to fd (if fd = 1 this is your terminal, stdout)
+}
+
+int	main(void) {
+	ft_putchar(42);				// will print a star
+	// ft_putchar(42 + '0');	// will only print 4
+	// ft_putchar("4");			// will not work, you are using " instead of ', so C language think it is a char array.
+	return 0;
+}
+```
+
+Once you understand well how to print a character, you should try to return the length of many together (it is called a [string](https://en.wikipedia.org/wiki/String_(computer_science)))
+
+#### ft_strlen
+
+```c
+#include <unistd.h>
+
+int		ft_strlen(char *str) {
+	int i = 0;					// set variable i to 0
+	while (str[i] != NULL)		// while the char array does not reach a NULL character
+		i++;					// increment i, equivalent of i = i + 1;
+
+	return i;					// return i variable to the caller function
+}
+
+int main(void) {
+	int i = ft_strlen("Duck Tales");	// declare i, call the function ft_strlen, and assign its output to i
+	printf("%d", i); // remember that it is forbidden to submit a function with printf during the Piscine
+	return 0;
+}
+```
+*NB: remember that it is forbidden to submit a function with printf during the Piscine*
+
+#### ft_putstr
+
+Then print a whole string by recoding the libc function 'puts':
+```c
+#include <stdio.h> // header for puts
+
+int main(void) {
+	puts("Duck Tales");
+	return 0;
+}
+```
+
+This can be achieve by using and index that starts on the first character and is progressively incremented until NULL as string are NULL terminated:
+```c
+#include <unistd.h>
+
+void	ft_putstr(char *str) {
+	int i = 0;
+
+	while(str[i] != NULL)
+		write(1, &str[i++], 1);
+}
+```
+
+Along with the main function slightly modified to make use of your code:
+```c
+int main(void) {
+	ft_putstr("Duck Tales");
+	return 0;
+}
+```
+
+You can also use only the pointer since you do not care of the return value (the function type being void)
+```c
+#include <unistd.h>
+
+void	ft_putstr(char *str) {
+	while(*str)
+		write(1, s++, 1);
+}
+```
+
+Or even use the length of the string to print the whole string at once, hence avoiding many *[system calls](https://en.wikipedia.org/wiki/System_call) (write)* that are costly for the program execution:
+
+```c
+void	ft_putstr(char *str) {
+	write(1, str, ft_strlen(str));
+}
+```
+*NB: You have to include ft_strlen in the same file AND above the function to make it work.*
+
+Next you should **study the different concepts in programming**, especially spend time understanding the different [C data types](https://en.wikipedia.org/wiki/C_data_types), [the concept of pointers](https://en.wikipedia.org/wiki/Pointer_(computer_programming)) and [arrays](https://en.wikipedia.org/wiki/Array_data_type), because it is what you have been using up to now and it will only get more complicated.
+
 
 ---
 ## For Accepted Students: 42 Projects Guides
@@ -785,9 +896,17 @@ You can read the details about each flag on [gccgnu website](https://gcc.gnu.org
 ### 0x04 Using preprocessor DEBUG macros
 
 You can improve the performance of your program by using what we call preprocessor macros
+```
+#include <unistd.h>
 
-# define DEBUG true
+#define DEBUG true
 
+int main(void) {
+	if (DEBUG)
+		write(1, 42, 1);
+	return 0;
+}
+```
 
 ### 0x04 Setting up a new Git Repository using CLI (command line interface)
 
@@ -865,9 +984,9 @@ source ~/.bashrc
 
 ### 0x07 Vim, Code Editor used in 42
 
-> To generate a truly random string, put a web developer in front of Vim and tell them to exit
+VIM is the text editor used in 42. You access a file by using ```vim filename```. To exit VIM  with elegance vim type ```:q```, if you fail to exit VIM you might consider becoming a freelance web developer.
 
-VIM is the text editor used in 42. To exit vim type ```:q``` 
+> To generate a truly random string, put a web developer in front of Vim and tell them to exit
 
 You can access VIM configuration by typing
 ```
