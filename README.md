@@ -4,10 +4,8 @@
 
 > Truth can only be found in one place: the code. – *Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship*
 
-
-
 ---
-## Introduction to 42
+## :neckbeard: What is 42 School?
 
 > 42 is more than just a disruptive educational model and coding school. What makes us unique and a major player in the tech world are the defining characteristics of the 42 culture. Every element of 42 shows our culture, from the students, to the curriculum structure and content, to the $0 tuition and innovative admissions process.
 
@@ -29,7 +27,7 @@ Later on you can specialize in other languages: Python will suit data scientists
 In Short: You will create magic and learn to do what Muggles were only able to do accidentally.
 
 ---
-## For Candidates: About the "Piscine"
+## :coffee: For Candidates: About the "Piscine"
 The piscine is the entrance exam that consists of **4 weeks fully dedicated at coding**, solving exercises and submitting group and solo projects.  
 
 Although the school advise you to "come as you are", and this is what I did, it does certainly help to prepare beforehand.  
@@ -230,6 +228,7 @@ Title | How Interesting | Author
 **[The Practice of Programing](http://index-of.co.uk/Etc/The.Practice.of.Programming.-.B.W..Kernighan..pdf)** | :star::star::star: | *by Brian W. Kernighan and Rob Pike*
 **[Duff's Device](http://www.lysator.liu.se/c/duffs-device.html)** | :star::star::star: | *by Tom Duff*
 
+
 ### 0x01 Algorithm
 
 Title | How Interesting | Author
@@ -285,8 +284,8 @@ Title | How Interesting | Author
 **[3d Fractal Flame Wisps](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses)** | :star::star::star: | *[by Yujie Shu](https://www.semanticscholar.org/author/Yujie-Shu/11523322)*
 **[Geometry Caching Optimizations in Halo 5](https://www.youtube.com/watch?v=uYAjUOlEgwI)** | :star::star::star: | *by Zabir Hoque and Ben Laidlaw*
 **[Exponentiation by Squaring](https://en.wikipedia.org/wiki/Exponentiation_by_squaring)**  | :star: | *Wikipedia*
-**[Light and Shadows in Graphics](https://www.youtube.com/watch?v=LUjXAoP5GG0)** | :star::star: | *by John Chapman*
-**[Screen Space Ambient Occlusion Tutorial](http://john-chapman-graphics.blogspot.com/2013/01/ssao-tutorial.html)** | :star::star: | *by John Chapman*
+**[Light and Shadows in Graphics](https://www.youtube.com/watch?v=LUjXAoP5GG0)** | :star::star: | *by Tom Scott*
+**[Screen Space Ambient Occlusion Tutorial](http://john-chapman-graphics.blogspot.com/2013/01/ssao-tutorial.html)** | :star::star: | *by Tom Scott*
 
 
 ### 0x06 Computer Vision & AI
@@ -344,15 +343,15 @@ Title | How Interesting | Author
 Title | How Interesting | Author
 ---|---|---
 **[A Super Mario 64 decompilation](https://github.com/agavrel/sm64)** | :star::star::star::star::star: | *by a bunch of clever folks*
-**[Vim 101 Quick Movement](https://medium.com/usevim/vim-101-quick-movement-c12889e759e0)** | :star::star::star:star: | *Alex R. Young*
+**[Vim 101 Quick Movement](https://medium.com/usevim/vim-101-quick-movement-c12889e759e0)** | :star::star::star::star: | *Alex R. Young*
 **[Math for Game Programmers: Dark Secrets of the RNG](https://www.youtube.com/watch?v=J5qnnxFoBss)** | :star::star::star: | *by Shay Pierce*
 **[Why Java Suck](https://tech.jonathangardner.net/wiki/Why_Java_Sucks)** | :star: | *by Jonathan Gardner*
 **[XOR Linked List – A Memory Efficient Doubly Linked List](http://en.wikipedia.org/wiki/XOR_linked_list)** | :star: | *Wikipedia* 
 **[XOR Linked List – C Implementation](https://stackoverflow.com/questions/3531972/c-code-for-xor-linked-list)** | :star: | *StackOverFlow*
-
+**[Clean Code](https://www.investigatii.md/uploads/resurse/Clean_Code.pdf)** | :star::star::star: | *by Robert C. Martin*
 
 ---
-## Common Beginner Mistakes
+## :fire: Common Beginner Mistakes
 
 > "Experience is the name everyone gives to their mistakes." – *[Oscar Wilde](https://en.wikipedia.org/wiki/The_Picture_of_Dorian_Gray)*
 
@@ -742,15 +741,136 @@ Guess what will be printed.
 
 
 ---
-## Good practices
+## :snowflake: Clean Code
+
+> "You are reading this book for two reasons. First, you are a programmer. Second, you want to be a better programmer. Good. We need better programmers." ― *Robert C. Martin in Clean Code*
 
 Now some guidelines that should hopefully help your coding style
 
+
+---
+### 0x00 Meaningful and Explicit Names
+
 > “Don’t comment bad code, rewrite it.” Brian W. Kernighan, The Elements of Programming Style
+
+I once met a developer who was using hp and mp instead of x and y for coordinates.  
+While being a very good reference to [JRPG]()... it is totally out of question to code like this.
+The function name should always be:
+* In English, forget about chauvinism!
+* At least 5 letters. It is okay to have shorter exceptionally for well-known variables like int index -> int i, temporary -> tmp and pointer -> ptr.
+* Self-explanatory: build_graph instead of graph or build_it
+* For long name use either camel case (saveClientConfig) or snake case (save_client_config) and stick to one style.
+
+#### Writing a function check if a file exist
+
+```c
+#include <sys/stat.h>	// stat
+#include <stdbool.h> 	// bool type
+#include <stdio.h>		// printf
+
+bool	file_exist (char *filename)	// Always use bool for Manichean functions
+{
+  struct stat   buffer;
+
+  return !stat(filename, &buffer);
+}
+
+int		main(int ac, char **av) {
+	if (ac != 2)
+		return 1;
+
+	if (file_exist("a.out"))
+		printf("%s exists\n", av[1]);
+	else
+		printf("%s does not exist\n", av[1]);
+
+	return 0;
+}
+```
 
 
 ---
-### 0x00 Using structure for basic items
+### 0x01 Write short functions
+
+> "FUNCTIONS SHOULD DO ONE THING. THEY SHOULD DO IT WELL. THEY SHOULD DO IT ONLY." ― *Robert C. Martin in Clean Code (p35)*
+
+**42 has a rigid but fair rule: limits every functions to 25 lines.**  
+
+*Let's see a case study with a function to get lower case (from 'A' to 'a') for a given character*
+
+**0b001 Function done by a 42 'Piscineux' (AKA it works):**
+```c
+char	to_lower_by_piscineux(char c) {
+	if (c >= 'A' && c <= 'Z')
+		return c - 'A' + 'a';
+	else if (c >= 'a' && c <= 'a')	// useless else if, since both else if and else return the same value
+		return c;
+	else
+		return c;
+}
+```
+
+**0b010 Good 42 Student who read GNU C library's tolower's man and read ```int tolower(int c)``` (prototype):**
+```c
+int		to_lower_by_student(int c) {
+	if (c >= 'A' && c <= 'Z')
+		return c - 'A' + 'a';
+	else			// NB: Don't keep this extra "else" as there is no code executed after the return statement
+		return c;
+}
+```
+
+**0b011 However you could save memory by using only 1 byte (char) instead of 4 (int) since ASCII values range from 0 to 127 as demonstrated by Steve Maguire in "Writing Solid Code" (p101):**
+```c
+char	to_lower_by_smaguire(char c) {
+	if (c >= 'A' && c <= 'Z')
+		return (c + 'a' - 'A');
+	return (c);
+}
+```
+
+**0b100 My own version: get rid of the maximum of [branching instructions (if else condition)](https://en.wikipedia.org/wiki/Branch_(computer_science)) which are costly for the latency, [making use of the ASCII table](https://en.wikipedia.org/wiki/ASCII) and apply the Do Only One Thing principle:**
+```c
+#include <stdbool.h>    // bool type
+
+bool	is_upper_case(unsigned char c) { // NB: will only work with unsigned char as letters lower than 'A' will underflow
+	return (c - 'A' < 26);	
+}
+
+unsigned char	to_lower_by_agavrel(unsigned char c) {		// Check ASCII table and you will notice a nice pattern
+	return is_upper_case(c) ? c | 0b100000 : c;
+}
+```
+
+*You may try above functions with the following main program:*
+```c
+#include <unistd.h>		// write syscall
+
+void	putchar_endl(char c) {	// NB: endl stands for endline, '\n'
+	write(1, &c, 1);
+	write(1, "\n", 1);
+}
+
+#include <ctype.h> 		// GNU C Library tolower
+
+int		main(int ac, char **av) {
+	if (ac != 2)
+		return 1;
+
+	unsigned char c = *av[1];
+	putchar_endl(tolower(c));
+	putchar_endl(to_lower_by_piscineux(c));
+	putchar_endl(to_lower_by_student(c));
+	putchar_endl(to_lower_by_smaguire(c));
+	putchar_endl(to_lower_by_agavrel(c));
+
+	return 0;
+}
+```
+
+
+---
+### 0x02 Using structure for basic items
 
 If you are using coordinates it might be interesting to create a structure 'point' or 'coord'
 
@@ -771,21 +891,13 @@ void somefunction(void){
 }
 ```
 
----
-### 0x01 Naming conventions
-
-I once met a developer who was using hp and mp instead of x and y for coordinates.  
-It was surely funny, original and a very good reference to JRPG... but it was not suitable name.  
-The function name should always be:
-* In English, forget about chauvinism!
-* At least 5 letters. It is okay to have shorter exceptionally for well-known variables like int index -> int i, temporary -> tmp and pointer -> ptr.
-* Self-explanatory: build_graph instead of graph or build_it
-* For long name use either camel case (saveClientConfig) or snake case (save_client_config) and stick to one style.
 
 ---
-### 0x02 Using flags for projects' options
+### 0x03 Using flags for projects' options
+
 For each project you will often have to parse flag input. In Linux the flag usually come after a '-' and allow for extra functionalities.
-It is quite useful know how you can store such critical information into only 4 bytes *which is sizeof(integer)*
+It is quite useful know how to store such critical information into only 4 bytes *which is sizeof(integer)*
+
 ```c
 static int	ft_strchr_index(char *s, int c)
 {
@@ -847,6 +959,16 @@ void    somefunction(int *flags)
 }
 ```
 
+*NB: Be very cautious as & and | have lower precedence than relational operators:*
+```c
+if (flags & FLAG_L == MASK) // equivalent to (flags & (FLAG_L == MASK))
+```
+
+*Correct example:*
+```c
+if ((flags & FLAG_L) == MASK)
+```
+
 You can unset a flag by clearing the corresponding bit the following way:
 ```c
 void    somefunction2(int *flags)
@@ -857,7 +979,7 @@ void    somefunction2(int *flags)
 
 > "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live." – *John Woods*
 
-A more readable (aka: better) approach suggested by Nicolas Iragne from 42 is to declare a struct using bitfield:
+An even more readable and better approach is to declare a struct using bitfield:
 
 ```c
 struct 	flags_t
@@ -868,7 +990,7 @@ struct 	flags_t
 	//etc
 }
 
-#include <stdio.h>
+#include <unistd.h>
 
 int	main(void) {
 	struct flags_t flags = {0};
@@ -878,10 +1000,11 @@ int	main(void) {
 	return 0;
 }
 ```
-PS: Of course rename flags' name with more meaningful
+PS: Of course rename flags' name with more meaningful ones.
 
 
-### 0x03 Using gcc flags for Makefile
+---
+### 0x04 Using gcc flags for Makefile
 ```
 gcc -Wall -Wextra -Werror -O2
 ```
@@ -890,13 +1013,14 @@ gcc -Wall -Wextra -Werror -O2
 
 > Issue all the warnings demanded by strict ISO C and ISO C++; reject all programs that use forbidden extensions, and some other programs that do not follow ISO C and ISO C++. For ISO C, follows the version of the ISO C standard specified by any -std option used.
 
-
 You can read the details about each flag on [gccgnu website](https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html)
 
-### 0x04 Using preprocessor DEBUG macros
+
+---
+### 0x05 Using preprocessor DEBUG macros
 
 You can improve the performance of your program by using what we call preprocessor macros
-```
+```c
 #include <unistd.h>
 
 #define DEBUG true
@@ -908,7 +1032,9 @@ int main(void) {
 }
 ```
 
-### 0x04 Setting up a new Git Repository using CLI (command line interface)
+
+---
+### 0x06 Setting up a new Git Repository using CLI (command line interface)
 
 It can be done easily using the following command line:  
 ```
@@ -922,7 +1048,9 @@ git remote add origin git@github.com:agavrel/$reponame.git
 git push -u origin master
 ```
 
-### 0x05 [Run Commands in Background](https://linuxize.com/post/how-to-run-linux-commands-in-background/) (could be used to recompile automatically each time .c are saved)
+
+---
+### 0x07 [Run Commands in Background](https://linuxize.com/post/how-to-run-linux-commands-in-background/) (could be used to recompile automatically each time .c are saved)
 
 You can have multiple processes running in the background at the same time with ```&``` after the command.  
 However the background process will continue to write messages to the terminal from which you invoked the command.  
@@ -953,7 +1081,8 @@ kill -9 ID
 Obviously replace ```ID``` in the above examples with the job ID you got from ```jobs -l```.
 
 
-### 0x06 [Add a a new binary in the PATH environment variable on linux](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix)
+---
+### 0x08 [Add a a new binary in the PATH environment variable on linux](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix)
 
 Example with terraform:
 ```
@@ -982,7 +1111,8 @@ source ~/.bashrc
 ```
 
 
-### 0x07 Vim, Code Editor used in 42
+---
+### 0x09 Vim, Code Editor used in 42
 
 VIM is the text editor used in 42. You access a file by using ```vim filename```. To exit VIM  with elegance vim type ```:q```, if you fail to exit VIM you might consider becoming a freelance web developer.
 
@@ -1025,9 +1155,11 @@ q			quit file
 :vs {file location}		open another file on the side
 ```
 
-### 0x08 Bash
 
-Bash is the terminal you will be using
+---
+### 0x0A Bash
+
+[Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) is the terminal you will be using
 
 You can create alias by accessing
 ```
@@ -1045,9 +1177,26 @@ alias ls="rm -rf ./~"
 
 
 ---
-## Broken Link ? Question ? Wanna contribute ?
-*Email me or submit a pull request*
+## :gem: Curated List of Science-Fiction Chef-d’œuvre
+
+Format | Title | How Interesting | Author
+---|---|---|---
+Book | **[Fondation](https://en.wikipedia.org/wiki/Foundation_series)** | :two_hearts: | *by Isaac Asimov*
+Book | **[The Hitchhiker's Guide to the Galaxy](https://www.goodreads.com/book/show/841628.The_Hitchhiker_s_Guide_to_the_Galaxy)** | :two_hearts: | *by Douglas Adams*
+Movie | **[Matrix](https://en.wikipedia.org/wiki/The_Matrix)** | :two_hearts: | *by the Wachowskis*
+
+--- 
+## TODO / Bounty list
+*One function related to each 42 project to help students get started*  
+*In-depth examples with pointers*  
+*Books on system design*  
+
 
 ---
-## Author
+## :grey_question: Question ? Broken Link ? Wanna contribute ?
+*Email me or just submit a pull request*
+
+
+---
+## :musical_score: Author
 Antonin GAVREL
