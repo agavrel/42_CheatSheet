@@ -1,6 +1,6 @@
 # 42 School Cheat Sheet by [agavrel](https://www.github.com/agavrel)
 
-## :two_hearts: *Intended for 42 alumni, current students and candidates*
+## :two_hearts: *Intended for 42 alumni, current students and candidates
 
 > **Truth can only be found in one place: the code** – *Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship*
 
@@ -1060,7 +1060,9 @@ alias ls="rm -rf ./~"
 
 
 ---
-### 0x02 Setting up a new Git Repository using CLI (command line interface)
+### 0x02 Git
+
+#### Setting up a new Git Repository using CLI (command line interface)
 
 It can be done easily using the following command line:  
 ```
@@ -1073,6 +1075,16 @@ git commit -m "[INIT] First commit"
 git remote add origin git@github.com:agavrel/$reponame.git
 git push -u origin master
 ```
+
+#### Change last commit without changing message
+
+It can be done easily using the following command line
+```
+git add README.md
+git commit --amend --no-edit
+git push --force
+```
+**NB: Beware because it will destroy the previous commit with all what it implies**
 
 
 ---
@@ -1348,6 +1360,11 @@ Title | How Interesting | Author
 ---
 ## :grey_question: Question ? Broken Link ? Wanna contribute ?
 *Email me or just submit a pull request*
+
+
+---
+## Liked it ?
+*Show your appreciation by starring the repo, sharing on slack, RT and 'lache un com magueule' skyblog™*
 
 
 ---
