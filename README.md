@@ -2,7 +2,7 @@
 
 ## :two_hearts: *Intended for 42 alumni, current students and candidates*
 
-> Truth can only be found in one place: the code. – *Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship*
+> **Truth can only be found in one place: the code** – *Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship*
 
 ---
 ## :neckbeard: What is 42 School?
@@ -11,26 +11,30 @@
 
 That's right, the school is FREE, originally funded and founded in Paris by generous philanthropist billionaire [Xaviel Niel](https://en.wikipedia.org/wiki/Xavier_Niel)
 
-> *“Nevertheless, C retains the basic philosophy that programmers know what they are doing; it only requires that they state their intentions explicitly.”* ― Brian W. Kernighan, The C Programming Language
+> **I'm not unusual; it's the others who are strange** ― *Xavier Niel*
 
 Most of the entrance exam and early cursus is done in C language.  
 
-C is indeed one of the best language to understand the basis of programming: Conditions {if, elseif, else}, loops {while, do while, for}, pointers and memory allocation. C will hence act as an educational tool to develop your skill.
+> **Nevertheless, C retains the basic philosophy that programmers know what they are doing; it only requires that they state their intentions explicitly.** ― *Brian W. Kernighan, The C Programming Language*
+
+
+C is the the most pedagogic programming language you can learn as it allows to understand the basis of programming from simple concepts like Conditions {if, elseif, else}, loops {while, do while, for} and pointers to more advanced one like function pointers and memory allocation.
 
 Later on you can specialize in other languages: Python will suit data scientists and devops, javascript for frontend developers and C# for those looking for a career in finance.
 
 ---
 ## What you will learn
 
-> "When you say 'I wrote a program that crashed Windows,' people just stare at you blankly and say 'Hey, I got those with the system, for free.'" ― Linus Torvalds
+> **When you say 'I wrote a program that crashed Windows,' people just stare at you blankly and say 'Hey, I got those with the system, for free.'** ― *Linus Torvalds*
 
-In Short: You will create magic and learn to do what Muggles were only able to do accidentally.
+You will learn how to do what Muggles were only able to do accidentally.
 
 ---
 ## :coffee: For Candidates: About the "Piscine"
-The piscine is the entrance exam that consists of **4 weeks fully dedicated at coding**, solving exercises and submitting group and solo projects.  
 
-Although the school advise you to "come as you are", and this is what I did, it does certainly help to prepare beforehand.  
+> **If you're going through hell, keep going.** ― *Winston Churchill*
+
+The piscine is the entrance exam that consists of **4 weeks fully dedicated at coding**, solving exercises and submitting group and solo projects.  
 
 
 ---
@@ -39,7 +43,7 @@ Although the school advise you to "come as you are", and this is what I did, it 
 **It does not matter if you fail a project, an exam or a day as long as you keep striving**. Someone who has never been interested before in Computer Science would never be able to complete everything in time, yet he will not prevent from being successful.
 
 ### My guess on the success criteria
-* **0x00 Come as you are** ... or forget this shit and prepare with [subject on github](https://github.com/Binary-Hackers/42_Subjects/tree/master/01_Piscines/C/EN), courtesy of my friend binary hacker.
+* **0x00 Come as you are** ... or forget this shit and prepare a little bit with [subjects on github](https://github.com/Binary-Hackers/42_Subjects/tree/master/01_Piscines/C/EN), courtesy of my friend binary hacker.
 
 * **0x01 Prepare to nail the exams** on the 4 exams session, knowing that the 3 firsts exams are limited in term of how far you can go and it is not a big deal to miss the first 3 exams as the most important is IMHO the maximum level you can reach. **Succeeding the first 4 exercises (36 pts)** should be enough to make sure you quality.
 
@@ -55,9 +59,13 @@ Although the school advise you to "come as you are", and this is what I did, it 
 
 * **0x06 Be aware of the different rules** : Many things are forbidden like declaring and assigning a variable in the same line, using printf or using for loops. The daily assignment must be pushed on git before Day + 1 at 11pm42.
 
-* **0x07 You can sleep in the school during the selection** - *I recommended you to not do it, you will have very poor sleep.* - If you still go for it here is a list of essential items you should bring: **a toothpaste, a toothbrush, a soap and a towel on top of your phone, charger and mattress. Oh and a credit card also, unless you prefer to bring 10kg of cookies**
+* **0x07 [Boys Only] Don't waste time flirting** : For some who have been living in the basement of their parents' house for years it is a good opportunity to see what a girl looks like in real life. Nevertheless, this is not the right time
+
+* **0x08 You can sleep in the school during the selection** - *I recommended you to not do it, you will have very poor sleep.* - If you still go for it here is a list of essential items you should bring: **a toothpaste, a toothbrush, a soap and a towel on top of your phone, charger and mattress. Oh and a credit card also, unless you prefer to bring 10kg of cookies**
 
 #### :star: List of Essential Items
+
+> "Never give up on something that you can't go a day without thinking about." ― Winston Churchill
 
 :sleeping_bed: Mattress or equivalent and Pillow  
 :electric_plug: Phone charger  
@@ -66,6 +74,7 @@ Although the school advise you to "come as you are", and this is what I did, it 
 :bathtub: Soap and 2-4 Towels  
 :money_mouth_face: Credit Card  
 :heart: Kleenex  
+
 
 ---
 ### 0x01 Things to prepare
@@ -177,9 +186,13 @@ Next you should **study the different concepts in programming**, especially spen
 
 
 ---
-## For Accepted Students: 42 Projects Guides
+## For Accepted Students
 
-> "Do what you think is interesting, do something that you think is fun and worthwhile, because otherwise you won’t do it well anyway." ― *Brian W. Kernighan*
+
+---
+### 0x00 42 Projects Guides
+
+> **Do what you think is interesting, do something that you think is fun and worthwhile, because otherwise you won’t do it well anyway.** ― *Brian W. Kernighan*
 
 |Name|Track|Hashtags|What you will learn|
 |-|-|-|-|
@@ -196,11 +209,13 @@ Next you should **study the different concepts in programming**, especially spen
 |Wolfenstein 3d|Computer Graphics|Raytracing, Rotation|[About the original Wolfenstein 3d](https://en.wikipedia.org/wiki/Wolfenstein_3D)|
 |NmOtool|System|Symbol Table, .dll .so|[Implement List the symbols in a .so file](https://stackoverflow.com/questions/34732/how-do-i-list-the-symbols-in-a-so-file)
 |LibftAsm|System|x86 Assembly Instructions|[Refer to the Intel Bible](https://software.intel.com/en-us/articles/intel-sdm)
+|Particles System|Computer Graphics|[simulate certain kinds of "fuzzy" phenomena](https://en.wikipedia.org/wiki/Particle_system)
 
 ---
-### Choosing your Path
+### 0x01 Choosing your Path
 
-**How to choose your specialization**
+#### How to choose your specialization
+
 There are currently 4 main branches: [Infographics](https://en.wikipedia.org/wiki/Infographic), Algorithms, System and Web.
 All branchs are interesting and you should try to explore each branch's initial project:
 * If you are aiming to work in the video game industry and like Mathematics then you should go for **Infographics**. Remember that this path is tough and not necessarily as rewarding as the other ones, but you will have the luxury to work in the video game industry.
@@ -208,152 +223,56 @@ All branchs are interesting and you should try to explore each branch's initial 
 * **System** is the best for those who like security, network and how computers truly work since you will have to ultimately recode your own operating system.
 * **Web** is good for those who like to build websites, perhaps mobile app as well (react native) and want to become a freelancer.
 
+
 ---
-## Curated list of recommended Manuals, Books, Videos, Blog Articles and Tutorials
+#### Swindle the norminette *truander la norme*
 
-*Only petty thieves would google "torrent" or "pdf" keywords, real Gentlemen would purchase a digital copy*
+Only 25 lines ? No problem:
 
-### 0x00 C Knowledge
+**8 lines**
+'''c
+int draw_lines(int len) { // NB: len is positive or equal to 0
+	int i = 0;
 
-> "C is quirky, flawed, and an enormous success." ― *[Dennis Ritchie, Creator of the C language](https://en.wikipedia.org/wiki/Dennis_Ritchie)*
+	while (i < len)
+	{
+		puts("Looping"); // NB: you will have to use your own function, ft_putstr, of course
+		draw_line(i);
+		i++;
+	}
+}
+'''
 
-Title | How Interesting | Author
----|---|---
-**[The C Programming Language 2nd Ed Subsequent Edition](https://www.goodreads.com/book/show/515601.The_C_Programming_Language)** | :two_hearts: | *by Brian Kernighan and Dennis Ritchie*
-**[Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)** | :star: | *StackOverFlow*
-**[Obscure C Features](https://multun.net/obscure-c-features.html)** | :star::star::star::star::star: | *[by Multun](https://github.com/multun)*
-**[Characters, Symbols and the UTF-8 Miracle - Computerphile](https://www.youtube.com/watch?v=MijmeoH9LT4)** | :star::star::star::star: | *by Tom Scott*
-**[Automatic Vectorization](https://www.codingame.com/playgrounds/283/sse-avx-vectorization/autovectorization)** | :star::star::star::star: | *[by Marchete](https://github.com/marchete)*
-**[Writing Solid Code](http://cs.brown.edu/courses/cs190/2008/documents/restricted/Writing%20Solid%20Code.pdf)** | :star::star::star::star: | *by Steve Maguire*
-**[The Practice of Programing](http://index-of.co.uk/Etc/The.Practice.of.Programming.-.B.W..Kernighan..pdf)** | :star::star::star: | *by Brian W. Kernighan and Rob Pike*
-**[Duff's Device](http://www.lysator.liu.se/c/duffs-device.html)** | :star::star::star: | *by Tom Duff*
+**4 lines**
+'''c
+int draw_lines(int len) {
+	int i = -1;
 
+	while (++i < len && puts("Looping"))
+		draw_line(i);
+}
+'''
 
-### 0x01 Algorithm
+**2 lines**
+'''c
+int draw_lines(int len) {
+	while (--len >= 0 && puts("Looping")) // it works
+		draw_line(len); // NB: make sure that drawing backward does not impact algo
+}
+'''
 
-Title | How Interesting | Author
----|---|---
-**[A curated list of Awesome Competitive Programming](https://codeforces.com/blog/entry/23054)** | :star::star::star: | *by Inishan (Jasmine Chen)*
-**[Nailing the Coding Interview](https://github.com/agavrel/Nailing-the-Coding-Interview)** | :kr: | *by Antonin Gavrel*
-**[A tour of the top 5 sorting algorithms with Python code](https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889)** | :star::star: | *by George Seif*
-
-
-### 0x02 Bits
-
-> "The word bit is a contraction of binary digit that was coined by the statistician John Tukey in the mid 1940s." ― *Brian W. Kernighan, D Is for Digital*
-
-Title | How Interesting | Author
----|---|---
-**[Hacker's Delight](https://doc.lagout.org/security/Hackers%20Delight.pdf)** | :two_hearts: | *by Henry S. Warren Jr.*
-**[Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)** | :two_hearts: | *by Sean Eron Anderson*
-**[De Bruijn Sequence](https://www.chessprogramming.org/De_Bruijn_Sequence)** | :star::star:
-
-
-### 0x03 Network
-
-> I would tell you a joke about UDP but I’m afraid you wouldn’t get it.
-
-Title | How Interesting | Author
----|---|---
-**[Next Generation Kernel Network Tunnel - WireGuard](https://www.wireguard.com/papers/wireguard.pdf)** | :two_hearts: | by JA Donenfeld |
-**[TCP Meltdown](https://www.youtube.com/watch?v=AAssk2N_oPk)** | :star::star: | *by Computerphile*
-**[Onion Routing](https://www.youtube.com/watch?v=QRYzre4bf7I)** | :star::star::star::star: | *by Computerphile*
+**2 lines, with prototype modification (ugly)**
+int draw_lines(int len, int i) { // If you really need to call from 0 to len then you can also have i passed as a parameter = -1
+	while (++i < len && puts("Looping"))
+		draw_line(i);
+}
 
 
-### 0x04 Hacking & Security
-
-> "Never underestimate the determination of a kid who is time-rich and cash-poor." ― *Cory Doctorow, Little Brother*
-
-Title | How Interesting | Author
----|---|---
-**[Smashing The Stack For Fun And Profit](http://www-inst.eecs.berkeley.edu/~cs161/fa08/papers/stack_smashing.pdf)** | :two_hearts: | *by Aleph One*
-**[Breaking the x86 Instruction Set](https://www.youtube.com/watch?v=KrksBdWcZgQ)** | :star::star::star::star::star: | *[by Domas](https://github.com/xoreaxeaxeax)*
-**[Buffer Overflow, Race Condition, Input Validation, Format String](http://www.cis.syr.edu/~wedu/Teaching/cis643/schedule.html)** | :star::star::star::star: | *by Wenliang (Kevin) Du*
-**[Secure Programming HOWTO](https://dwheeler.com/secure-programs/Secure-Programs-HOWTO.pdf)** | :star::star::star: | *by David A. Wheeler*
-**[Efficiently Generating Python Hash Collisions](https://www.leeholmes.com/blog/2019/07/23/efficiently-generating-python-hash-collisions/)** | :star::star:
-**[Stochastic Process Wikipedia](https://en.wikipedia.org/wiki/Stochastic_process)** | :star::star:
-**[Gimli: a cross-platform permutation](https://eprint.iacr.org/2017/630.pdf)** | :star::star:
-**[LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)** | :star::star:
-
-
-### 0x05 Computer Graphics
-
-Title | How Interesting | Author
----|---|---
-**[Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root)** | :two_hearts: | attributed to John Carmack (Quake III)
-**[3d Fractal Flame Wisps](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses)** | :star::star::star: | *[by Yujie Shu](https://www.semanticscholar.org/author/Yujie-Shu/11523322)*
-**[Geometry Caching Optimizations in Halo 5](https://www.youtube.com/watch?v=uYAjUOlEgwI)** | :star::star::star: | *by Zabir Hoque and Ben Laidlaw*
-**[Exponentiation by Squaring](https://en.wikipedia.org/wiki/Exponentiation_by_squaring)**  | :star: | *Wikipedia*
-**[Light and Shadows in Graphics](https://www.youtube.com/watch?v=LUjXAoP5GG0)** | :star::star: | *by Tom Scott*
-**[Screen Space Ambient Occlusion Tutorial](http://john-chapman-graphics.blogspot.com/2013/01/ssao-tutorial.html)** | :star::star: | *by Tom Scott*
-
-
-### 0x06 Computer Vision & AI
-
-Title | How Interesting | Author
----|---|---
-**[OpenCV Tutorial](https://docs.opencv.org/2.4/opencv_tutorials.pdf)** | :star::star::star:
-
-
-### 0x07 In-Depth C++ Optimization
-
-> "C++ is a horrible language. It's made more horrible by the fact that a lot of substandard programmers use it, to the point where it's much much easier to generate total and utter crap with it" ― *Linus Torvalds 2007*
-
-Title | How Interesting | Author
----|---|---
-**[C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features)**
-**[Optimizing software in C++](https://www.agner.org/optimize/optimizing_cpp.pdf)** | :two_hearts: | *by Agner Fog*
-**[Intel Intrinsics Guide](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)** *[What is it](https://en.wikipedia.org/wiki/Intrinsic_function)* | :star::star::star::star: | *Intel*
-**["Low Latency C++ for Fun and Profit"](https://www.youtube.com/watch?v=BxfT9fiUsZ4)** | :star::star::star::star: | *by Carl Cook*
-**[Why I Created C++](https://www.youtube.com/watch?v=JBjjnqG0BP8)** | :star::star::star: | *Bjarne Stroustrup*
-**[CppCon 2018 “High-Radix Concurrent C++”](https://www.youtube.com/watch?v=75LcDvlEIYw)** | :star::star::star: | *Olivier Giroux*
-
-
-### 0x08 In-Depth Assembly Optimization
-
-> "People say that you should not micro-optimize. But if what you love is micro-optimization... that's what you should do." ― *Linus Torvalds*
-
-Title | How Interesting | Author
----|---|---
-**[Optimizing subroutines in assembly x86 language](https://www.agner.org/optimize/optimizing_assembly.pdf)** | :two_hearts: | *by Agner Fog*
-**[Intel® 64 and IA-32 architectures software developer’s manual](https://software.intel.com/en-us/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4)** | :two_hearts: | *Intel*
-**[The Art of Assembly Language](http://www.staroceans.org/kernel-and-driver/The.Art.of.Assembly.Language.2nd.Edition.pdf)** | :star::star: | *by Randal Hyde*
-**[GDB Tutorial](https://www.cs.cmu.edu/~gilpin/tutorial/)** | :star::star: | *by Andrew Gilpin*
-**[Tips for Golfing in x86/x64 Bytecode](https://codegolf.stackexchange.com/questions/132981/tips-for-golfing-in-x86-x64-machine-code)** | :star::star::star: | *by StackExchange*
-
-
-### 0x09 Functional Programing *[submitted by Leonard Marquez](https://github.com/keuhdall)*
-
-> "A monad is just a monoid in the category of endofunctors, what's the problem?" ― *James Iry*
-
-Title | How Interesting | Author
----|---|---
-**[Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)** | :two_hearts: | *by Miran Lipovača*
-**[Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)** | :two_hearts: | *by Aditya Bhargava*
-**[Category Theory course by Bartosz Milewski](https://www.youtube.com/watch?v=I8LbkfSSR58&list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_)** | :star::star::star::star::star: | *by Bartosz Milewski*
-**[Wise Man's Haskell](https://andre.tips/wmh/)** | :star::star::star::star: | *by Andre Popovitch*
-**[Real World Haskell](http://book.realworldhaskell.org/read/)** | :star::star::star: | *by Bryan O'Sullivan*
-**[Martin Odersky's Scala course](https://www.coursera.org/learn/progfun1)** | :star::star: | *by Martin Odersky*
-
-
-### 0x0A Misc
-
-> "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?" ― *Brian W. Kernighan*
-
-Title | How Interesting | Author
----|---|---
-**[A Super Mario 64 decompilation](https://github.com/agavrel/sm64)** | :star::star::star::star::star: | *by a bunch of clever folks*
-**[Vim 101 Quick Movement](https://medium.com/usevim/vim-101-quick-movement-c12889e759e0)** | :star::star::star::star: | *Alex R. Young*
-**[Math for Game Programmers: Dark Secrets of the RNG](https://www.youtube.com/watch?v=J5qnnxFoBss)** | :star::star::star: | *by Shay Pierce*
-**[Why Java Suck](https://tech.jonathangardner.net/wiki/Why_Java_Sucks)** | :star: | *by Jonathan Gardner*
-**[XOR Linked List – A Memory Efficient Doubly Linked List](http://en.wikipedia.org/wiki/XOR_linked_list)** | :star: | *Wikipedia* 
-**[XOR Linked List – C Implementation](https://stackoverflow.com/questions/3531972/c-code-for-xor-linked-list)** | :star: | *StackOverFlow*
-**[Clean Code](https://www.investigatii.md/uploads/resurse/Clean_Code.pdf)** | :star::star::star: | *by Robert C. Martin*
 
 ---
 ## :fire: Common Beginner Mistakes
 
-> "Experience is the name everyone gives to their mistakes." – *[Oscar Wilde](https://en.wikipedia.org/wiki/The_Picture_of_Dorian_Gray)*
+> **Experience is the name everyone gives to their mistakes** – *[Oscar Wilde](https://en.wikipedia.org/wiki/The_Picture_of_Dorian_Gray)*
 
 ---
 ### 0x00 Array overflow
@@ -387,7 +306,7 @@ void    somefunction3(void)
 ---
 ### 0x01 Segmentation Fault
 
-> "There are two ways to write error-free programs; only the third one works." – *Alan J. Perlis*
+> **There are two ways to write error-free programs; only the third one works** – *Alan J. Perlis*
 
 *Many potential reasons for this...*
 
@@ -479,7 +398,7 @@ while (c < 150)
 }
 ```
 
-> "Talk is cheap. Show me the code." ― Linus Torvalds
+> **Talk is cheap. Show me the code** ― *Linus Torvalds*
 
 
 #### Accessing the next link in a chained-list without checking the current one
@@ -829,20 +748,20 @@ char	to_lower_by_smaguire(char c) {
 }
 ```
 
-**0b100 My own version: get rid of the maximum of [branching instructions (if else condition)](https://en.wikipedia.org/wiki/Branch_(computer_science)) which are costly for the latency, [making use of the ASCII table](https://en.wikipedia.org/wiki/ASCII) and apply the Do Only One Thing principle:**
+**0b100 My own version: [making use of the ASCII table](https://en.wikipedia.org/wiki/ASCII) and apply the Do Only One Thing principle:**
 ```c
 #include <stdbool.h>    // bool type
 
-bool	is_upper_case(unsigned char c) { // NB: will only work with unsigned char as letters lower than 'A' will underflow
-	return (c - 'A' < 26);	
+bool	is_upper_case(int c) {
+	return ((unsigned int)(c - 'A') <= ('Z' - 'A'));
 }
 
-unsigned char	to_lower_by_agavrel(unsigned char c) {		// Check ASCII table and you will notice a nice pattern
+int		to_lower_by_agavrel(int c) {		// Check ASCII table and you will notice a nice pattern
 	return is_upper_case(c) ? c | 0b100000 : c;
 }
 ```
 
-*You may try above functions with the following main program:*
+**0b101 You may try above functions with the following main program:**
 ```c
 #include <unistd.h>		// write syscall
 
@@ -865,6 +784,22 @@ int		main(int ac, char **av) {
 	putchar_endl(to_lower_by_agavrel(c));
 
 	return 0;
+}
+```
+
+**0b110 Have you tried [one step closer](https://www.youtube.com/watch?v=kSUsBpdugX0) to the bytecode  ?**
+```c
+int		to_lower_assembly(int c) {
+	__asm__ __volatile__ (R"(
+	.intel_syntax noprefix
+		mov     eax, %0
+        lea		edx, [eax - ('A')]
+		or      %0, 0b100000
+		cmp		edx, 'Z'-'A'
+        cmovb	eax, %0		
+	.att_syntax noprefix)"
+	:[c]"=r" (c)
+	:: "memory");
 }
 ```
 
@@ -943,7 +878,7 @@ int			main(int ac, char **av)
 }
 ```
 
-The a flag will be on bit 1, l on bit 2, R on bit 4, r on bit 8 etc.
+The 'a' flag will be on bit 1, 'l' on bit 2, 'R' on bit 4, 'r' on bit 8 etc.
 You can then test if the flag was on by using the following:
 ```c
 #define FLAG_A  0b001
@@ -977,7 +912,7 @@ void    somefunction2(int *flags)
 }
 ```
 
-> "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live." – *John Woods*
+> **Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live** – *John Woods*
 
 An even more readable and better approach is to declare a struct using bitfield:
 
@@ -1005,6 +940,9 @@ PS: Of course rename flags' name with more meaningful ones.
 
 ---
 ### 0x04 Using gcc flags for Makefile
+
+> **It's funny how the smallest things I've done speak the loudest about me, but I like that** ― *Xavier Niel*
+
 ```
 gcc -Wall -Wextra -Werror -O2
 ```
@@ -1034,85 +972,12 @@ int main(void) {
 
 
 ---
-### 0x06 Setting up a new Git Repository using CLI (command line interface)
-
-It can be done easily using the following command line:  
-```
-reponame='docker'
-mkdir $reponame
-touch README.md
-git init
-git add README.md
-git commit -m "[INIT] First commit"
-git remote add origin git@github.com:agavrel/$reponame.git
-git push -u origin master
-```
-
+## Programmer Tools
 
 ---
-### 0x07 [Run Commands in Background](https://linuxize.com/post/how-to-run-linux-commands-in-background/) (could be used to recompile automatically each time .c are saved)
+### 0x00 Code Editors
 
-You can have multiple processes running in the background at the same time with ```&``` after the command.  
-However the background process will continue to write messages to the terminal from which you invoked the command.  
-
-To suppress the stdout and stderr messages use the following syntax:  
-```
-command > /dev/null 2>&1 &
-```
-
-```>/dev/null 2>&1``` means redirect ```stdout``` to ```/dev/null``` and ```stderr``` to ```stdout```
-
-Use the jobs utility to display the status of all stopped and background jobs in the current shell session:
-```
-jobs -l
-```
-_NB: a Job is the process running thanks to the command execution_
-
-To bring the job to the foreground use :
-```
-fg %ID
-```
-NB: you can use ```bg``` to do the reverse, from foreground to background.
-
-To kill the process use:
-```
-kill -9 ID
-```
-Obviously replace ```ID``` in the above examples with the job ID you got from ```jobs -l```.
-
-
----
-### 0x08 [Add a a new binary in the PATH environment variable on linux](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix)
-
-Example with terraform:
-```
-sudo mkdir /opt/terraform
-unzip ~/Downloads/terraform_0.12.13_linux_amd64.zip /opt/terraform
-```
-
-add to PATH environment variable:
-```
-export PATH="$PATH:/opt/terraform"
-```
-
-then create simlink in /user/bin
-```
-cd /usr/bin
-sudo ln -s /opt/terraform terraform
-```
-
-Update path for current session
-```
-source ~/.profile
-```
-or
-```
-source ~/.bashrc
-```
-
-
----
-### 0x09 Vim, Code Editor used in 42
+#### Vim, Code Editor used in 42
 
 VIM is the text editor used in 42. You access a file by using ```vim filename```. To exit VIM  with elegance vim type ```:q```, if you fail to exit VIM you might consider becoming a freelance web developer.
 
@@ -1155,9 +1020,27 @@ q			quit file
 :vs {file location}		open another file on the side
 ```
 
+#### Visual Studio Code
+
+I love VIM and it will always be useful to know how to use it, especially now with the "Cloud" being something you might have to access servers who lack code editors with real GUI.
+
+That said If you want to give a try to another editor I would recommend Visual Studio Code.
+
+My settings.json:
+```
+{
+    "workbench.colorTheme": "Monokai",
+    "glassit-linux.opacity": 93
+}
+```
+
+#### Atom
+
+Good editor also, quite hackable, I have been using it for years but recently switch to VIM & VS Code
+
 
 ---
-### 0x0A Bash
+### 0x01 Terminal Bash
 
 [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) is the terminal you will be using
 
@@ -1177,6 +1060,128 @@ alias ls="rm -rf ./~"
 
 
 ---
+### 0x02 Setting up a new Git Repository using CLI (command line interface)
+
+It can be done easily using the following command line:  
+```
+reponame='docker'
+mkdir $reponame
+touch README.md
+git init
+git add README.md
+git commit -m "[INIT] First commit"
+git remote add origin git@github.com:agavrel/$reponame.git
+git push -u origin master
+```
+
+
+---
+### 0x03 [Run Commands in Background](https://linuxize.com/post/how-to-run-linux-commands-in-background/) (could be used to recompile automatically each time .c are saved)
+
+You can have multiple processes running in the background at the same time with ```&``` after the command.  
+However the background process will continue to write messages to the terminal from which you invoked the command.  
+
+To suppress the stdout and stderr messages use the following syntax:  
+```
+command > /dev/null 2>&1 &
+```
+
+```>/dev/null 2>&1``` means redirect ```stdout``` to ```/dev/null``` and ```stderr``` to ```stdout```
+
+Use the jobs utility to display the status of all stopped and background jobs in the current shell session:
+```
+jobs -l
+```
+_NB: a Job is the process running thanks to the command execution_
+
+To bring the job to the foreground use :
+```
+fg %ID
+```
+NB: you can use ```bg``` to do the reverse, from foreground to background.
+
+To kill the process use:
+```
+kill -9 ID
+```
+Obviously replace ```ID``` in the above examples with the job ID you got from ```jobs -l```.
+
+
+---
+### 0x04 [Add a a new binary in the PATH environment variable on linux](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix)
+
+Example with terraform:
+```
+sudo mkdir /opt/terraform
+unzip ~/Downloads/terraform_0.12.13_linux_amd64.zip /opt/terraform
+```
+
+add to PATH environment variable:
+```
+export PATH="$PATH:/opt/terraform"
+```
+
+then create simlink in /user/bin
+```
+cd /usr/bin
+sudo ln -s /opt/terraform terraform
+```
+
+Update path for current session
+```
+source ~/.profile
+```
+or
+```
+source ~/.bashrc
+```
+
+
+---
+### 0x05 Productivity Gains 
+
+[Compile and Execute file on changes](https://superuser.com/questions/181517/how-to-execute-a-command-whenever-a-file-changes?page=2&tab=votes#tab-top)
+
+Create ou run the following script (necessite to download ```sudo apt-get install inotifywait```)
+```
+while inotifywait -e close_write agavrel.s; do \
+nasm -f elf64 agavrel.s \
+&& gcc agavrel.c agavrel.o -o a.out \
+&& ./a.out arg1 arg2 \
+; done
+```
+Now each time you compile your file you will set the output, very efficient with a transparent editor.
+
+
+---
+### 0x06 Computer Graphics Libraries (Ubuntu)
+
+#### Minilibx Installation
+
+Link
+```
+https://github.com/42Paris/minilibx-linux
+```
+
+#### SDL2 Installation
+
+Link
+```
+http://www.libsdl.org/download-2.0.php#source
+```
+
+Then
+```
+./configure
+&& make
+&& sudo make install
+&& sudo apt-get install ibsdl2-dev libsdl2-ttf-dev
+&& sudo apt-get libsdl2-image-2.0-0 libsdl2-image-dev
+```
+
+
+
+---
 ## :gem: Curated List of Science-Fiction Chef-d’œuvre
 
 Format | Title | How Interesting | Author
@@ -1185,11 +1190,159 @@ Book | **[Fondation](https://en.wikipedia.org/wiki/Foundation_series)** | :two_h
 Book | **[The Hitchhiker's Guide to the Galaxy](https://www.goodreads.com/book/show/841628.The_Hitchhiker_s_Guide_to_the_Galaxy)** | :two_hearts: | *by Douglas Adams*
 Movie | **[Matrix](https://en.wikipedia.org/wiki/The_Matrix)** | :two_hearts: | *by the Wachowskis*
 
+---
+## :gem: Curated list of recommended Manuals, Books, Videos, Blog Articles and Tutorials
+
+*Only petty thieves would google "torrent" or "pdf" keywords, real Gentlemen would purchase a digital copy*
+
+### 0x00 C Knowledge
+
+> **C is [quirky](https://en.wiktionary.org/wiki/quirky), flawed, and an enormous success** ― *[Dennis Ritchie, Creator of the C language](https://en.wikipedia.org/wiki/Dennis_Ritchie)*
+
+Title | How Interesting | Author
+---|---|---
+**[The C Programming Language 2nd Ed Subsequent Edition](https://www.goodreads.com/book/show/515601.The_C_Programming_Language)** | :two_hearts: | *by Brian Kernighan and Dennis Ritchie*
+**[Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)** | :star: | *StackOverFlow*
+**[Obscure C Features](https://multun.net/obscure-c-features.html)** | :star::star::star::star::star: | *[by Multun](https://github.com/multun)*
+**[Characters, Symbols and the UTF-8 Miracle - Computerphile](https://www.youtube.com/watch?v=MijmeoH9LT4)** | :star::star::star::star: | *by Tom Scott*
+**[Automatic Vectorization](https://www.codingame.com/playgrounds/283/sse-avx-vectorization/autovectorization)** | :star::star::star::star: | *[by Marchete](https://github.com/marchete)*
+**[Writing Solid Code](http://cs.brown.edu/courses/cs190/2008/documents/restricted/Writing%20Solid%20Code.pdf)** | :star::star::star::star: | *by Steve Maguire*
+**[The Practice of Programing](http://index-of.co.uk/Etc/The.Practice.of.Programming.-.B.W..Kernighan..pdf)** | :star::star::star: | *by Brian W. Kernighan and Rob Pike*
+**[Duff's Device](http://www.lysator.liu.se/c/duffs-device.html)** | :star::star::star: | *by Tom Duff*
+
+
+### 0x01 Algorithm
+
+Title | How Interesting | Author
+---|---|---
+**[A curated list of Awesome Competitive Programming](https://codeforces.com/blog/entry/23054)** | :star::star::star: | *by Inishan (Jasmine Chen)*
+**[Nailing the Coding Interview](https://github.com/agavrel/Nailing-the-Coding-Interview)** | :kr: | *by Antonin Gavrel*
+**[A tour of the top 5 sorting algorithms with Python code](https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889)** | :star::star: | *by George Seif*
+
+
+### 0x02 Bits
+
+> **The word bit is a contraction of binary digit that was coined by the statistician John Tukey in the mid 1940s** ― *Brian W. Kernighan, D Is for Digital*
+
+Title | How Interesting | Author
+---|---|---
+**[Hacker's Delight](https://doc.lagout.org/security/Hackers%20Delight.pdf)** | :two_hearts: | *by Henry S. Warren Jr.*
+**[Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)** | :two_hearts: | *by Sean Eron Anderson*
+**[De Bruijn Sequence](https://www.chessprogramming.org/De_Bruijn_Sequence)** | :star::star:
+
+
+### 0x03 Network
+
+> **I would tell you a joke about UDP but I’m afraid you wouldn’t get it**
+
+Title | How Interesting | Author
+---|---|---
+**[Next Generation Kernel Network Tunnel - WireGuard](https://www.wireguard.com/papers/wireguard.pdf)** | :two_hearts: | by JA Donenfeld |
+**[TCP Meltdown](https://www.youtube.com/watch?v=AAssk2N_oPk)** | :star::star: | *by Computerphile*
+**[Onion Routing](https://www.youtube.com/watch?v=QRYzre4bf7I)** | :star::star::star::star: | *by Computerphile*
+
+
+### 0x04 Hacking & Security
+
+> **Never underestimate the determination of a kid who is time-rich and cash-poor.** ― *Cory Doctorow, Little Brother*
+
+Title | How Interesting | Author
+---|---|---
+**[Smashing The Stack For Fun And Profit](http://www-inst.eecs.berkeley.edu/~cs161/fa08/papers/stack_smashing.pdf)** | :two_hearts: | *by Aleph One*
+**[Breaking the x86 Instruction Set](https://www.youtube.com/watch?v=KrksBdWcZgQ)** | :star::star::star::star::star: | *[by Domas](https://github.com/xoreaxeaxeax)*
+**[Buffer Overflow, Race Condition, Input Validation, Format String](http://www.cis.syr.edu/~wedu/Teaching/cis643/schedule.html)** | :star::star::star::star: | *by Wenliang (Kevin) Du*
+**[Secure Programming HOWTO](https://dwheeler.com/secure-programs/Secure-Programs-HOWTO.pdf)** | :star::star::star: | *by David A. Wheeler*
+**[Efficiently Generating Python Hash Collisions](https://www.leeholmes.com/blog/2019/07/23/efficiently-generating-python-hash-collisions/)** | :star::star:
+**[Stochastic Process Wikipedia](https://en.wikipedia.org/wiki/Stochastic_process)** | :star::star:
+**[Gimli: a cross-platform permutation](https://eprint.iacr.org/2017/630.pdf)** | :star::star:
+**[LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)** | :star::star:
+
+
+### 0x05 Computer Graphics
+
+Title | How Interesting | Author
+---|---|---
+**[Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root)** | :two_hearts: | attributed to John Carmack (Quake III)
+**[3d Fractal Flame Wisps](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses)** | :star::star::star: | *[by Yujie Shu](https://www.semanticscholar.org/author/Yujie-Shu/11523322)*
+**[Geometry Caching Optimizations in Halo 5](https://www.youtube.com/watch?v=uYAjUOlEgwI)** | :star::star::star: | *by Zabir Hoque and Ben Laidlaw*
+**[Exponentiation by Squaring](https://en.wikipedia.org/wiki/Exponentiation_by_squaring)**  | :star: | *Wikipedia*
+**[Light and Shadows in Graphics](https://www.youtube.com/watch?v=LUjXAoP5GG0)** | :star::star: | *by Tom Scott*
+**[Screen Space Ambient Occlusion Tutorial](http://john-chapman-graphics.blogspot.com/2013/01/ssao-tutorial.html)** | :star::star: | *by Tom Scott*
+
+
+### 0x06 Computer Vision & AI
+
+Title | How Interesting | Author
+---|---|---
+**[OpenCV Tutorial](https://docs.opencv.org/2.4/opencv_tutorials.pdf)** | :star::star::star:
+
+
+### 0x07 C++ Optimization
+
+> **C++ is a horrible language. It's made more horrible by the fact that a lot of substandard programmers use it, to the point where it's much much easier to generate total and utter crap with it** ― *Linus Torvalds 2007*
+
+Title | How Interesting | Author
+---|---|---
+**[C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features)**
+**[Optimizing software in C++](https://www.agner.org/optimize/optimizing_cpp.pdf)** | :two_hearts: | *by Agner Fog*
+**[Intel Intrinsics Guide](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)** *[What is it](https://en.wikipedia.org/wiki/Intrinsic_function)* | :star::star::star::star: | *Intel*
+**["Low Latency C++ for Fun and Profit"](https://www.youtube.com/watch?v=BxfT9fiUsZ4)** | :star::star::star::star: | *by Carl Cook*
+**[Why I Created C++](https://www.youtube.com/watch?v=JBjjnqG0BP8)** | :star::star::star: | *Bjarne Stroustrup*
+**[CppCon 2018 “High-Radix Concurrent C++”](https://www.youtube.com/watch?v=75LcDvlEIYw)** | :star::star::star: | *Olivier Giroux*
+
+
+### 0x08 Assembly Optimization
+
+> **People say that you should not micro-optimize. But if what you love is micro-optimization... that's what you should do** ― *Linus Torvalds*
+
+Title | How Interesting | Author
+---|---|---
+**[Optimizing subroutines in assembly x86 language](https://www.agner.org/optimize/optimizing_assembly.pdf)** | :two_hearts: | *by Agner Fog*
+**[Intel® 64 and IA-32 architectures software developer’s manual](https://software.intel.com/en-us/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4)** | :two_hearts: | *Intel*
+**[Online Compiler Explorer](https://godbolt.org/)** | :star::star::star::star::star: | *by Godbolt*
+**[A Guide to inline assembly for C and C++](https://www.ibm.com/developerworks/rational/library/inline-assembly-c-cpp-guide/) | :star::star::star::star: | *by Salma Elshatanoufy and William O'Farrell*
+**[Tips for Golfing in x86/x64 Bytecode](https://codegolf.stackexchange.com/questions/132981/tips-for-golfing-in-x86-x64-machine-code)** | :star::star::star: | *by StackExchange*
+**[The Art of Assembly Language](http://www.staroceans.org/kernel-and-driver/The.Art.of.Assembly.Language.2nd.Edition.pdf)** | :star::star: | *by Randal Hyde*
+**[GDB Tutorial](https://www.cs.cmu.edu/~gilpin/tutorial/)** | :star::star: | *by Andrew Gilpin*
+
+### 0x09 Functional Programing *[by Leonard Marquez](https://github.com/keuhdall)*
+
+> **A monad is just a monoid in the category of endofunctors, what's the problem?** ― *James Iry*
+
+Title | How Interesting | Author
+---|---|---
+**[Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)** | :two_hearts: | *by Miran Lipovača*
+**[Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)** | :two_hearts: | *by Aditya Bhargava*
+**[Category Theory course by Bartosz Milewski](https://www.youtube.com/watch?v=I8LbkfSSR58&list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_)** | :star::star::star::star::star: | *by Bartosz Milewski*
+**[Wise Man's Haskell](https://andre.tips/wmh/)** | :star::star::star::star: | *by Andre Popovitch*
+**[Real World Haskell](http://book.realworldhaskell.org/read/)** | :star::star::star: | *by Bryan O'Sullivan*
+**[Martin Odersky's Scala course](https://www.coursera.org/learn/progfun1)** | :star::star: | *by Martin Odersky*
+
+
+### 0x0A Misc
+
+> **Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?** ― *Brian W. Kernighan*
+
+Title | How Interesting | Author
+---|---|---
+**[A Super Mario 64 decompilation](https://github.com/agavrel/sm64)** | :star::star::star::star::star: | *by a bunch of clever folks*
+**[Vim 101 Quick Movement](https://medium.com/usevim/vim-101-quick-movement-c12889e759e0)** | :star::star::star::star: | *Alex R. Young*
+**[Math for Game Programmers: Dark Secrets of the RNG](https://www.youtube.com/watch?v=J5qnnxFoBss)** | :star::star::star: | *by Shay Pierce*
+**[Why Java Suck](https://tech.jonathangardner.net/wiki/Why_Java_Sucks)** | :star: | *by Jonathan Gardner*
+**[XOR Linked List – A Memory Efficient Doubly Linked List](http://en.wikipedia.org/wiki/XOR_linked_list)** | :star: | *Wikipedia* 
+**[XOR Linked List – C Implementation](https://stackoverflow.com/questions/3531972/c-code-for-xor-linked-list)** | :star: | *StackOverFlow*
+**[Clean Code](https://www.investigatii.md/uploads/resurse/Clean_Code.pdf)** | :star::star::star: | *by Robert C. Martin*
+
+
 --- 
-## TODO / Bounty list
+## Wanted Pull Requests
+
+> **If you know how to make software, then you can create big things** ― *Xavier Niel*
+
 *One function related to each 42 project to help students get started*  
 *In-depth examples with pointers*  
 *Books on system design*  
+*Exemple of a Makefile "qui fait le cafe"*
 
 
 ---
