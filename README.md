@@ -45,7 +45,7 @@ The piscine is the entrance exam that consists of **4 weeks fully dedicated to c
 
 **It does not matter if you fail a project, an exam or a day as long as you keep striving**. Someone who has never been interested before in Computer Science would never be able to complete everything in time, yet he will not prevent from being successful.
 
-### My guess on the success criteria
+#### My guess on the success criteria
 * **0x00 Come as you are** ... or forget this bullshit and prepare a little bit with [subjects on github](https://github.com/Binary-Hackers/42_Subjects/tree/master/01_Piscines/C/EN), courtesy of my friend binary hacker.
 
 * **0x01 Prepare to nail the exams** on the 4 exams session, knowing that the 3 firsts exams are limited in term of how far you can go and it is not a big deal to miss the first 3 exams as the most important is IMHO the maximum level you can reach. **Succeeding the first 4 exercises (36 pts)** should be enough to make sure you quality.
@@ -81,6 +81,8 @@ The piscine is the entrance exam that consists of **4 weeks fully dedicated to c
 
 ---
 ### 0x01 Things to prepare
+
+> 시작이 반이다  ― *The beginning is half of the way* Korean expression 
 
 #### First by installing a C compiler on your computer
 * On Windows it is a bit tricky, you will have to install [Mingw](http://www.mingw.org/)
@@ -200,7 +202,7 @@ Next you should **study the different concepts in programming**, especially spen
 |-|-|-|-|
 |Fillit|General|Architecture, Parsing, Algo|[Description from a student](https://medium.com/@bethnenniger/fillit-solving-for-the-smallest-square-of-tetrominos-c6316004f909)|
 |Printf|Algorithm|Architecture, Parsing, utf-8|[UTF-8 Conversion table](https://en.wikipedia.org/wiki/UTF-8)<br>[Variadic Function](https://en.wikipedia.org/wiki/Variadic_function)|
-|Filler|Algorithm|Parsing, Algo, Bot|42 forums have good threads on this project|
+|[Filler](https://github.com/agavrel/42-filler)|Algorithm|Parsing, Algo, Bot|42 forums have good threads on this project|
 |Lem-In|Algorithm|Parsing, Algo, Chained-Lists|[Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)|
 |Corewar|Algorithm|Architecture, parsing, disassembler, virus, VM|[About the original Game](https://en.wikipedia.org/wiki/Core_War)|
 |LS|System|Parsing, Recursion, Chained-Lists|[The Good Old Manual](http://man7.org/linux/man-pages/man1/ls.1.html)|
@@ -211,6 +213,7 @@ Next you should **study the different concepts in programming**, especially spen
 |Wolfenstein 3d|Computer Graphics|Raytracing, Rotation|[About the original Wolfenstein 3d](https://en.wikipedia.org/wiki/Wolfenstein_3D)|
 |NmOtool|System|Symbol Table, .dll .so|[Implement List the symbols in a .so file](https://stackoverflow.com/questions/34732/how-do-i-list-the-symbols-in-a-so-file)
 |LibftAsm|System|x86 Assembly Instructions|[Refer to the Intel Bible](https://software.intel.com/en-us/articles/intel-sdm)
+|[RT](https://github.com/Chr0nos/rt)|Computer Graphics|Ray Tracing|Create a Scene of enlightened polygons 
 |Particles System|Computer Graphics|Graphics Effects|[simulate certain kinds of "fuzzy" phenomena](https://en.wikipedia.org/wiki/Particle_system)
 
 ---
@@ -232,7 +235,7 @@ All branchs are interesting and you should try to explore each branch's initial 
 Only 25 lines ? No problem:
 
 **8 lines**
-'''c
+```c
 int draw_lines(int len) { // NB: len is positive or equal to 0
 	int i = 0;
 
@@ -243,32 +246,33 @@ int draw_lines(int len) { // NB: len is positive or equal to 0
 		i++;
 	}
 }
-'''
+```
 
 **4 lines**
-'''c
+```c
 int draw_lines(int len) {
 	int i = -1;
 
 	while (++i < len && puts("Looping"))
 		draw_line(i);
 }
-'''
+```
 
 **2 lines**
-'''c
+```c
 int draw_lines(int len) {
 	while (--len >= 0 && puts("Looping")) // it works
 		draw_line(len); // NB: make sure that drawing backward does not impact algo
 }
-'''
+```
 
 **2 lines, with prototype modification (ugly)**
+```c
 int draw_lines(int len, int i) { // If you really need to call from 0 to len then you can also have i passed as a parameter = -1
 	while (++i < len && puts("Looping"))
 		draw_line(i);
 }
-
+```
 
 
 ---
@@ -283,10 +287,10 @@ In C the index of an array starts at 0. Because C does not perform boundary chec
 
 ```c
 #include <stdio.h>
+
 void    somefunction3(void)
 {
-    int a[5];
-
+    int a[5] = {1,3,5,7,9};
     printf("%d\n", a[5]);
 }
 ```
@@ -372,7 +376,7 @@ int main(void) {
 	return 0;
 }
 ```
-PS: will you be able to fix this code ?
+*PS: will you be able to fix this code ?*  
 
 Also classic with lists:  you have a loop and its crucial condition that allows the function to return, but used an assignation instead of comparison
 ```c
@@ -448,13 +452,9 @@ int somefunction(int y_max, int x_max, int array[y_max][x_max]);
         while (x < x_max)
         {
             if (array[y][x-1] > array[y][x]) // don't you see there is a problem ?
-            {
                 array[y][x] = array[y][x-1];
-            }
             if (array[y+1][x] > array[y][x]) // don't you see there is another problem ?
-            {
                 array[y][x] = array[y+1][x];
-            }
         }
 
     }
@@ -530,6 +530,9 @@ int main(void) {
 ### 0x03 Modifying value of a local variable given as function parameter
 
 Local variable value are allocated on the stack, which is cleaned once you exit the function.
+
+#### Useless variable change
+
 ```c
 void increment_a(int a)
 {
@@ -543,6 +546,8 @@ int solve(void)
     increment_a(a);
 }
 ```
+
+#### Useful variable change
 
 Hence if you want to modify a value you either have to use a pointer to the memory address:
 ```c
@@ -563,7 +568,7 @@ or return the local value:
 ```c
 int increment_a(int a)
 {
-    return a+1;
+    return a + 1;
 }
 
 int solve(void)
@@ -736,8 +741,45 @@ int main()
 
 You cannot change what you have declared as const.
 
+
 ---
-### 0x0B Wrong usage of pointers
+### OXOB Carefully use define preprocessor macros
+
+```c
+#include <stdio.h>
+
+#define MAX(a,b)	a > b ? a : b
+
+int main(void) {
+	int a = 5;
+	int b = 42;
+	int c = 40 +  MAX(a,b);
+	
+	printf("%d\n", c);
+	return 0;
+}
+```
+
+This will return 5, becaure the compiler understand it as :
+```c
+int main(void) {
+	int a = 5;
+	int b = 42;
+	int c = 40 + 5 > 42 ? 5 : 42; // if 47 > 42 then c = a (5) , else c = b (42);
+	...
+}
+```
+
+The correct usage is to always encapsulate your ```#define``` with brackets to make sure it works as intended:
+```c
+#define MAX(a,b)	(a > b ? a : b)
+```
+
+That said you should avoid using define who act like functions in the first place.
+
+
+---
+### 0x0C Wrong usage of pointers
 
 Pointers are the memory location of the value of this variable
 
@@ -1220,8 +1262,8 @@ git push -u origin master
 
 It can be done easily using the following command line
 ```
-git add README.md
-&& git commit --amend --no-edit
+git add README.md \
+&& git commit --amend --no-edit \
 && git push --force
 ```
 **NB: Beware because it will destroy the previous commit with all what it implies**
@@ -1343,10 +1385,11 @@ Book | **[The Hitchhiker's Guide to the Galaxy](https://www.goodreads.com/book/s
 Movie | **[Matrix](https://en.wikipedia.org/wiki/The_Matrix)** | :two_hearts: | *by the Wachowskis*
 
 ---
-## :gem: Curated list of recommended Manuals, Books, Videos, Blog Articles and Tutorials
+## :earth_asia: Curated list of Manuals, Books, Videos, Articles and Tutorials
 
 *Only petty thieves would google "torrent" or "pdf" keywords, real Gentlemen would purchase a digital copy*
 
+---
 ### 0x00 C Knowledge
 
 > **C is [quirky](https://en.wiktionary.org/wiki/quirky), flawed, and an enormous success** ― *[Dennis Ritchie, Creator of the C language](https://en.wikipedia.org/wiki/Dennis_Ritchie)*
@@ -1354,24 +1397,26 @@ Movie | **[Matrix](https://en.wikipedia.org/wiki/The_Matrix)** | :two_hearts: | 
 Title | How Interesting | Author
 ---|---|---
 **[The C Programming Language 2nd Ed Subsequent Edition](https://www.goodreads.com/book/show/515601.The_C_Programming_Language)** | :two_hearts: | *by Brian Kernighan and Dennis Ritchie*
-**[Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)** | :star: | *StackOverFlow*
 **[Obscure C Features](https://multun.net/obscure-c-features.html)** | :star::star::star::star::star: | *[by Multun](https://github.com/multun)*
 **[Characters, Symbols and the UTF-8 Miracle - Computerphile](https://www.youtube.com/watch?v=MijmeoH9LT4)** | :star::star::star::star: | *by Tom Scott*
 **[Automatic Vectorization](https://www.codingame.com/playgrounds/283/sse-avx-vectorization/autovectorization)** | :star::star::star::star: | *[by Marchete](https://github.com/marchete)*
 **[Writing Solid Code](http://cs.brown.edu/courses/cs190/2008/documents/restricted/Writing%20Solid%20Code.pdf)** | :star::star::star::star: | *by Steve Maguire*
 **[The Practice of Programing](http://index-of.co.uk/Etc/The.Practice.of.Programming.-.B.W..Kernighan..pdf)** | :star::star::star: | *by Brian W. Kernighan and Rob Pike*
 **[Duff's Device](http://www.lysator.liu.se/c/duffs-device.html)** | :star::star::star: | *by Tom Duff*
+**[Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)** | :star: | *StackOverFlow*
 
 
+---
 ### 0x01 Algorithm
 
 Title | How Interesting | Author
 ---|---|---
-**[A curated list of Awesome Competitive Programming](https://codeforces.com/blog/entry/23054)** | :star::star::star: | *by Inishan (Jasmine Chen)*
 **[Nailing the Coding Interview](https://github.com/agavrel/Nailing-the-Coding-Interview)** | :kr: | *by Antonin Gavrel*
+**[A curated list of Awesome Competitive Programming](https://codeforces.com/blog/entry/23054)** | :star::star::star: | *by Inishan (Jasmine Chen)*
 **[A tour of the top 5 sorting algorithms with Python code](https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889)** | :star::star: | *by George Seif*
 
 
+---
 ### 0x02 Bits
 
 > **The word bit is a contraction of binary digit that was coined by the statistician John Tukey in the mid 1940s** ― *Brian W. Kernighan, D Is for Digital*
@@ -1383,6 +1428,7 @@ Title | How Interesting | Author
 **[De Bruijn Sequence](https://www.chessprogramming.org/De_Bruijn_Sequence)** | :star::star:
 
 
+---
 ### 0x03 Network
 
 > **I would tell you a joke about UDP but I’m afraid you wouldn’t get it**
@@ -1390,10 +1436,11 @@ Title | How Interesting | Author
 Title | How Interesting | Author
 ---|---|---
 **[Next Generation Kernel Network Tunnel - WireGuard](https://www.wireguard.com/papers/wireguard.pdf)** | :two_hearts: | by JA Donenfeld |
-**[TCP Meltdown](https://www.youtube.com/watch?v=AAssk2N_oPk)** | :star::star: | *by Computerphile*
 **[Onion Routing](https://www.youtube.com/watch?v=QRYzre4bf7I)** | :star::star::star::star: | *by Computerphile*
+**[TCP Meltdown](https://www.youtube.com/watch?v=AAssk2N_oPk)** | :star::star: | *by Computerphile*
 
 
+---
 ### 0x04 Hacking & Security
 
 > **Never underestimate the determination of a kid who is time-rich and cash-poor.** ― *Cory Doctorow, Little Brother*
@@ -1410,6 +1457,7 @@ Title | How Interesting | Author
 **[LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)** | :star::star:
 
 
+---
 ### 0x05 Computer Graphics
 
 Title | How Interesting | Author
@@ -1417,11 +1465,12 @@ Title | How Interesting | Author
 **[Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root)** | :two_hearts: | attributed to John Carmack (Quake III)
 **[3d Fractal Flame Wisps](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses)** | :star::star::star: | *[by Yujie Shu](https://www.semanticscholar.org/author/Yujie-Shu/11523322)*
 **[Geometry Caching Optimizations in Halo 5](https://www.youtube.com/watch?v=uYAjUOlEgwI)** | :star::star::star: | *by Zabir Hoque and Ben Laidlaw*
-**[Exponentiation by Squaring](https://en.wikipedia.org/wiki/Exponentiation_by_squaring)**  | :star: | *Wikipedia*
 **[Light and Shadows in Graphics](https://www.youtube.com/watch?v=LUjXAoP5GG0)** | :star::star: | *by Tom Scott*
 **[Screen Space Ambient Occlusion Tutorial](http://john-chapman-graphics.blogspot.com/2013/01/ssao-tutorial.html)** | :star::star: | *by Tom Scott*
+**[Exponentiation by Squaring](https://en.wikipedia.org/wiki/Exponentiation_by_squaring)**  | :star: | *Wikipedia*
 
 
+---
 ### 0x06 Computer Vision & AI
 
 Title | How Interesting | Author
@@ -1429,6 +1478,7 @@ Title | How Interesting | Author
 **[OpenCV Tutorial](https://docs.opencv.org/2.4/opencv_tutorials.pdf)** | :star::star::star:
 
 
+---
 ### 0x07 C++ Optimization
 
 > **C++ is a horrible language. It's made more horrible by the fact that a lot of substandard programmers use it, to the point where it's much much easier to generate total and utter crap with it** ― *Linus Torvalds 2007*
@@ -1443,6 +1493,7 @@ Title | How Interesting | Author
 **[CppCon 2018 “High-Radix Concurrent C++”](https://www.youtube.com/watch?v=75LcDvlEIYw)** | :star::star::star: | *Olivier Giroux*
 
 
+---
 ### 0x08 Assembly Optimization
 
 > **People say that you should not micro-optimize. But if what you love is micro-optimization... that's what you should do** ― *Linus Torvalds*
@@ -1457,6 +1508,8 @@ Title | How Interesting | Author
 **[The Art of Assembly Language](http://www.staroceans.org/kernel-and-driver/The.Art.of.Assembly.Language.2nd.Edition.pdf)** | :star::star: | *by Randal Hyde*
 **[GDB Tutorial](https://www.cs.cmu.edu/~gilpin/tutorial/)** | :star::star: | *by Andrew Gilpin*
 
+
+---
 ### 0x09 Functional Programing *[by Leonard Marquez](https://github.com/keuhdall)*
 
 > **A monad is just a monoid in the category of endofunctors, what's the problem?** ― *James Iry*
@@ -1471,6 +1524,7 @@ Title | How Interesting | Author
 **[Martin Odersky's Scala course](https://www.coursera.org/learn/progfun1)** | :star::star: | *by Martin Odersky*
 
 
+---
 ### 0x0A Misc
 
 > **Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?** ― *Brian W. Kernighan*
@@ -1480,10 +1534,10 @@ Title | How Interesting | Author
 **[A Super Mario 64 decompilation](https://github.com/agavrel/sm64)** | :star::star::star::star::star: | *by a bunch of clever folks*
 **[Vim 101 Quick Movement](https://medium.com/usevim/vim-101-quick-movement-c12889e759e0)** | :star::star::star::star: | *Alex R. Young*
 **[Math for Game Programmers: Dark Secrets of the RNG](https://www.youtube.com/watch?v=J5qnnxFoBss)** | :star::star::star: | *by Shay Pierce*
+**[Clean Code](https://www.investigatii.md/uploads/resurse/Clean_Code.pdf)** | :star::star::star: | *by Robert C. Martin*
 **[Why Java Suck](https://tech.jonathangardner.net/wiki/Why_Java_Sucks)** | :star: | *by Jonathan Gardner*
 **[XOR Linked List – A Memory Efficient Doubly Linked List](http://en.wikipedia.org/wiki/XOR_linked_list)** | :star: | *Wikipedia* 
 **[XOR Linked List – C Implementation](https://stackoverflow.com/questions/3531972/c-code-for-xor-linked-list)** | :star: | *StackOverFlow*
-**[Clean Code](https://www.investigatii.md/uploads/resurse/Clean_Code.pdf)** | :star::star::star: | *by Robert C. Martin*
 
 
 --- 
@@ -1507,6 +1561,8 @@ Title | How Interesting | Author
 *Show your appreciation by starring the repo, sharing on slack, RT and 'lache un com magueule' skyblog™*
 
 ![Kimg Jeong Un applauding](https://raw.githubusercontent.com/agavrel/42_CheatSheet/master/meme/applauses.gif)
+
+> 잘했어 동무 계속 [배우자](https://www.youtube.com/watch?v=ukBcC-sK3wQ) ― *Good Job Comrade, let's keep studying*
 
 ---
 ## :musical_score: Author
