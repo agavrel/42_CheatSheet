@@ -1,6 +1,6 @@
 # 42 School Cheat Sheet by [agavrel](https://www.github.com/agavrel)
 
-## :two_hearts: *Intended for 42 alumni, current students and candidates
+## :two_hearts: Intended for 42 alumni, current students and candidates
 
 > **Truth can only be found in one place: the code** – *Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship*
 
@@ -9,32 +9,35 @@
 
 > 42 is more than just a disruptive educational model and coding school. What makes us unique and a major player in the tech world are the defining characteristics of the 42 culture. Every element of 42 shows our culture, from the students, to the curriculum structure and content, to the $0 tuition and innovative admissions process.
 
-That's right, the school is FREE, originally funded and founded in Paris by generous philanthropist billionaire [Xaviel Niel](https://en.wikipedia.org/wiki/Xavier_Niel)
+That's right, the school is FREE, originally funded and founded in Paris by generous **philanthropist billionaire [Xaviel Niel](https://en.wikipedia.org/wiki/Xavier_Niel)**.
 
 > **I'm not unusual; it's the others who are strange** ― *Xavier Niel*
 
-Most of the entrance exam and early cursus is done in C language.  
+There are no teachers but a pedagogic team, if you dare to ask them any question they will send you back to [RTFM](https://en.wikipedia.org/wiki/RTFM).
+
+![RTFM meme](https://i.kym-cdn.com/photos/images/newsfeed/000/017/668/Mao_RTFM_vectorize_by_cmenghi.png?1318992465)
+
+Most of the entrance exam and early cursus is done in [C language](https://en.wikipedia.org/wiki/C_(programming_language)).  
 
 > **Nevertheless, C retains the basic philosophy that programmers know what they are doing; it only requires that they state their intentions explicitly.** ― *Brian W. Kernighan, The C Programming Language*
 
+C is the most pedagogic programming language you can learn as it allows to understand the basis of programming from simple concepts like **conditions** {if, elseif, else}, **loops** {while, do while, for}, **write system calls** and **pointers** to more advanced one like **function pointers** and **memory allocation**.
 
-C is the the most pedagogic programming language you can learn as it allows to understand the basis of programming from simple concepts like Conditions {if, elseif, else}, loops {while, do while, for} and pointers to more advanced one like function pointers and memory allocation.
-
-Later on you can specialize in other languages: Python will suit data scientists and devops, javascript for frontend developers and C# for those looking for a career in finance.
+Later on you can specialize in other languages: Python will fit data scientists and devops, javascript for frontend developers and C# for those looking for a career in finance.
 
 ---
 ## What you will learn
 
 > **When you say 'I wrote a program that crashed Windows,' people just stare at you blankly and say 'Hey, I got those with the system, for free.'** ― *Linus Torvalds*
 
-You will learn how to do what Muggles were only able to do accidentally.
+You will learn how to do what [Muggles](https://en.wikipedia.org/wiki/Muggle) were only able to do accidentally.
 
 ---
 ## :coffee: For Candidates: About the "Piscine"
 
 > **If you're going through hell, keep going.** ― *Winston Churchill*
 
-The piscine is the entrance exam that consists of **4 weeks fully dedicated at coding**, solving exercises and submitting group and solo projects.  
+The piscine is the entrance exam that consists of **4 weeks fully dedicated to coding**, solving exercises and submitting solo and group projects to peer review.  
 
 
 ---
@@ -43,7 +46,7 @@ The piscine is the entrance exam that consists of **4 weeks fully dedicated at c
 **It does not matter if you fail a project, an exam or a day as long as you keep striving**. Someone who has never been interested before in Computer Science would never be able to complete everything in time, yet he will not prevent from being successful.
 
 ### My guess on the success criteria
-* **0x00 Come as you are** ... or forget this shit and prepare a little bit with [subjects on github](https://github.com/Binary-Hackers/42_Subjects/tree/master/01_Piscines/C/EN), courtesy of my friend binary hacker.
+* **0x00 Come as you are** ... or forget this bullshit and prepare a little bit with [subjects on github](https://github.com/Binary-Hackers/42_Subjects/tree/master/01_Piscines/C/EN), courtesy of my friend binary hacker.
 
 * **0x01 Prepare to nail the exams** on the 4 exams session, knowing that the 3 firsts exams are limited in term of how far you can go and it is not a big deal to miss the first 3 exams as the most important is IMHO the maximum level you can reach. **Succeeding the first 4 exercises (36 pts)** should be enough to make sure you quality.
 
@@ -59,7 +62,7 @@ The piscine is the entrance exam that consists of **4 weeks fully dedicated at c
 
 * **0x06 Be aware of the different rules** : Many things are forbidden like declaring and assigning a variable in the same line, using printf or using for loops. The daily assignment must be pushed on git before Day + 1 at 11pm42.
 
-* **0x07 [Boys Only] Don't waste time flirting** : For some who have been living in the basement of their parents' house for years it is a good opportunity to see what a girl looks like in real life. Nevertheless, this is not the right time
+* **0x07 [Boys Only] Don't waste time flirting** : For some who have been living in the basement of their parents' house for years it is a good opportunity to see what a girl looks like in real life. Nevertheless, you have to under that 1/this is not the right time and place to do so.
 
 * **0x08 You can sleep in the school during the selection** - *I recommended you to not do it, you will have very poor sleep.* - If you still go for it here is a list of essential items you should bring: **a toothpaste, a toothbrush, a soap and a towel on top of your phone, charger and mattress. Oh and a credit card also, unless you prefer to bring 10kg of cookies**
 
@@ -188,7 +191,6 @@ Next you should **study the different concepts in programming**, especially spen
 ---
 ## For Accepted Students
 
-
 ---
 ### 0x00 42 Projects Guides
 
@@ -209,7 +211,7 @@ Next you should **study the different concepts in programming**, especially spen
 |Wolfenstein 3d|Computer Graphics|Raytracing, Rotation|[About the original Wolfenstein 3d](https://en.wikipedia.org/wiki/Wolfenstein_3D)|
 |NmOtool|System|Symbol Table, .dll .so|[Implement List the symbols in a .so file](https://stackoverflow.com/questions/34732/how-do-i-list-the-symbols-in-a-so-file)
 |LibftAsm|System|x86 Assembly Instructions|[Refer to the Intel Bible](https://software.intel.com/en-us/articles/intel-sdm)
-|Particles System|Computer Graphics|[simulate certain kinds of "fuzzy" phenomena](https://en.wikipedia.org/wiki/Particle_system)
+|Particles System|Computer Graphics|Graphics Effects|[simulate certain kinds of "fuzzy" phenomena](https://en.wikipedia.org/wiki/Particle_system)
 
 ---
 ### 0x01 Choosing your Path
@@ -428,9 +430,7 @@ if the current link of list is null you will get a segfault. The correct way is 
 void somefunction(t_list *list)
 {
     if (list && list->next) // if both list and list->next exist
-    {
         list = list->next->next;
-    }
 }
 ```
 
@@ -474,8 +474,60 @@ x = 1;
 while (y < y_max - 1)
 ```
 
+Another example
+```c
+int main(void) {
+	const int x_max = 3;
+	const int y_max = 3;
+	int a[y_max][x_max];
+	
+	for (int y = 0; y < y_max; y++)
+    	for (int x = 0; x < x_max; x++)
+			a[y+6][x] = x + y;
+}
+```
+
 ---
-### 0x01 Modifying value of a local variable given as function parameter
+### 0x01 Bus error
+
+Occur when your processor cannot even attempt the memory access requested, like trying to access an address that does not satisfy its alignment requirements.
+```c
+int main(void) {
+	const int x_max = 3;
+	const int y_max = 3;
+	int a[y_max][x_max];
+	
+	for (int y = 0; y < y_max; y++)
+    	for (int x = 0; x < x_max; x++)
+			a[y][x] = a[x] + a[y];
+}
+```
+
+
+---
+### 0x02 Stack smashing
+
+See below in the recommended books the one by Aleph One, how you can make use of such "error"
+```c
+int main(void) {
+	const int x_max = 3;
+	const int y_max = 3;
+	int a[y_max][x_max];
+	
+	for (int y = 0; y < y_max; y++)
+    	for (int x = 0; x < x_max; x++)
+        	a[y][x] = x + y;
+
+	for (int y = 0; y < y_max; y++) {
+    	for (int x = 0; x < x_max; x++) {
+        	a[y+6][x] += a[y][x];
+    	}
+	}
+}
+```
+
+---
+### 0x03 Modifying value of a local variable given as function parameter
 
 Local variable value are allocated on the stack, which is cleaned once you exit the function.
 ```c
@@ -522,7 +574,7 @@ int solve(void)
 }
 ```
 
-### 0x02 Unprotected malloc
+### 0x04 Unprotected malloc
 
 Do NOT leave a malloc unprotected:
 ```c
@@ -567,19 +619,27 @@ int somefunction(void)
 ```
 
 ---
-### 0x03 Freeing memory that has already been fred
+### 0x05 Freeing memory that has already been fred
 
 In the previous example, if you don't need the variable matrix anymore you can free it.  
 
 However do not attempt to free twice or to free a stack based variable:
 ```c
-free(matrix);
-free(matrix)
+int main(void) {
+	int *matrix;
+
+	if (!(matrix = malloc(sizeof(int) * 9)))
+		return 1; // NB: exceptionnally return 1 in the main, it means that an error occured
+	free(matrix); // OK
+	free(matrix) // Not OK
+
+	return 0; // return 0, the program run without error
+}
 ```
 
 
 ---
-### 0x04 Do Not use global variables
+### 0x06 Do Not use global variables
 
 > "Theory and practice sometimes clash. And when that happens, theory loses.  
 Every single time." ― Linus Torvalds
@@ -627,24 +687,26 @@ This is "legal" in 42 (it is not a global variable, it is a structure passed alo
 
 
 ---
-### 0x05 VLA - Variable Length Arrays
+### 0x07 VLA - Variable Length Arrays
+
+[Waiter! There's a VLA in my C!](http://ayekat.ch/blog/vla)
 
 The following example is a VLA and this is bad for many reasons, the most critical being that the memory is allocated on the stack which has a limited size.
 ```c
 int somefunction(int y, int x, int array[y][x]);
 ```
-[Waiter! There's a VLA in my C!](http://ayekat.ch/blog/vla)
-
+My peer reviewer: "wow [your filler](https://github.com/agavrel/42-filler) run so fast!"
+Me: "really ?" (how to tell them that it was not compliant with the norm? :D)
 
 ---
-### 0x06 Using ft_ prefix for all functions
+### 0x08 Using ft_ prefix for all functions
 
 *ft_* should only be added to functions you want to re-use through different projects (and add to your personal library, the libft project) not for specific program functions.
 
 
 ---
-### 0x07 [Usage of Sequence Point](https://en.m.wikipedia.org/wiki/Sequence_point)
-```
+### 0x09 [Usage of Sequence Point](https://en.m.wikipedia.org/wiki/Sequence_point)
+```c
 #include <unistd.h>
 
 int main()
@@ -658,6 +720,82 @@ int main()
 ```
 Guess what will be printed.
 
+
+---
+### 0x0A Assignment of read-only location
+```c
+int main()
+{
+	const char s[20] = "hello world";
+	*s = 'a';
+	s[0] = 'b';
+
+	return 0;
+}
+```
+
+You cannot change what you have declared as const.
+
+---
+### 0x0B Wrong usage of pointers
+
+Pointers are the memory location of the value of this variable
+
+An example with ft_swap
+
+#### The wrong way to use pointers
+```c
+void ft_swap(int *a, int *b)
+{
+	int *tmp;
+
+	*tmp = *a;
+	*a = *b;
+	*b = *tmp;
+}
+```
+
+This will segfault, because you declared tmp as a pointer, but what you want is tmp to store the value of the memory address of a.
+
+#### The correct way to use pointers
+```c
+void ft_swap(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+```
+
+#### Swapping without using another variable
+```c
+=void ft_swap(int *a, int *b)
+{
+	*a ^= *b;		// a = a - b
+	*b ^= *a;		// b = b - (a - b) = a
+	*a = *b ^ *a;	// a = a - (a - b) = b
+	
+}
+```
+If you like it you can [learn more about bitwise operations here](https://github.com/agavrel/42-Bitwise_Operators)
+
+#### Main to test above functions
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	int a = 5;
+	int b = 42;
+
+	printf("a: %d \t b: %d\n", a, b);
+	ft_swap(&a, &b);
+	printf("a: %d \t b: %d\n", a, b);
+	return 0;
+}
+```
 
 ---
 ## :snowflake: Clean Code
@@ -1078,11 +1216,13 @@ git push -u origin master
 
 #### Change last commit without changing message
 
+> 
+
 It can be done easily using the following command line
 ```
 git add README.md
-git commit --amend --no-edit
-git push --force
+&& git commit --amend --no-edit
+&& git push --force
 ```
 **NB: Beware because it will destroy the previous commit with all what it implies**
 
@@ -1366,6 +1506,7 @@ Title | How Interesting | Author
 ## Liked it ?
 *Show your appreciation by starring the repo, sharing on slack, RT and 'lache un com magueule' skyblog™*
 
+![Kimg Jeong Un applauding](https://raw.githubusercontent.com/agavrel/42_CheatSheet/master/meme/applauses.gif)
 
 ---
 ## :musical_score: Author
