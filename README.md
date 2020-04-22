@@ -892,6 +892,35 @@ int main(void)
 }
 ```
 
+---
+### 0x0E Undefined Behavior
+
+Undefined behavior means that the result is **as much unpredictable as a [pangolin](https://en.wikipedia.org/wiki/Pangolin) sneezing in some faraway country**. *You don't want to have your program depending on it.*
+
+```c
+#include <stdio.h>
+
+char omg(char i) {
+return ++i + ++i + ++i + ++i + ++i + ++i + ++i \
+ 	+ ++i + ++i + ++i + ++i + ++i + ++i + ++i \
+ 	+ ++i + ++i + ++i + ++i + ++i + ++i + ++i \
+ 	+ ++i + ++i + ++i + ++i + ++i + ++i + ++i \
+ 	+ ++i + ++i + ++i + ++i + ++i + ++i + ++i \
+ 	+ ++i + ++i + ++i + ++i + ++i + ++i + ++i \
+ 	+ ++i + ++i + ++i + ++i + ++i + ++i + ++i \
+ 	+ ++i + ++i + ++i + ++i + ++i + ++i -5;
+}
+
+
+int main(int argc, char **argv) {
+	unsigned char i = omg(i);
+
+	if (i++ > 254)
+		printf("%d\n", ++i);
+}
+```
+*Try guessing the output*
+
 
 ---
 ## :snowflake: Clean Code
@@ -1252,6 +1281,11 @@ D5D			delete 5 rows
 w			save file
 q			quit file
 :vs {file location}		open another file on the side
+:ws			save and quit
+ZZ			save and quit
+:x			save and quit
+:q!			quit without change
+ZQ			quit without change
 ```
 
 #### Visual Studio Code
@@ -1434,7 +1468,7 @@ Then
 
 Format | Title | How Interesting | Author
 ---|---|---|---
-Book | **[Fondation](https://en.wikipedia.org/wiki/Foundation_series)** | :two_hearts: | *by Isaac Asimov*
+Book | **[The Foundation](https://en.wikipedia.org/wiki/Foundation_series)** | :two_hearts: | *by Isaac Asimov*
 Book | **[The Hitchhiker's Guide to the Galaxy](https://www.goodreads.com/book/show/841628.The_Hitchhiker_s_Guide_to_the_Galaxy)** | :two_hearts: | *by Douglas Adams*
 Movie | **[Matrix](https://en.wikipedia.org/wiki/The_Matrix)** | :two_hearts: | *by the Wachowskis*
 
@@ -1456,7 +1490,9 @@ Title | How Interesting | Author
 **[Automatic Vectorization](https://www.codingame.com/playgrounds/283/sse-avx-vectorization/autovectorization)** | :star::star::star::star: | *[by Marchete](https://github.com/marchete)*
 **[Writing Solid Code](http://cs.brown.edu/courses/cs190/2008/documents/restricted/Writing%20Solid%20Code.pdf)** | :star::star::star::star: | *by Steve Maguire*
 **[The Practice of Programing](http://index-of.co.uk/Etc/The.Practice.of.Programming.-.B.W..Kernighan..pdf)** | :star::star::star: | *by Brian W. Kernighan and Rob Pike*
+**[Modern C](https://gforge.inria.fr/frs/download.php/file/38170/ModernC.pdf)** | :star::star::star: | *by Jens Gustedt*
 **[Duff's Device](http://www.lysator.liu.se/c/duffs-device.html)** | :star::star::star: | *by Tom Duff*
+**[Structure Packing](http://www.catb.org/esr/structure-packing/)** | :star::star::star: | *by Eric S. Raymond*
 **[Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)** | :star: | *StackOverFlow*
 
 
@@ -1592,6 +1628,122 @@ Title | How Interesting | Author
 **[Why Java Suck](https://tech.jonathangardner.net/wiki/Why_Java_Sucks)** | :star: | *by Jonathan Gardner*
 **[XOR Linked List – A Memory Efficient Doubly Linked List](http://en.wikipedia.org/wiki/XOR_linked_list)** | :star: | *Wikipedia* 
 **[XOR Linked List – C Implementation](https://stackoverflow.com/questions/3531972/c-code-for-xor-linked-list)** | :star: | *StackOverFlow*
+
+
+---
+## Tutorial
+
+---
+### 0x00 Buffer Overflow
+
+#### Introduction
+
+Let's take a look at the function strcpy, shall we? Type ```man strcpy``` in your terminal:
+
+> *The  strcpy() function copies the string pointed to by src, including the terminating null byte ('\0'), to the buffer pointed to by dest.  The strings may not overlap, and the destination string dest must be large enough to receive the copy.  Beware of buffer overruns!  **(See BUGS.)***
+
+**NB: Usage of brackets for what is considered as one of the most critical security flaw in the world**
+
+> ***BUGS:**  
+If  the  destination  string of a strcpy() is not large enough, then anything might happen ― **NB: Undefined Behavior**.  Overflowing fixed-length string buffers is a favorite cracker technique for taking complete control of the machine.  Any time a program reads or copies data into a buffer, the program first needs to  check  that  there's  enough  space. This may be unnecessary if you can show that overflow is impossible, but be careful: programs can get changed over time, in ways that may make the impossible possible.*
+
+```c
+#include <string.h>
+#include <stdio.h>
+
+int main(void) {
+	char s[11];
+
+	strcpy(s, "hello world");
+	puts(s);	
+
+	return 0;
+}
+```
+
+While this look okay if you count each letter, if you happen to read again the definition of strcpy (just above) you will notice: 
+> ***including the terminating null byte ('\0')***
+
+So you are trying to copy 12 characters in fact, into a 11 characters buffer. You will get the nice message:
+
+```bash
+In function ‘main’:
+warning: ‘__builtin_memcpy’ writing 12 bytes into a region of size 11 overflows the destination [-Wstringop-overflow=]
+strcpy(s, "hello world");
+```
+
+In fact all functions that you will find in [```#include <banned.h>```](https://github.com/git/git/blob/master/banned.h) represent potential security risks and should be avoided as much as possible.
+
+#### Buffer overflow to hijack a password
+
+```c
+#include <stdio.h>
+#include <string.h> // for strcmp, compare two strings and return 0 if they are equal
+
+char    *strcpy_until(char *dst, char *src, char until)
+{
+	int i = -1;
+
+	while (src[++i] != until)
+		dst[i] = src[i];
+    
+	return (dst);
+}
+
+int     main(int ac, char **av) {
+    int n = 5;
+    char password[] = "sarang hae"; // we don't know
+    char buffer[4] = "kkk";
+
+    if (ac != 2)
+        return 1;
+    printf("n equals %d\n", n);
+    printf("you would have never guessed, password was '%s'\n\n", password);
+    char *s = &buffer[3];
+    char shellcode[] = "\x42\x61\x67\x61\x76\x72\x65\x6c\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x2a\x00\x00\x01";
+    strcpy_until(s, shellcode, '\x01');
+    printf("n equals '%d'\n", n);
+    printf("password now equals: '%s'\n", password);
+
+    if (!strcmp(password, av[1])) {
+        printf("\nSuccessfully hacked user with password \e[1;5;92m%s\e[0m\n", password);        
+    }
+    return 0;
+}
+```
+*Would you have guessed the password?*  
+
+Some explanations:
+* ```strcpy_until``` will copy until a specific character, hence allowing to bypass the NULL that terminates the string
+* ```char shellcode[]``` can be used to, instead of just replacing value at memory addresses, execute the value that have been replaced. See next below...
+
+
+#### Shellcode Execution to get root access
+
+You will now have to compile with:
+```
+gcc -fno-stack-protector -z execstack a.c
+```
+
+* ```-fno-stack-protector a.c``` is to disable the [Stack-Guard mechanism](https://en.wikipedia.org/wiki/Buffer_overflow_protection)
+* Compiler make prevent stack from being executable and ```-z execstack``` reverse that protection.
+
+
+Last you will also **temporarily** disable randomize va space with:
+```
+sudo sysctl -w kernel.randomize_va_space=0
+```
+NB: You can use safer method ```setarch `uname -m` -R /bin/bash``` which is [more safe](https://askubuntu.com/questions/318315/how-can-i-temporarily-disable-aslr-address-space-layout-randomization)
+
+Once done with experiments do not forget to set back randomize back to normal:
+```
+sysctl -a --pattern "randomize" && \
+sudo sysctl -w kernel.randomize_va_space=2
+```
+
+{WIP}
+
+
 
 
 --- 
