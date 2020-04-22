@@ -232,13 +232,14 @@ All branchs are interesting and you should try to explore each branch's initial 
 ---
 #### Swindle the norminette *truander la norme*
 
-Only 25 lines ? No problem:
+*Only 25 lines ? No problem:*
 
-**8 lines**
+**9 lines**
 ```c
 int draw_lines(int len) { // NB: len is positive or equal to 0
-	int i = 0;
-
+	int i;
+	
+	i = 0;
 	while (i < len)
 	{
 		puts("Looping"); // NB: you will have to use your own function, ft_putstr, of course
@@ -248,11 +249,12 @@ int draw_lines(int len) { // NB: len is positive or equal to 0
 }
 ```
 
-**4 lines**
+**5 lines**
 ```c
 int draw_lines(int len) {
-	int i = -1;
+	int i;
 
+	i = -1;
 	while (++i < len && puts("Looping"))
 		draw_line(i);
 }
@@ -273,6 +275,28 @@ int draw_lines(int len, int i) { // If you really need to call from 0 to len the
 		draw_line(i);
 }
 ```
+
+---
+*Another one from lmarquez:*
+
+**5 lines**
+```c
+if (true)
+{
+	func1();
+	func2();
+}
+```
+
+**4 lines**
+```c
+if (true)
+	func1();
+if (true)
+	func2();
+```
+
+**NB: Please avoid as much as possible these tricks, it will make your program less efficient and hinder readability**
 
 
 ---
