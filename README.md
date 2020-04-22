@@ -803,7 +803,36 @@ That said you should avoid using define who act like functions in the first plac
 
 
 ---
-### 0x0C Wrong usage of pointers
+### 0x0C Comparing float and double
+
+```c
+#include <stdio.h>
+
+int main(void) {
+	double d = 1.1;
+	float f = 1.1;
+
+	if (f != d)
+		puts("float and double are different\n");
+	if (f != 1.1)
+		puts("Do not compare a float to an integer value\n");
+	if (d == 1.1)
+		puts("But that's okay for a double\n");
+	if (f == 1.1f)  // note the extra 'f' at the end
+		puts("This is how you compare a float to a float value\n");
+
+	return 0;
+}
+```
+
+They are represented differently. If you want to learn more about how they work take a look at [wikipedia](https://en.wikipedia.org/wiki/Double-precision_floating-point_format) or wach below video.  
+
+<a href="https://www.youtube.com/watch?v=PZRI1IfStY0" target="_blank"><img src="http://img.youtube.com/vi/PZRI1IfStY0/0.jpg"
+alt="Floating Point Numbers" width="240" height="180" border="10" /></a>
+
+
+---
+### 0x0D Wrong usage of pointers
 
 Pointers are the memory location of the value of this variable
 
@@ -862,6 +891,7 @@ int main(void)
 	return 0;
 }
 ```
+
 
 ---
 ## :snowflake: Clean Code
