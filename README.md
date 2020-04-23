@@ -230,11 +230,9 @@ All branchs are interesting and you should try to explore each branch's initial 
 
 
 ---
-#### Swindle the norminette *truander la norme*
+#### Swindle the norminette - *truander la norme*
 
-*Only 25 lines ? No problem:*
-
-**9 lines**
+**while loop** - *Only 25 lines ? No problem:*
 ```c
 int draw_lines(int len) { // NB: len is positive or equal to 0
 	int i;
@@ -248,8 +246,8 @@ int draw_lines(int len) { // NB: len is positive or equal to 0
 	}
 }
 ```
+**Originally 9 lines**
 
-**5 lines**
 ```c
 int draw_lines(int len) {
 	int i;
@@ -259,27 +257,28 @@ int draw_lines(int len) {
 		draw_line(i);
 }
 ```
+**Now 5 lines**
 
-**2 lines**
 ```c
 int draw_lines(int len) {
 	while (--len >= 0 && puts("Looping")) // it works
 		draw_line(len); // NB: make sure that drawing backward does not impact algo
 }
 ```
+**2 lines**
 
-**2 lines, with prototype modification (ugly)**
 ```c
 int draw_lines(int len, int i) { // If you really need to call from 0 to len then you can also have i passed as a parameter = -1
 	while (++i < len && puts("Looping"))
 		draw_line(i);
 }
 ```
+**2 lines, with prototype modification (ugly)**
+
 
 ---
-*Another one from lmarquez:*
+**If brackets** *by lmarquez*
 
-**5 lines**
 ```c
 if (true)
 {
@@ -287,17 +286,58 @@ if (true)
 	func2();
 }
 ```
+**5 lines**
 
-**4 lines**
 ```c
 if (true)
 	func1();
 if (true)
 	func2();
 ```
+**4 lines**  
 
-**NB: Please avoid as much as possible these tricks, it will make your program less efficient and hinder readability**
+**NB: Beware of these tricks, it could potentially make your program less efficient. In the above example you use two [branching instructions](https://en.wikipedia.org/wiki/Branch_(computer_science)) - *if* - instead of one and in the while example the -1 initialization and puts inside the while hinder readability**
 
+---
+**Write colorful usage** *by mrdotb*
+```c
+int	usage(void)
+{
+	static char usage_str[] =
+
+	GREEN"philo_one\n"RESET
+	"Simulation of the philosopher.\n\n"
+	YELLOW"USAGE:\n    "RESET
+	GREEN"philo_one "RESET
+	"number_of_philosopher time_to_die time_to_eat "
+	"time_to_sleep [number_of_time_each_philosophers_must_eat]\n\n"
+	YELLOW"ARGS:\n    "RESET
+	"All args must be positive integer\n";
+	ft_putstr_fd(usage_str, 1);
+	return (1);
+}
+```
+
+**Function Pointers** *by [mrdotb](https://github.com/mrdotb)*
+```c
+void			listen_keystroke(t_dlist **lst)
+{
+	char		buffer[8];
+	int			el;
+	static void	(*f[])(t_dlist **lst) = { lst_validate, lst_del_one,
+		lst_del_one, lst_move_left, lst_move_right, lst_move_up,
+		lst_move_down, lst_select, lst_esc, lst_void_ret};
+
+	ft_memset(buffer, 0, 8);
+	while (read(0, buffer, 8) != -1)
+	{
+		el = ft_chrmatch(buffer);
+		f[el](lst);
+		render(find_first(lst), 0);
+		ft_memset(buffer, 0, 8);
+	}
+}
+```
 
 ---
 ## :fire: Common Beginner Mistakes
@@ -1344,9 +1384,9 @@ git remote add origin git@github.com:agavrel/$reponame.git
 git push -u origin master
 ```
 
-#### Change last commit without changing message
+#### Change last commit without changing commit message
 
-> 
+> **I choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it** ― *Bill Gates*
 
 It can be done easily using the following command line
 ```
@@ -1464,16 +1504,22 @@ Then
 
 
 ---
-## :gem: Curated List of Science-Fiction Chef-d’œuvre
+## :rocket: Curated List of Science-Fiction Masterpieces
 
 Format | Title | How Interesting | Author
 ---|---|---|---
-Book | **[The Foundation](https://en.wikipedia.org/wiki/Foundation_series)** | :two_hearts: | *by Isaac Asimov*
-Book | **[The Hitchhiker's Guide to the Galaxy](https://www.goodreads.com/book/show/841628.The_Hitchhiker_s_Guide_to_the_Galaxy)** | :two_hearts: | *by Douglas Adams*
+Book | **[The Foundation](https://en.wikipedia.org/wiki/Foundation_series)** | :two_hearts: | *by [Isaac Asimov](https://en.m.wikipedia.org/wiki/Isaac_Asimov)*
+Book | **[The Hitchhiker's Guide to the Galaxy](https://www.goodreads.com/book/show/841628.The_Hitchhiker_s_Guide_to_the_Galaxy)** | :two_hearts: | *by [Douglas Adams](https://en.m.wikipedia.org/wiki/Douglas_Adams)*
+AudioBook | **[The Hitchhiker's Guide to the Galaxy](https://www.youtube.com/watch?v=dPbr0v_V-cI&list=PLYT7LhCzuTTdtIGcDOP-PPMxAWYo3qF5r&index=3&t=3167s)** | :two_hearts | *by Douglas Adams and read by Stephen Moore*
+Movie | **[Ready Player One](https://en.wikipedia.org/wiki/Ready_Player_One_(film))** | :two_hearts: | by *[Steven Spielberg](https://en.wikipedia.org/wiki/Steven_Spielberg)*
 Movie | **[Matrix](https://en.wikipedia.org/wiki/The_Matrix)** | :two_hearts: | *by the Wachowskis*
+Book | **[Hyperion](The Hitchhiker's Guide to the Galaxy)** | :star::star::star::star: | *by [Dan Simmons](https://en.m.wikipedia.org/wiki/Dan_Simmons)*
+Movie | **[War Games](https://en.wikipedia.org/wiki/WarGames)** | :star::star::star: | *directed by John Badham*
+Book | **[Elon Musk Biography](https://www.goodreads.com/book/show/25541028-elon-musk)** | :star::star::star::star::star: | *by Ashlee Vance*
+
 
 ---
-## :earth_asia: Curated list of Manuals, Books, Videos, Articles and Tutorials
+## :gem: Curated list of Manuals, Books, Videos, Articles and Tutorials
 
 *Only petty thieves would google "torrent" or "pdf" keywords, real Gentlemen would purchase a digital copy*
 
@@ -1540,12 +1586,13 @@ Title | How Interesting | Author
 **[Smashing The Stack For Fun And Profit](http://www-inst.eecs.berkeley.edu/~cs161/fa08/papers/stack_smashing.pdf)** | :two_hearts: | *by Aleph One*
 **[Breaking the x86 Instruction Set](https://www.youtube.com/watch?v=KrksBdWcZgQ)** | :star::star::star::star::star: | *[by Domas](https://github.com/xoreaxeaxeax)*
 **[Buffer Overflow, Race Condition, Input Validation, Format String](http://www.cis.syr.edu/~wedu/Teaching/cis643/schedule.html)** | :star::star::star::star: | *by Wenliang (Kevin) Du*
+**[Meltdown](https://meltdownattack.com/meltdown.pdf)** | :star::star::star::star: | *by Lipp, Schwarz, Gruss, Prescher, Haas, Mangard, Kocher, Genkin, Yarom, and Hamburg*
+**[Basic Linux Privilege Esclation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)** | :star::star::star: | *by g0tmi1k* 
 **[Secure Programming HOWTO](https://dwheeler.com/secure-programs/Secure-Programs-HOWTO.pdf)** | :star::star::star: | *by David A. Wheeler*
 **[Efficiently Generating Python Hash Collisions](https://www.leeholmes.com/blog/2019/07/23/efficiently-generating-python-hash-collisions/)** | :star::star:
 **[Stochastic Process Wikipedia](https://en.wikipedia.org/wiki/Stochastic_process)** | :star::star:
 **[Gimli: a cross-platform permutation](https://eprint.iacr.org/2017/630.pdf)** | :star::star:
 **[LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)** | :star::star:
-
 
 ---
 ### 0x05 Computer Graphics
@@ -1575,12 +1622,12 @@ Title | How Interesting | Author
 
 Title | How Interesting | Author
 ---|---|---
-**[C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features)**
 **[Optimizing software in C++](https://www.agner.org/optimize/optimizing_cpp.pdf)** | :two_hearts: | *by Agner Fog*
 **[Intel Intrinsics Guide](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)** *[What is it](https://en.wikipedia.org/wiki/Intrinsic_function)* | :star::star::star::star: | *Intel*
 **["Low Latency C++ for Fun and Profit"](https://www.youtube.com/watch?v=BxfT9fiUsZ4)** | :star::star::star::star: | *by Carl Cook*
 **[Why I Created C++](https://www.youtube.com/watch?v=JBjjnqG0BP8)** | :star::star::star: | *Bjarne Stroustrup*
 **[CppCon 2018 “High-Radix Concurrent C++”](https://www.youtube.com/watch?v=75LcDvlEIYw)** | :star::star::star: | *Olivier Giroux*
+**[C++ Features](https://github.com/AnthonyCalandra/modern-cpp-features)**| :star::star::star: | *by Anthony Calandra*
 
 
 ---
@@ -1590,9 +1637,10 @@ Title | How Interesting | Author
 
 Title | How Interesting | Author
 ---|---|---
-**[Optimizing subroutines in assembly x86 language](https://www.agner.org/optimize/optimizing_assembly.pdf)** | :two_hearts: | *by Agner Fog*
 **[Intel® 64 and IA-32 architectures software developer’s manual](https://software.intel.com/en-us/download/intel-64-and-ia-32-architectures-sdm-combined-volumes-1-2a-2b-2c-2d-3a-3b-3c-3d-and-4)** | :two_hearts: | *Intel*
+**[Optimizing subroutines in assembly x86 language](https://www.agner.org/optimize/optimizing_assembly.pdf)** | :two_hearts: | *by Agner Fog*
 **[Online Compiler Explorer](https://godbolt.org/)** | :star::star::star::star::star: | *by Godbolt*
+**[Online Assembler and Disassembler](https://defuse.ca/online-x86-assembler.htm#disassembly)** | :star::star::star::star: | *by [Taylor Hornby](https://github.com/defuse)*
 **[A Guide to inline assembly for C and C++](https://www.ibm.com/developerworks/rational/library/inline-assembly-c-cpp-guide/) | :star::star::star::star: | *by Salma Elshatanoufy and William O'Farrell*
 **[Tips for Golfing in x86/x64 Bytecode](https://codegolf.stackexchange.com/questions/132981/tips-for-golfing-in-x86-x64-machine-code)** | :star::star::star: | *by StackExchange*
 **[The Art of Assembly Language](http://www.staroceans.org/kernel-and-driver/The.Art.of.Assembly.Language.2nd.Edition.pdf)** | :star::star: | *by Randal Hyde*
@@ -1720,6 +1768,8 @@ Some explanations:
 
 #### Shellcode Execution to get root access
 
+> **When something is important enough, you do it even if the odds are not in your favor** ― *Elon Musk*
+
 You will now have to compile with:
 ```
 gcc -fno-stack-protector -z execstack a.c
@@ -1759,7 +1809,10 @@ sudo sysctl -w kernel.randomize_va_space=2
 
 ---
 ## :grey_question: Question ? Broken Link ? Wanna contribute ?
-*Email me or just submit a pull request*
+
+> **I think it's very important to have a feedback loop, where you're constantly thinking about what you've done and how you could be doing it better** ― *Elon Musk*
+
+*Raise an issue or even better: submit a pull request*
 
 
 ---
