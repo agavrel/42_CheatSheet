@@ -839,7 +839,7 @@ The correct usage is to always encapsulate your ```#define``` with brackets to m
 #define MAX(a,b)	(a > b ? a : b)
 ```
 
-That said you should avoid using define who act like functions in the first place.
+That said you should avoid using macros who act like functions in the first place. Also note that you should always capitalize macro names and const variables, it is a convention.
 
 
 ---
@@ -908,13 +908,14 @@ void ft_swap(int *a, int *b)
 ```c
 =void ft_swap(int *a, int *b)
 {
-	*a ^= *b;		// a = a - b
-	*b ^= *a;		// b = b - (a - b) = a
-	*a = *b ^ *a;	// a = a - (a - b) = b
+	*a ^= *b;		// (1) a = a ^ b
+	*b ^= *a;		// (2) b = b ^ (a ^ b) = a
+	*a ^= *b;		// (3) a = (a ^ b) ^ a  = b  // a was set to a^b (1) and b became a (2)
 	
 }
 ```
-If you like it you can [learn more about bitwise operations here](https://github.com/agavrel/42-Bitwise_Operators)
+**NB: if you xor a number by itself you set it to 0. ```a ^= a;``` is equivalent to ```a = 0;```**  
+*If you like it you can [learn more about bitwise operations here](https://github.com/agavrel/42-Bitwise_Operators)*
 
 #### Main to test above functions
 ```c
@@ -1535,10 +1536,14 @@ Title | How Interesting | Author
 **[Characters, Symbols and the UTF-8 Miracle - Computerphile](https://www.youtube.com/watch?v=MijmeoH9LT4)** | :star::star::star::star: | *by Tom Scott*
 **[Automatic Vectorization](https://www.codingame.com/playgrounds/283/sse-avx-vectorization/autovectorization)** | :star::star::star::star: | *[by Marchete](https://github.com/marchete)*
 **[Writing Solid Code](http://cs.brown.edu/courses/cs190/2008/documents/restricted/Writing%20Solid%20Code.pdf)** | :star::star::star::star: | *by Steve Maguire*
+**[Fast wc Multithread SIMD](https://github.com/expr-fi/fastlwc)** | :star::star::star::star: | *by [expr-fi](https://github.com/expr-fi)*
+**[OpenMP Multithreading Programming](https://bisqwit.iki.fi/story/howto/openmp/)** | :star::star::star::star: | *by Joel Yliluoma*
+**[Understanding lvalues and rvalues](https://eli.thegreenplace.net/2011/12/15/understanding-lvalues-and-rvalues-in-c-and-c/)** | :star::star::star::star: | *by Eli Bendersky*
 **[The Practice of Programing](http://index-of.co.uk/Etc/The.Practice.of.Programming.-.B.W..Kernighan..pdf)** | :star::star::star: | *by Brian W. Kernighan and Rob Pike*
 **[Modern C](https://gforge.inria.fr/frs/download.php/file/38170/ModernC.pdf)** | :star::star::star: | *by Jens Gustedt*
 **[Duff's Device](http://www.lysator.liu.se/c/duffs-device.html)** | :star::star::star: | *by Tom Duff*
 **[Structure Packing](http://www.catb.org/esr/structure-packing/)** | :star::star::star: | *by Eric S. Raymond*
+**[Cello, High Level Programming to C](https://github.com/orangeduck/Cello)** | :Star::star::star: | *by Daniel Holden*
 **[Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)** | :star: | *StackOverFlow*
 
 
@@ -1548,7 +1553,8 @@ Title | How Interesting | Author
 Title | How Interesting | Author
 ---|---|---
 **[Nailing the Coding Interview](https://github.com/agavrel/Nailing-the-Coding-Interview)** | :kr: | *by Antonin Gavrel*
-**[A curated list of Awesome Competitive Programming](https://codeforces.com/blog/entry/23054)** | :star::star::star: | *by Inishan (Jasmine Chen)*
+**[A curated list of Awesome Competitive Programming](https://codeforces.com/blog/entry/23054)** | :star::star::star::star: | *by Inishan (Jasmine Chen)*
+**[The Algorithm Design Manual](https://www.goodreads.com/book/show/425208.The_Algorithm_Design_Manual)** | :star::star::star::star: | *by Steven S. Skiena*
 **[A tour of the top 5 sorting algorithms with Python code](https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889)** | :star::star: | *by George Seif*
 
 
@@ -1588,6 +1594,7 @@ Title | How Interesting | Author
 **[Buffer Overflow, Race Condition, Input Validation, Format String](http://www.cis.syr.edu/~wedu/Teaching/cis643/schedule.html)** | :star::star::star::star: | *by Wenliang (Kevin) Du*
 **[Meltdown](https://meltdownattack.com/meltdown.pdf)** | :star::star::star::star: | *by Lipp, Schwarz, Gruss, Prescher, Haas, Mangard, Kocher, Genkin, Yarom, and Hamburg*
 **[Basic Linux Privilege Esclation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)** | :star::star::star: | *by g0tmi1k* 
+**[Network Protocol Fuzzing and Buffer Overflow](https://blog.own.sh/introduction-to-network-protocol-fuzzing-buffer-overflow-exploitation/) | :star::star::star::star: | *by Joey Lane*
 **[Secure Programming HOWTO](https://dwheeler.com/secure-programs/Secure-Programs-HOWTO.pdf)** | :star::star::star: | *by David A. Wheeler*
 **[Efficiently Generating Python Hash Collisions](https://www.leeholmes.com/blog/2019/07/23/efficiently-generating-python-hash-collisions/)** | :star::star:
 **[Stochastic Process Wikipedia](https://en.wikipedia.org/wiki/Stochastic_process)** | :star::star:
@@ -1681,8 +1688,194 @@ Title | How Interesting | Author
 ---
 ## Tutorial
 
+
 ---
-### 0x00 Buffer Overflow
+### 0x00 Aiming for the lowest latency
+
+When you want to aim for lowest latency - *i.e maximum speed* - there are many things that will improve your program to create a better binary: Optimization flag, parallelization, vectorization and carefully crafting your algorithm.
+
+
+#### Optimization flags
+
+Especially for Computer Graphics projects, you will want to turn on these optimization flags, [listed on gcc website](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html).
+
+> Without any optimization option, the compiler’s goal is to reduce the cost of compilation and to make debugging produce the expected results. Statements are independent: if you stop the program with a breakpoint between statements, you can then assign a new value to any variable or change the program counter to any other statement in the function and get exactly the results you expect from the source code.
+Turning on optimization flags makes the compiler attempt to improve the performance and/or code size at the expense of compilation time and possibly the ability to debug the program.
+
+**To use it simply compile the program with:**
+```
+gcc -O2 a.c
+```
+NB: It is the letter 'o' and not a zero. You may also use O3.
+
+
+#### Multithreading and Parallelization
+
+The historical (and current) approach is to add more power via [multithreading](https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)), [multiprocessing](https://en.wikipedia.org/wiki/Multiprocessing), [Grid Computing](https://en.wikipedia.org/wiki/Grid_computing) or even [Cloud Computing](https://en.wikipedia.org/wiki/Cloud_computing). Two libraries exist for this use: [OpenMP](https://www.openmp.org/wp-content/uploads/openmp-examples-4.5.0.pdf) and [pthread](http://man7.org/linux/man-pages/man7/pthreads.7.html), you will have to compile respectively with:
+```
+gcc -fopenmp -O3 a.c
+```
+and:
+```
+gcc -pthread -O3 a.c
+```
+
+
+#### [Vectorization](https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions)
+
+> Modern graphics processing units (GPUs) are often wide SIMD implementations, capable of branches, loads, and stores on 128 or 256 bits at a time.
+Intel's latest AVX-512 SIMD instructions now process 512 bits of data at once.
+
+As a double is 64 bits - *i.e 8 bytes or octets* - **instead of iterating overs value 1 by 1, you will be able to compute up to 8 double at the time** - *i.e 512 / 64* - if your computer support it (but most likely, as of 2020, your computer will only handle 256 bits register).
+
+**Vectorization the most efficient way to quickly gain performance gains without the overhead of threads' initialization**.
+
+**Demonstration: Getting Min and Max value from a float array**
+```c
+/* Vectorization example by agavrel */
+#include <stdio.h>  // printf
+#include <stdlib.h> // rand()
+#include <time.h>   // time
+#include <xmmintrin.h>  // 128 bits register _m128
+
+float m128_max_float(__m128 src) {
+    __m128 n[4];
+
+	// a) n[0] = src >> 64                                  So lets say src is composed of floats a b c d, it becomes 0 0 a b
+    n[0] = _mm_shuffle_ps(src, src, _MM_SHUFFLE(0,0,3,2));
+	// b) n[1] = {max(a,0), max(b,0) max(a,c) max(b,d)}     NB: actually we don't care about the two highest float at this point, I will call them 'x': {x, x max(a,c) max(b,d)}
+    n[1] = _mm_max_ps(src, n[0]);                             
+	// c) n[2] = n[1] >> 32                                 So n2 become {0 x x max(a,c)}
+    n[2] = _mm_shuffle_ps(n[1], n[1], _MM_SHUFFLE(0,0,0,1));
+	// d) n[3] = {x x x max(max(a,c), max(b,d))}
+    n[3] = _mm_max_ps(n[1], n[2]);                            
+
+    return _mm_cvtss_f32(n[3]);   // d) Hence max(a,b,c,d), stored in the lowest 32 bits of n[3], is loaded into a float that we return. We don't care about the other bits
+}
+
+float m128_min_float(__m128 src) {
+    __m128 n[4];
+
+    n[0] = _mm_shuffle_ps(src, src, _MM_SHUFFLE(0,0,3,2));
+    n[1] = _mm_min_ps(src, n[0]);
+    n[2] = _mm_shuffle_ps(n[1], n[1], _MM_SHUFFLE(0,0,0,1));
+    n[3] = _mm_min_ps(n[1], n[2]);
+
+    return _mm_cvtss_f32(n[3]);
+}
+
+#define SIZE  1000000000L // 1 billion. Yes.
+
+void  get_min_max(long i, float array[i]) {
+  __m128 max;
+  __m128 min;
+  
+  max = _mm_loadu_ps(array); // will load first 4 float into max
+  min = _mm_loadu_ps(array); // will load first 4 float into min
+  while ((i -= 4L))
+  {
+    __m128 tmp = _mm_loadu_ps(array + i);
+    max = _mm_max_ps(max, tmp);
+    min = _mm_min_ps(min, tmp);
+  }
+
+  printf("Max value: %f\t Min value: %f\n", m128_max_float(max), m128_min_float(min));
+}
+
+void  get_min_max_like_bocalian(long size, float array[size]) {
+  float max;
+  float min;
+  int i;
+
+  max = array[0];
+  min = array[0];
+  i = 1L;
+  while (i < size)
+  {
+    float tmp = array[i++];
+    max = tmp < max ? max : tmp;
+    min = tmp > min ? min : tmp;
+  }
+
+  printf("Max value: %f\t Min value: %f\n", max, min);
+}
+
+int main()
+{
+  long i;
+  float *data;
+  clock_t time;
+
+  srand(time(NULL));  // seed
+  data = (float *)malloc(SIZE * sizeof(float));
+  i = -1L;
+  while (++i < SIZE) {
+    data[i] = (float)rand() / (float)(RAND_MAX) * 1000.0f;
+   /* printf("%.02f\t\t", data[i]);     // I commented these lines because it slows considerably the program.
+    if (!(i & 15))
+      printf("\n");*/
+  }
+
+  time = clock();
+  get_min_max(SIZE, data);
+  time = clock() - time;
+  double elapsed_time = ((double)time) / CLOCKS_PER_SEC;
+  printf("Executed in %f seconds\n", elapsed_time);
+
+  time = clock();
+  get_min_max_like_bocalian(SIZE, data);
+  time = clock() - time;
+  elapsed_time = ((double)time) / CLOCKS_PER_SEC;
+  printf("Executed in %f seconds\n", elapsed_time); 
+
+  return 0;
+}
+```
+
+And compile with:
+```
+gcc vectorization.c -O3  && ./a.out 
+```
+
+You will notice that the vectorized approach will be about 3 times faster (NB: For this specific example). If I was using mm256 or mm512 registers, the vectorized program would be even faster by a factor of 2 and 4 respectively.
+
+*Now that you realize the performance boost, how about using what you just learn for your RayTracing project?*
+
+
+#### Combining Optimization Flags, Parallelization and Vectorization
+
+*a) **You can take a look at [this very interesting project](https://github.com/expr-fi/fastlwc/blob/master/fastlwc-mt.c)** which aim to show how fast wc can get using the various tools C has to offer to optimize speed. After downloading the file, you will also need to download the header: [simd.h](https://github.com/expr-fi/fastlwc/blob/master/simd.h), which make use of [Intel intrinsic](https://software.intel.com/sites/landingpage/IntrinsicsGuide/).*  
+
+*b) Compile it with the flags:*
+```
+gcc fastlwc-mt.c -fopenmp -O3
+```
+
+*c) Create a random file:*
+```
+dd if=/dev/urandom of=sample.txt bs=64M count=16 iflag=fullblock
+```
+
+*d) Compare wc with the new binary with:*
+```
+time ./a.out sample.txt \
+&& time wc sample.txt
+```
+
+
+#### Last but not least: Getting the right algorithm
+
+Try to give a shot at solving this [algorithm problem](https://github.com/agavrel/Nailing-the-Coding-Interview/tree/master/math/the_dancer):
+
+```c
+int32_t dancer_position(uint32_t time_elapsed) { ;}
+```
+
+**The right algorithm is usually the corner stone of an efficient program.**
+
+
+---
+### 0x01 Buffer Overflow
 
 #### Introduction
 
