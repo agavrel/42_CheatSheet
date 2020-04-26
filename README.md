@@ -82,7 +82,7 @@ The piscine is the entrance exam that consists of **4 weeks fully dedicated to c
 ---
 ### 0x01 Things to prepare
 
-> 시작이 반이다  ― *The beginning is half of the way* Korean expression 
+> **시작이 반이다** ― *The beginning is half of the way (Korean proverb)* 
 
 #### First by installing a C compiler on your computer
 * On Windows it is a bit tricky, you will have to install [Mingw](http://www.mingw.org/)
@@ -1606,6 +1606,7 @@ Title | How Interesting | Author
 
 Title | How Interesting | Author
 ---|---|---
+**[SDL2 Tutorial](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/linux/index.php)** | :two_hearts | *by mysterious Lazyfoo*
 **[Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root)** | :two_hearts: | attributed to John Carmack (Quake III)
 **[3d Fractal Flame Wisps](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses)** | :star::star::star: | *[by Yujie Shu](https://www.semanticscholar.org/author/Yujie-Shu/11523322)*
 **[Geometry Caching Optimizations in Halo 5](https://www.youtube.com/watch?v=uYAjUOlEgwI)** | :star::star::star: | *by Zabir Hoque and Ben Laidlaw*
@@ -1686,11 +1687,13 @@ Title | How Interesting | Author
 
 
 ---
-## Tutorial
+## Tutorials
 
+<a href="https://www.youtube.com/watch?v=Jen46qkZVNI&t=30s" target="_blank"><img src="http://img.youtube.com/vi/Jen46qkZVNI/0.jpg"
+alt="Boxer's Perfect Rush SCV" width="240" height="180" border="10" /></a>
 
 ---
-### 0x00 Aiming for the lowest latency
+### 0x00 Optimization - Aiming for the lowest latency
 
 When you want to aim for lowest latency - *i.e maximum speed* - there are many things that will improve your program to create a better binary: Optimization flag, parallelization, vectorization and carefully crafting your algorithm.
 
@@ -1875,7 +1878,133 @@ int32_t dancer_position(uint32_t time_elapsed) { ;}
 
 
 ---
-### 0x01 Buffer Overflow
+### 0x01 Computer Graphics - Using [SDL2](https://www.libsdl.org/index.php) to create Fractal
+
+#### Using SDL2 to create Computer Graphics
+You can follow tutorials to create a simple program with SDL on [Lazyfoo's website](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/linux/index.php) or on SDL2 official website.
+
+You will also have to install SDL2:
+```
+brew install sdl2
+```
+
+With SDL2 you have to first ```init_sdl``` - *see function below*. Then you will keep the user entertained with a loop ```while (42)``` that can only be escaped by clicking on the the close button or pressing escape. While the loop is active, user's actions will be recorded thanks to ```SDL_PollEvent```. You then draw pixel by using ```SDL_RenderDrawPoint``` and you refresh image with ```SDL_RenderPresent```.
+
+#### Example with a Barnsley Fern Fractal
+
+[Michael Barnsley](https://en.wikipedia.org/wiki/Michael_Barnsley) was a British mathematician who coined a fractal algorithm to represent a fern.  
+
+![Barnsley Fern](https://raw.githubusercontent.com/agavrel/42_CheatSheet/master/img/BarnsleyFern.png)
+
+The algorithm is explained in detail on [wikipedia](https://en.wikipedia.org/wiki/Barnsley_fern)  
+
+Find below the code for the whole program, compile it with :
+```
+gcc barnsley.c -lSDL2 -O3
+```
+
+You will need about 10 000 iterations of n to draw the shape. On each keypress you will increase the number of iterations by 400.
+```c
+#pragma message "\033[1;31mRequire SDL2\033[0m, \033[1;92mbrew install sdl2\033[0m and compile with \033[1;5;36mgcc barnsley.c -lSDL2\033[0m  && ./a.out  " __FILE__ "..."
+// gcc main.c -lSDL2 -O3 -Wall -Werror -Wextra --pedantic&& ./a.out
+#include <stdio.h>
+#include <SDL2/SDL.h>
+#include <stdbool.h>
+
+#define WINDOW_WIDTH	600
+#define	WINDOW_HEIGHT	800
+
+typedef struct		s_cnb
+{
+	double			real;
+	double			imag;
+}					t_cnb;
+
+typedef struct		s_pixel
+{
+	int				x;
+	int				y;
+}					t_pixel;
+
+void	barnsley(SDL_Renderer *renderer, t_cnb *c) {
+	float	rng;
+	t_pixel	i;
+	static const float probability[3] = {0.01f, 0.08f, 0.15f};
+	long n = 400;
+
+	while (n--) {
+		rng = ((float)rand() / (float)RAND_MAX);
+		if (rng <= probability[0]) {
+			c->real = 0;
+			c->imag *= 0.16f;
+		}
+		else if (rng <= probability[1]){
+			c->real = -0.15f * c->real + 0.28f * c->imag;
+			c->imag = 0.26f * c->real + 0.24f * c->imag + 0.44f;
+		}
+		else if (rng <= probability[2]) {
+			c->real = 0.2f * c->real + -0.26f * c->imag;
+			c->imag = 0.23f * c->real + 0.22f * c->imag + 1.6f;
+		}
+		else {
+			c->real = 0.85f * c->real + 0.04f * c->imag;
+			c->imag = -0.04f * c->real + 0.85f * c->imag + 1.6f;
+		}
+		i.x = (c->real + 3) * 70;
+		i.y = WINDOW_HEIGHT - c->imag * 70;
+    	SDL_RenderDrawPoint(renderer, i.x, i.y);
+	}
+}
+
+bool	error_sdl(char *error_msg) {
+	printf( "%s! SDL_Error: %s\n", error_msg, SDL_GetError() );
+	return false;
+}
+
+bool	init_sdl(SDL_Window **window, SDL_Renderer **renderer) {
+	if (SDL_Init(SDL_INIT_VIDEO) < 0)
+		return (error_sdl("SDL could not initialize!"));
+	SDL_CreateWindowAndRenderer(WINDOW_WIDTH, WINDOW_HEIGHT, 0, window, renderer);
+	if (*window == NULL)
+		return (error_sdl("Window could not be created!"));
+	SDL_SetRenderDrawColor(*renderer, 0, 0, 0, 0);
+	SDL_RenderClear(*renderer);
+    SDL_SetRenderDrawColor(*renderer, 0xbf, 0xff, 0, 0);
+
+	return true;
+}
+
+int		main(void) {
+    SDL_Event event;
+    SDL_Window *window;
+	SDL_Renderer *renderer;
+	t_cnb c;
+	
+	if (!(init_sdl(&window, &renderer)))
+		return 1;
+
+	c = (t_cnb) {.real = 0, .imag = 0}; // PS: legal for Norminette
+    while (42) {
+		if (SDL_PollEvent(&event)) {
+			if (event.type == SDL_QUIT)
+				break ;
+			else if (event.type == SDL_KEYDOWN) {
+				if (event.key.keysym.sym == SDLK_ESCAPE)
+					break ;
+				barnsley(renderer, &c);
+				SDL_RenderPresent(renderer);
+			}
+		}
+    }
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+    return EXIT_SUCCESS;
+}
+```
+
+---
+### 0x02 Hacking - Buffer Overflow
 
 #### Introduction
 
@@ -2012,7 +2141,7 @@ sudo sysctl -w kernel.randomize_va_space=2
 ## Liked it ?
 *Show your appreciation by starring the repo, sharing on slack, RT and 'lache un com magueule' skyblog™*
 
-![Kimg Jeong Un applauding](https://raw.githubusercontent.com/agavrel/42_CheatSheet/master/meme/applauses.gif)
+![Kimg Jeong Un applauding](https://raw.githubusercontent.com/agavrel/42_CheatSheet/master/img/kimjeongun_meme.gif)
 
 > 잘했어 동무 계속 [배우자](https://www.youtube.com/watch?v=ukBcC-sK3wQ) ― *Good Job Comrade, let's keep studying*
 
