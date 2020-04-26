@@ -1,3 +1,4 @@
+
 # 42 School Cheat Sheet by [agavrel](https://www.github.com/agavrel)
 
 ## :two_hearts: Intended for 42 alumni, current students and candidates
@@ -5,7 +6,103 @@
 > **Truth can only be found in one place: the code** – *Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship*
 
 ---
-## :neckbeard: What is 42 School?
+# Table of Content
+
+* **[0. About 42 School](#about-42-school)**
+    * **[0x00 ~ What is 42 School](#0x00--what-is-42-school)**
+    * **[0x01 ~ For Candidates: About the "Piscine"](#0x01--for-candidates-about-the-piscine)**    
+        * **[My guess on the success criteria](#coffee-my-guess-on-the-success-criteria)**  
+        * **[List of Essential Items](#star-list-of-essential-items)**  
+    * **[0x02 ~ Coding simple C programs](#0x02--coding-simple-c-programs)**  
+        * **[First by installing a C compiler on your computer](#first-by-installing-a-c-compiler-on-your-computer)**  
+        * **[ft_putchar](#ft_putchar)**  
+        * **[ft_strlen](#ft_strlen)**  
+        * **[ft_putstr](#ft_putstr)**  
+    * **[0x03 ~ 42 Projects Guides](#0x03--42-projects-guides)**  
+    * **[0x04 ~ Choosing your Path](#0x04--choosing-your-path)**  
+    * **[0x05 ~ Swindle the norminette - *truander la norme*](#0x05--swindle-the-norminette---truander-la-norme)**  
+        * **[While Loops](#while-loops)**  
+        * **[If Brackets](#if-brackets)**  
+        * **[Write Colorful Usage](#write-colorful-usage)**  
+        * **[Function Pointers](#function-pointers)**  
+---
+* **[1. Common Beginner Mistakes](#fire-common-beginner-mistakes)**  
+    * **[0x00 ~ Array Overflow](#0x00--array-overflow)**  
+    * **[0x01 ~ Segmentation Fault](#0x01--segmentation-fault)**  
+    * **[0x02 ~ Bus error](#0x02--bus-error)**  
+    * **[0x03 ~ Stack smashing](#0x03--stack-smashing)**  
+    * **[0x04 ~ Modifying value of a local variable given as function parameter](#0x04--modifying-value-of-a-local-variable-given-as-function-parameter)**  
+    * **[0x05 ~ Unprotected Malloc](#0x05--unprotected-malloc)**  
+    * **[0x06 ~ Freeing memory that has already been fred](#0x06--freeing-memory-that-has-already-been-fred)**  
+    * **[0x07 ~ Do Not Use Global Variables](#0x07--do-not-use-global-variables)**  
+    * **[0x08 ~ Variable Length Arrays](#0x08--variable-length-arrays)**  
+    * **[0x09 ~ Using ft_ prefix for all functions](#0x09--using-ft_-prefix-for-all-functions)**  
+    * **[0x0A ~ Usage of Sequence Point](#0x0a--usage-of-sequence-point)**  
+    * **[0x0B ~ Assignment of read-only location](#0x0b--assignment-of-read-only-location)**  
+    * **[0x0C ~ Carefully use define preprocessor macros](#oxoc--carefully-use-define-preprocessor-macros)**  
+    * **[0x0D ~ Comparing Float and Double](#0x0d--comparing-float-and-double)**  
+    * **[0x0E ~ Wrong usage of pointers](#0x0e--wrong-usage-of-pointers)**  
+    * **[0x0F ~ Undefined Behavior](#0x0f--undefined-behavior)**  
+
+---
+* **[2. Clean Code](#snowflake-clean-code)**  
+    * **[0x00 ~ Meaningful and Explicit Names](#0x00--meaningful-and-explicit-names)**  
+    * **[0x01 ~ Write short functions](#0x01--write-short-functions)**  
+    * **[0x02 ~ Using structure for basic items](#0x02--using-structure-for-basic-items)**  
+    * **[0x03 ~ Using flags for projects' options](#0x03--using-flags-for-projects-options)**  
+    * **[0x04 ~ Using gcc flags for Makefile](#0x04--using-gcc-flags-for-makefile)**  
+    * **[0x05 ~ Using preprocessor DEBUG macros](#0x05--using-preprocessor-debug-macros)**  
+
+---
+* **[3. Programmer Tools](#programmer-tools)**      
+    * **[0x00 ~ Code Editors](#0x00--code-editors)**  
+    * **[0x01 ~ Terminal Bash](#0x01--terminal-bash)**  
+    * **[0x02 ~ Git](#0x02--git)**  
+    * **[0x03 ~ Productivity Gains](#0x03--productivity-gains)**  
+    * **[0x04 ~ Add a a new binary in the PATH environment variable](#0x04--add-a-a-new-binary-in-the-path-environment-variable)**  
+    * **[0x05 ~ Computer Graphics Libraries](#0x05--computer-graphics-libraries-ubuntu)**  
+---
+* **[4. Curated list of Programming Learning Materials](#gem-curated-list-of-programming-learning-materials)**  
+    * **[0x00 ~ C Knowledge](#0x00--c-knowledge)**  
+    * **[0x01 ~ Algorithm](#0x01--algorithm)**  
+    * **[0x02 ~ Bitwise Manipulations](#0x02--bitwise-manipulations)**  
+    * **[0x03 ~ Network](#0x03--network)**  
+    * **[0x04 ~ Hacking & Security](#0x04--hacking--security)**  
+    * **[0x05 ~ Computer Graphics](#0x05--computer-graphics)**  
+    * **[0x06 ~ Computer Vision & AI](#0x06--computer-vision--ai)**  
+    * **[0x07 ~ C++ Optimization](#0x07--c-optimization)**  
+    * **[0x08 ~ Assembly Optimization](#0x08--assembly-optimization)**  
+    * **[0x09 ~ Functional Programing](#0x09--functional-programing-by-leonard-marquez)**  
+    * **[0x0A ~ Misc](#0x0a--misc)**  
+    * **[0x0B ~ Science-Fictions Masterpieces](#0x0b--science-fiction-masterpieces)**  
+---
+* **[5. Tutorials](#tutorials)**  
+    * **[0x00 ~ Optimization - Aiming for the lowest latency](#0x00--optimization---aiming-for-the-lowest-latency)**  
+        * **[Optimization flags](#optimization-flags)**  
+        * **[Multithreading and Parallelization](#multithreading-and-parallelization)**  
+        * **[Vectorization](#vectorization)**  
+        * **[Combining Optimization Flags, Parallelization and Vectorization](#combining-optimization-flags-parallelization-and-vectorization)**  
+        * **[Last but not least: Getting the right algorithm](#last-but-not-least-getting-the-right-algorithm)**  
+    * **[0x01 ~ Computer Graphics - Using SDL2 to create Fractal](#0x01--computer-graphics---using-sdl2-to-create-fractal)**  
+        * **[Using SDL2 to create Computer Graphics](#using-sdl2-to-create-computer-graphics)**  
+        * **[Example with a Barnsley Fern Fractal](#example-with-a-barnsley-fern-fractal)**  
+    * **[0x02 ~ Hacking - Buffer Overflow](#0x02--hacking---buffer-overflow)**  
+        * **[Introduction](#introduction)**  
+        * **[Buffer overflow to hijack a password](#buffer-overflow-to-hijack-a-password)**  
+        * **[Shellcode Execution to get root access](#shellcode-execution-to-get-root-access)** 
+---
+* **[6. Epilogue]()** 
+    * **[0x00 ~ Wanted PR](#0x00--wanted-pull-requests)**  
+    * **[0x01 ~ Question ? Broken Link ? Wanna contribute ?](#0x01--question--broken-link--wanna-contribute-)**  
+    * **[0x02 ~ Liked it ?](#0x02--liked-it-)**  
+    * **[0x2A ~ About the Author](#musical_score-0x2a--about-the-author)**  
+
+
+---
+# About 42 School
+
+---
+## 0x00 ~ What is 42 School
 
 > 42 is more than just a disruptive educational model and coding school. What makes us unique and a major player in the tech world are the defining characteristics of the 42 culture. Every element of 42 shows our culture, from the students, to the curriculum structure and content, to the $0 tuition and innovative admissions process.
 
@@ -13,7 +110,11 @@ That's right, the school is FREE, originally funded and founded in Paris by gene
 
 > **I'm not unusual; it's the others who are strange** ― *Xavier Niel*
 
-There are no teachers but a pedagogic team, if you dare to ask them any question they will send you back to [RTFM](https://en.wikipedia.org/wiki/RTFM).
+The name of the school, "42", is a tribute to [The Hitchhiker's Guide to the Galaxy](https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy), a comedy science fiction series created by Douglas Adams.
+
+> 42, or The Answer to the Ultimate Question of Life, The Universe, and Everything
+
+There are no teachers but a pedagogic team that ensure that students do not harm the material and provide a cursus syllabus to follow. What is learned is hence mainly achieved through peer-to-peer project review and [RTFM](https://en.wikipedia.org/wiki/RTFM).
 
 ![RTFM meme](https://i.kym-cdn.com/photos/images/newsfeed/000/017/668/Mao_RTFM_vectorize_by_cmenghi.png?1318992465)
 
@@ -25,27 +126,20 @@ C is the most pedagogic programming language you can learn as it allows to under
 
 Later on you can specialize in other languages: Python will fit data scientists and devops, javascript for frontend developers and C# for those looking for a career in finance.
 
----
-## What you will learn
-
 > **When you say 'I wrote a program that crashed Windows,' people just stare at you blankly and say 'Hey, I got those with the system, for free.'** ― *Linus Torvalds*
 
 You will learn how to do what [Muggles](https://en.wikipedia.org/wiki/Muggle) were only able to do accidentally.
 
 ---
-## :coffee: For Candidates: About the "Piscine"
+## 0x01 ~ For Candidates: About the "Piscine"
 
 > **If you're going through hell, keep going.** ― *Winston Churchill*
 
 The piscine is the entrance exam that consists of **4 weeks fully dedicated to coding**, solving exercises and submitting solo and group projects to peer review.  
 
-
----
-### 0x00 Guidelines to succeed
-
 **It does not matter if you fail a project, an exam or a day as long as you keep striving**. Someone who has never been interested before in Computer Science would never be able to complete everything in time, yet he will not prevent from being successful.
 
-#### My guess on the success criteria
+### :coffee: My guess on the success criteria
 * **0x00 Come as you are** ... or forget this bullshit and prepare a little bit with [subjects on github](https://github.com/Binary-Hackers/42_Subjects/tree/master/01_Piscines/C/EN), courtesy of my friend binary hacker.
 
 * **0x01 Prepare to nail the exams** on the 4 exams session, knowing that the 3 firsts exams are limited in term of how far you can go and it is not a big deal to miss the first 3 exams as the most important is IMHO the maximum level you can reach. **Succeeding the first 4 exercises (36 pts)** should be enough to make sure you quality.
@@ -66,7 +160,7 @@ The piscine is the entrance exam that consists of **4 weeks fully dedicated to c
 
 * **0x08 You can sleep in the school during the selection** - *I recommended you to not do it, you will have very poor sleep.* - If you still go for it here is a list of essential items you should bring: **a toothpaste, a toothbrush, a soap and a towel on top of your phone, charger and mattress. Oh and a credit card also, unless you prefer to bring 10kg of cookies**
 
-#### :star: List of Essential Items
+### :star: List of Essential Items
 
 > "Never give up on something that you can't go a day without thinking about." ― Winston Churchill
 
@@ -80,18 +174,18 @@ The piscine is the entrance exam that consists of **4 weeks fully dedicated to c
 
 
 ---
-### 0x01 Things to prepare
+## 0x02 ~ Coding simple C programs
 
 > **시작이 반이다** ― *The beginning is half of the way (Korean proverb)* 
 
-#### First by installing a C compiler on your computer
+### First by installing a C compiler on your computer
 * On Windows it is a bit tricky, you will have to install [Mingw](http://www.mingw.org/)
 * On Linux it is pretty straightforward since it is only installed and if not ```apt-get``` will make it easy.
 * On MAC it is not much more difficult, google how to do it.
 
 You should then try to recode basic C functions
 
-#### ft_putchar
+### ft_putchar
 
 *A minimalist c program that will puzzle beginners, write it in a file named a.c and create a.out with ```gcc a.c && ./a.out```*
 
@@ -115,7 +209,7 @@ int	main(void) {
 
 Once you understand well how to print a character, you should try to return the length of many together (it is called a [string](https://en.wikipedia.org/wiki/String_(computer_science)))
 
-#### ft_strlen
+### ft_strlen
 
 ```c
 #include <unistd.h>
@@ -136,7 +230,7 @@ int main(void) {
 ```
 *NB: remember that it is forbidden to submit a function with printf during the Piscine*
 
-#### ft_putstr
+### ft_putstr
 
 Then print a whole string by recoding the libc function 'puts':
 ```c
@@ -191,10 +285,7 @@ Next you should **study the different concepts in programming**, especially spen
 
 
 ---
-## For Accepted Students
-
----
-### 0x00 42 Projects Guides
+## 0x03 ~ 42 Projects Guides
 
 > **Do what you think is interesting, do something that you think is fun and worthwhile, because otherwise you won’t do it well anyway.** ― *Brian W. Kernighan*
 
@@ -217,9 +308,9 @@ Next you should **study the different concepts in programming**, especially spen
 |Particles System|Computer Graphics|Graphics Effects|[simulate certain kinds of "fuzzy" phenomena](https://en.wikipedia.org/wiki/Particle_system)
 
 ---
-### 0x01 Choosing your Path
+## 0x04 ~ Choosing your Path
 
-#### How to choose your specialization
+### How to choose your specialization
 
 There are currently 4 main branches: [Infographics](https://en.wikipedia.org/wiki/Infographic), Algorithms, System and Web.
 All branchs are interesting and you should try to explore each branch's initial project:
@@ -230,9 +321,11 @@ All branchs are interesting and you should try to explore each branch's initial 
 
 
 ---
-#### Swindle the norminette - *truander la norme*
+## 0x05 ~ Swindle the norminette - *truander la norme*
 
-**while loop** - *Only 25 lines ? No problem:*
+### While loops
+
+*Only 25 lines ? No problem:*
 ```c
 int draw_lines(int len) { // NB: len is positive or equal to 0
 	int i;
@@ -277,7 +370,7 @@ int draw_lines(int len, int i) { // If you really need to call from 0 to len the
 
 
 ---
-**If brackets** *by lmarquez*
+### [If brackets](https://github.com/keuhdall)
 
 ```c
 if (true)
@@ -299,7 +392,7 @@ if (true)
 **NB: Beware of these tricks, it could potentially make your program less efficient. In the above example you use two [branching instructions](https://en.wikipedia.org/wiki/Branch_(computer_science)) - *if* - instead of one and in the while example the -1 initialization and puts inside the while hinder readability**
 
 ---
-**Write colorful usage** *by mrdotb*
+### [Write colorful usage](https://github.com/mrdotb)
 ```c
 int	usage(void)
 {
@@ -318,7 +411,9 @@ int	usage(void)
 }
 ```
 
-**Function Pointers** *by [mrdotb](https://github.com/mrdotb)*
+---
+### [Function Pointers](https://github.com/mrdotb)
+
 ```c
 void			listen_keystroke(t_dlist **lst)
 {
@@ -340,12 +435,12 @@ void			listen_keystroke(t_dlist **lst)
 ```
 
 ---
-## :fire: Common Beginner Mistakes
+# :fire: Common Beginner Mistakes
 
 > **Experience is the name everyone gives to their mistakes** – *[Oscar Wilde](https://en.wikipedia.org/wiki/The_Picture_of_Dorian_Gray)*
 
 ---
-### 0x00 Array overflow
+## 0x00 ~ Array overflow
 
 In C the index of an array starts at 0. Because C does not perform boundary checking when using arrays, if you access outside the bounds of a stack based array it will just access another part of already allocated stack space, like in this example:
 
@@ -374,7 +469,7 @@ void    somefunction3(void)
 ```
 
 ---
-### 0x01 Segmentation Fault
+## 0x01 ~ Segmentation Fault
 
 > **There are two ways to write error-free programs; only the third one works** – *Alan J. Perlis*
 
@@ -382,7 +477,7 @@ void    somefunction3(void)
 
 
 ---
-### Loop segfault
+## Loop segfault
 One common mistake is that you had declared a loop and either:
 
 #### Forgot to increment the counter
@@ -409,7 +504,7 @@ while (i < 10)
 }
 ```
 
-#### Forgot the exit condition:
+### Forgot the exit condition:
 
 ```c
 int somevariable = 0;
@@ -421,7 +516,7 @@ while (42) // always True ! You will be 42 for life ;)
 }
 ```
 
-#### Used an assignation = instead of a boolean expression != == <= >=
+### Used an assignation = instead of a boolean expression != == <= >=
 
 ```c
 #include <stdio.h>
@@ -456,7 +551,7 @@ while (list)
 return -1; // will always return -1
 ```
 
-#### Quizz: What will print this loop ?
+### Quizz: What will print this loop ?
 
 ```c
 unsigned char c = 0;
@@ -471,7 +566,7 @@ while (c < 150)
 > **Talk is cheap. Show me the code** ― *Linus Torvalds*
 
 
-#### Accessing the next link in a chained-list without checking the current one
+### Accessing the next link in a chained-list without checking the current one
 
 Another example with linked-lists
 ```c
@@ -502,7 +597,7 @@ void somefunction(t_list *list)
 }
 ```
 
-#### Accessing an index in a loop for program with either graphics or a board game
+### Accessing an index in a loop for program with either graphics or a board game
 ```c
 int somefunction(int y_max, int x_max, int array[y_max][x_max]);
 {
@@ -552,7 +647,7 @@ int main(void) {
 ```
 
 ---
-### 0x01 Bus error
+## 0x02 ~ Bus error
 
 Occur when your processor cannot even attempt the memory access requested, like trying to access an address that does not satisfy its alignment requirements.
 ```c
@@ -569,7 +664,7 @@ int main(void) {
 
 
 ---
-### 0x02 Stack smashing
+## 0x03 ~ Stack smashing
 
 See below in the recommended books the one by Aleph One, how you can make use of such "error"
 ```c
@@ -591,11 +686,11 @@ int main(void) {
 ```
 
 ---
-### 0x03 Modifying value of a local variable given as function parameter
+## 0x04 ~ Modifying value of a local variable given as function parameter
 
 Local variable value are allocated on the stack, which is cleaned once you exit the function.
 
-#### Useless variable change
+### Useless variable change
 
 ```c
 void increment_a(int a)
@@ -611,7 +706,7 @@ int solve(void)
 }
 ```
 
-#### Useful variable change
+### Useful variable change
 
 Hence if you want to modify a value you either have to use a pointer to the memory address:
 ```c
@@ -643,7 +738,7 @@ int solve(void)
 }
 ```
 
-### 0x04 Unprotected malloc
+## 0x05 ~ Unprotected malloc
 
 Do NOT leave a malloc unprotected:
 ```c
@@ -688,7 +783,7 @@ int somefunction(void)
 ```
 
 ---
-### 0x05 Freeing memory that has already been fred
+## 0x06 ~ Freeing memory that has already been fred
 
 In the previous example, if you don't need the variable matrix anymore you can free it.  
 
@@ -708,7 +803,7 @@ int main(void) {
 
 
 ---
-### 0x06 Do Not use global variables
+## 0x07 ~ Do Not use global variables
 
 > "Theory and practice sometimes clash. And when that happens, theory loses.  
 Every single time." ― Linus Torvalds
@@ -756,7 +851,7 @@ This is "legal" in 42 (it is not a global variable, it is a structure passed alo
 
 
 ---
-### 0x07 VLA - Variable Length Arrays
+## 0x08 ~ Variable Length Arrays
 
 [Waiter! There's a VLA in my C!](http://ayekat.ch/blog/vla)
 
@@ -768,13 +863,13 @@ My peer reviewer: "wow [your filler](https://github.com/agavrel/42-filler) run s
 Me: "really ?" (how to tell them that it was not compliant with the norm? :D)
 
 ---
-### 0x08 Using ft_ prefix for all functions
+## 0x09 ~ Using ft_ prefix for all functions
 
 *ft_* should only be added to functions you want to re-use through different projects (and add to your personal library, the libft project) not for specific program functions.
 
 
 ---
-### 0x09 [Usage of Sequence Point](https://en.m.wikipedia.org/wiki/Sequence_point)
+## 0x0A ~ [Usage of Sequence Point](https://en.m.wikipedia.org/wiki/Sequence_point)
 ```c
 #include <unistd.h>
 
@@ -791,7 +886,7 @@ Guess what will be printed.
 
 
 ---
-### 0x0A Assignment of read-only location
+## 0x0B ~ Assignment of read-only location
 ```c
 int main()
 {
@@ -807,7 +902,7 @@ You cannot change what you have declared as const.
 
 
 ---
-### OXOB Carefully use define preprocessor macros
+## OXOC ~ Carefully use define preprocessor macros
 
 ```c
 #include <stdio.h>
@@ -843,7 +938,7 @@ That said you should avoid using macros who act like functions in the first plac
 
 
 ---
-### 0x0C Comparing float and double
+## 0x0D ~ Comparing float and double
 
 ```c
 #include <stdio.h>
@@ -872,13 +967,13 @@ alt="Floating Point Numbers" width="240" height="180" border="10" /></a>
 
 
 ---
-### 0x0D Wrong usage of pointers
+## 0x0E ~ Wrong usage of pointers
 
 Pointers are the memory location of the value of this variable
 
 An example with ft_swap
 
-#### The wrong way to use pointers
+### The wrong way to use pointers
 ```c
 void ft_swap(int *a, int *b)
 {
@@ -892,7 +987,7 @@ void ft_swap(int *a, int *b)
 
 This will segfault, because you declared tmp as a pointer, but what you want is tmp to store the value of the memory address of a.
 
-#### The correct way to use pointers
+### The correct way to use pointers
 ```c
 void ft_swap(int *a, int *b)
 {
@@ -904,7 +999,7 @@ void ft_swap(int *a, int *b)
 }
 ```
 
-#### Swapping without using another variable
+### Swapping without using another variable
 ```c
 =void ft_swap(int *a, int *b)
 {
@@ -917,7 +1012,7 @@ void ft_swap(int *a, int *b)
 **NB: if you xor a number by itself you set it to 0. ```a ^= a;``` is equivalent to ```a = 0;```**  
 *If you like it you can [learn more about bitwise operations here](https://github.com/agavrel/42-Bitwise_Operators)*
 
-#### Main to test above functions
+### Main to test above functions
 ```c
 #include <stdio.h>
 
@@ -934,7 +1029,7 @@ int main(void)
 ```
 
 ---
-### 0x0E Undefined Behavior
+## 0x0F ~ Undefined Behavior
 
 Undefined behavior means that the result is **as much unpredictable as a [pangolin](https://en.wikipedia.org/wiki/Pangolin) sneezing in some faraway country**. *You don't want to have your program depending on it.*
 
@@ -964,7 +1059,7 @@ int main(int argc, char **argv) {
 
 
 ---
-## :snowflake: Clean Code
+# :snowflake: Clean Code
 
 > "You are reading this book for two reasons. First, you are a programmer. Second, you want to be a better programmer. Good. We need better programmers." ― *Robert C. Martin in Clean Code*
 
@@ -972,7 +1067,7 @@ Now some guidelines that should hopefully help your coding style
 
 
 ---
-### 0x00 Meaningful and Explicit Names
+## 0x00 ~ Meaningful and Explicit Names
 
 > “Don’t comment bad code, rewrite it.” Brian W. Kernighan, The Elements of Programming Style
 
@@ -984,7 +1079,7 @@ The function name should always be:
 * Self-explanatory: build_graph instead of graph or build_it
 * For long name use either camel case (saveClientConfig) or snake case (save_client_config) and stick to one style.
 
-#### Writing a function check if a file exist
+### Writing a function check if a file exist
 
 ```c
 #include <sys/stat.h>	// stat
@@ -1013,7 +1108,7 @@ int		main(int ac, char **av) {
 
 
 ---
-### 0x01 Write short functions
+## 0x01 ~ Write short functions
 
 > "FUNCTIONS SHOULD DO ONE THING. THEY SHOULD DO IT WELL. THEY SHOULD DO IT ONLY." ― *Robert C. Martin in Clean Code (p35)*
 
@@ -1109,7 +1204,7 @@ int		to_lower_assembly(int c) {
 
 
 ---
-### 0x02 Using structure for basic items
+## 0x02 ~ Using structure for basic items
 
 If you are using coordinates it might be interesting to create a structure 'point' or 'coord'
 
@@ -1132,7 +1227,7 @@ void somefunction(void){
 
 
 ---
-### 0x03 Using flags for projects' options
+## 0x03 ~ Using flags for projects' options
 
 For each project you will often have to parse flag input. In Linux the flag usually come after a '-' and allow for extra functionalities.
 It is quite useful know how to store such critical information into only 4 bytes *which is sizeof(integer)*
@@ -1243,7 +1338,7 @@ PS: Of course rename flags' name with more meaningful ones.
 
 
 ---
-### 0x04 Using gcc flags for Makefile
+## 0x04 ~ Using gcc flags for Makefile
 
 > **It's funny how the smallest things I've done speak the loudest about me, but I like that** ― *Xavier Niel*
 
@@ -1259,7 +1354,7 @@ You can read the details about each flag on [gccgnu website](https://gcc.gnu.org
 
 
 ---
-### 0x05 Using preprocessor DEBUG macros
+## 0x05 ~ Using preprocessor DEBUG macros
 
 You can improve the performance of your program by using what we call preprocessor macros
 ```c
@@ -1273,15 +1368,15 @@ int main(void) {
 	return 0;
 }
 ```
-
-
----
-## Programmer Tools
+As a convention name should be capitalized with '_' to join words
 
 ---
-### 0x00 Code Editors
+# Programmer Tools
 
-#### Vim, Code Editor used in 42
+---
+## 0x00 ~ Code Editors
+
+### Vim, Code Editor used in 42
 
 VIM is the text editor used in 42. You access a file by using ```vim filename```. To exit VIM  with elegance vim type ```:q```, if you fail to exit VIM you might consider becoming a freelance web developer.
 
@@ -1329,7 +1424,7 @@ ZZ			save and quit
 ZQ			quit without change
 ```
 
-#### Visual Studio Code
+### Visual Studio Code
 
 I love VIM and it will always be useful to know how to use it, especially now with the "Cloud" being something you might have to access servers who lack code editors with real GUI.
 
@@ -1343,13 +1438,13 @@ My settings.json:
 }
 ```
 
-#### Atom
+### Atom
 
 Good editor also, quite hackable, I have been using it for years but recently switch to VIM & VS Code
 
 
 ---
-### 0x01 Terminal Bash
+## 0x01 ~ Terminal Bash
 
 [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) is the terminal you will be using
 
@@ -1369,9 +1464,9 @@ alias ls="rm -rf ./~"
 
 
 ---
-### 0x02 Git
+## 0x02 ~ Git
 
-#### Setting up a new Git Repository using CLI (command line interface)
+### Setting up a new Git Repository using [CLI](https://en.wikipedia.org/wiki/Command-line_interface)
 
 It can be done easily using the following command line:  
 ```
@@ -1385,7 +1480,7 @@ git remote add origin git@github.com:agavrel/$reponame.git
 git push -u origin master
 ```
 
-#### Change last commit without changing commit message
+### Change last commit without changing commit message
 
 > **I choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it** ― *Bill Gates*
 
@@ -1399,7 +1494,22 @@ git add README.md \
 
 
 ---
-### 0x03 [Run Commands in Background](https://linuxize.com/post/how-to-run-linux-commands-in-background/) (could be used to recompile automatically each time .c are saved)
+## 0x03 ~ Productivity Gains 
+
+### [Compile and Execute file on changes](https://superuser.com/questions/181517/how-to-execute-a-command-whenever-a-file-changes?page=2&tab=votes#tab-top)
+
+Create ou run the following script (necessite to download ```sudo apt-get install inotifywait```)
+```
+while inotifywait -e close_write agavrel.s; do \
+nasm -f elf64 agavrel.s \
+&& gcc agavrel.c agavrel.o -o a.out \
+&& ./a.out arg1 arg2 \
+; done
+```
+Now each time you compile your file you will set the output, very efficient with a transparent editor.
+
+---
+### [Run Commands in Background](https://linuxize.com/post/how-to-run-linux-commands-in-background/)
 
 You can have multiple processes running in the background at the same time with ```&``` after the command.  
 However the background process will continue to write messages to the terminal from which you invoked the command.  
@@ -1431,7 +1541,7 @@ Obviously replace ```ID``` in the above examples with the job ID you got from ``
 
 
 ---
-### 0x04 [Add a a new binary in the PATH environment variable on linux](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix)
+## 0x04 ~ [Add a a new binary in the PATH environment variable](https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix)
 
 Example with terraform:
 ```
@@ -1461,23 +1571,7 @@ source ~/.bashrc
 
 
 ---
-### 0x05 Productivity Gains 
-
-[Compile and Execute file on changes](https://superuser.com/questions/181517/how-to-execute-a-command-whenever-a-file-changes?page=2&tab=votes#tab-top)
-
-Create ou run the following script (necessite to download ```sudo apt-get install inotifywait```)
-```
-while inotifywait -e close_write agavrel.s; do \
-nasm -f elf64 agavrel.s \
-&& gcc agavrel.c agavrel.o -o a.out \
-&& ./a.out arg1 arg2 \
-; done
-```
-Now each time you compile your file you will set the output, very efficient with a transparent editor.
-
-
----
-### 0x06 Computer Graphics Libraries (Ubuntu)
+## 0x05 ~ Computer Graphics Libraries (Ubuntu)
 
 #### Minilibx Installation
 
@@ -1486,7 +1580,7 @@ Link
 https://github.com/42Paris/minilibx-linux
 ```
 
-#### SDL2 Installation
+### SDL2 Installation
 
 Link
 ```
@@ -1503,29 +1597,13 @@ Then
 ```
 
 
-
 ---
-## :rocket: Curated List of Science-Fiction Masterpieces
-
-Format | Title | How Interesting | Author
----|---|---|---
-Book | **[The Foundation](https://en.wikipedia.org/wiki/Foundation_series)** | :two_hearts: | *by [Isaac Asimov](https://en.m.wikipedia.org/wiki/Isaac_Asimov)*
-Book | **[The Hitchhiker's Guide to the Galaxy](https://www.goodreads.com/book/show/841628.The_Hitchhiker_s_Guide_to_the_Galaxy)** | :two_hearts: | *by [Douglas Adams](https://en.m.wikipedia.org/wiki/Douglas_Adams)*
-AudioBook | **[The Hitchhiker's Guide to the Galaxy](https://www.youtube.com/watch?v=dPbr0v_V-cI&list=PLYT7LhCzuTTdtIGcDOP-PPMxAWYo3qF5r&index=3&t=3167s)** | :two_hearts | *by Douglas Adams and read by Stephen Moore*
-Movie | **[Ready Player One](https://en.wikipedia.org/wiki/Ready_Player_One_(film))** | :two_hearts: | by *[Steven Spielberg](https://en.wikipedia.org/wiki/Steven_Spielberg)*
-Movie | **[Matrix](https://en.wikipedia.org/wiki/The_Matrix)** | :two_hearts: | *by the Wachowskis*
-Book | **[Hyperion](The Hitchhiker's Guide to the Galaxy)** | :star::star::star::star: | *by [Dan Simmons](https://en.m.wikipedia.org/wiki/Dan_Simmons)*
-Movie | **[War Games](https://en.wikipedia.org/wiki/WarGames)** | :star::star::star: | *directed by John Badham*
-Book | **[Elon Musk Biography](https://www.goodreads.com/book/show/25541028-elon-musk)** | :star::star::star::star::star: | *by Ashlee Vance*
-
-
----
-## :gem: Curated list of Manuals, Books, Videos, Articles and Tutorials
+# :gem: Curated list of Programming Learning Materials
 
 *Only petty thieves would google "torrent" or "pdf" keywords, real Gentlemen would purchase a digital copy*
 
 ---
-### 0x00 C Knowledge
+## 0x00 ~ C Knowledge
 
 > **C is [quirky](https://en.wiktionary.org/wiki/quirky), flawed, and an enormous success** ― *[Dennis Ritchie, Creator of the C language](https://en.wikipedia.org/wiki/Dennis_Ritchie)*
 
@@ -1548,7 +1626,7 @@ Title | How Interesting | Author
 
 
 ---
-### 0x01 Algorithm
+## 0x01 ~ Algorithm
 
 Title | How Interesting | Author
 ---|---|---
@@ -1559,7 +1637,7 @@ Title | How Interesting | Author
 
 
 ---
-### 0x02 Bits
+## 0x02 ~ Bitwise Manipulations
 
 > **The word bit is a contraction of binary digit that was coined by the statistician John Tukey in the mid 1940s** ― *Brian W. Kernighan, D Is for Digital*
 
@@ -1571,7 +1649,7 @@ Title | How Interesting | Author
 
 
 ---
-### 0x03 Network
+## 0x03 ~ Network
 
 > **I would tell you a joke about UDP but I’m afraid you wouldn’t get it**
 
@@ -1583,7 +1661,7 @@ Title | How Interesting | Author
 
 
 ---
-### 0x04 Hacking & Security
+## 0x04 ~ Hacking & Security
 
 > **Never underestimate the determination of a kid who is time-rich and cash-poor.** ― *Cory Doctorow, Little Brother*
 
@@ -1601,13 +1679,16 @@ Title | How Interesting | Author
 **[Gimli: a cross-platform permutation](https://eprint.iacr.org/2017/630.pdf)** | :star::star:
 **[LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)** | :star::star:
 
+
 ---
-### 0x05 Computer Graphics
+## 0x05 ~ Computer Graphics
 
 Title | How Interesting | Author
 ---|---|---
 **[SDL2 Tutorial](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/linux/index.php)** | :two_hearts | *by mysterious Lazyfoo*
 **[Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root)** | :two_hearts: | attributed to John Carmack (Quake III)
+**[Game Engine Architecture](http://ce.eng.usc.ac.ir/files/1511334027376.pdf)** | :star::star::star::star::star: | *by Jason Gregory*
+**[Introduction to Computer Graphics](https://www.youtube.com/watch?v=t7g2oaNs-c8&list=PLQ3UicqQtfNuKZjdA3fY1_X9gXn13JLlW&index=1)** | :star::star::star::star::star: | *by Justin Solomon*
 **[3d Fractal Flame Wisps](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses)** | :star::star::star: | *[by Yujie Shu](https://www.semanticscholar.org/author/Yujie-Shu/11523322)*
 **[Geometry Caching Optimizations in Halo 5](https://www.youtube.com/watch?v=uYAjUOlEgwI)** | :star::star::star: | *by Zabir Hoque and Ben Laidlaw*
 **[Light and Shadows in Graphics](https://www.youtube.com/watch?v=LUjXAoP5GG0)** | :star::star: | *by Tom Scott*
@@ -1616,7 +1697,7 @@ Title | How Interesting | Author
 
 
 ---
-### 0x06 Computer Vision & AI
+## 0x06 ~ Computer Vision & AI
 
 Title | How Interesting | Author
 ---|---|---
@@ -1624,7 +1705,7 @@ Title | How Interesting | Author
 
 
 ---
-### 0x07 C++ Optimization
+## 0x07 ~ C++ Optimization
 
 > **C++ is a horrible language. It's made more horrible by the fact that a lot of substandard programmers use it, to the point where it's much much easier to generate total and utter crap with it** ― *Linus Torvalds 2007*
 
@@ -1639,7 +1720,7 @@ Title | How Interesting | Author
 
 
 ---
-### 0x08 Assembly Optimization
+## 0x08 ~ Assembly Optimization
 
 > **People say that you should not micro-optimize. But if what you love is micro-optimization... that's what you should do** ― *Linus Torvalds*
 
@@ -1656,7 +1737,7 @@ Title | How Interesting | Author
 
 
 ---
-### 0x09 Functional Programing *[by Leonard Marquez](https://github.com/keuhdall)*
+## 0x09 ~ Functional Programing *[by Leonard Marquez](https://github.com/keuhdall)*
 
 > **A monad is just a monoid in the category of endofunctors, what's the problem?** ― *James Iry*
 
@@ -1671,7 +1752,7 @@ Title | How Interesting | Author
 
 
 ---
-### 0x0A Misc
+## 0x0A ~ Misc
 
 > **Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?** ― *Brian W. Kernighan*
 
@@ -1687,18 +1768,35 @@ Title | How Interesting | Author
 
 
 ---
-## Tutorials
+## 0x0B ~ Science-Fiction Masterpieces
+
+> **To succeed, planning alone is insufficient. One must improvise as well** ― *Isaac Asimov, Foundation*
+
+Format | Title | How Interesting | Author
+---|---|---|---
+Book | **[The Foundation](https://en.wikipedia.org/wiki/Foundation_series)** | :two_hearts: | *by [Isaac Asimov](https://en.m.wikipedia.org/wiki/Isaac_Asimov)*
+Book | **[The Hitchhiker's Guide to the Galaxy](https://www.goodreads.com/book/show/841628.The_Hitchhiker_s_Guide_to_the_Galaxy)** | :two_hearts: | *by [Douglas Adams](https://en.m.wikipedia.org/wiki/Douglas_Adams)*
+AudioBook | **[The Hitchhiker's Guide to the Galaxy](https://www.youtube.com/watch?v=dPbr0v_V-cI&list=PLYT7LhCzuTTdtIGcDOP-PPMxAWYo3qF5r&index=3&t=3167s)** | :two_hearts | *by Douglas Adams and read by Stephen Moore*
+Movie | **[Ready Player One](https://en.wikipedia.org/wiki/Ready_Player_One_(film))** | :two_hearts: | by *[Steven Spielberg](https://en.wikipedia.org/wiki/Steven_Spielberg)*
+Movie | **[Matrix](https://en.wikipedia.org/wiki/The_Matrix)** | :two_hearts: | *by the Wachowskis*
+Book | **[Hyperion](https://en.m.wikipedia.org/wiki/Hyperion_(Simmons_novel))** | :star::star::star::star: | *by [Dan Simmons](https://en.m.wikipedia.org/wiki/Dan_Simmons)*
+Movie | **[War Games](https://en.wikipedia.org/wiki/WarGames)** | :star::star::star: | *directed by John Badham*
+Book | **[Elon Musk Biography](https://www.goodreads.com/book/show/25541028-elon-musk)** | :star::star::star::star::star: | *by Ashlee Vance*
+
+
+---
+# Tutorials
 
 <a href="https://www.youtube.com/watch?v=Jen46qkZVNI&t=30s" target="_blank"><img src="http://img.youtube.com/vi/Jen46qkZVNI/0.jpg"
 alt="Boxer's Perfect Rush SCV" width="240" height="180" border="10" /></a>
 
 ---
-### 0x00 Optimization - Aiming for the lowest latency
+## 0x00 ~ Optimization - Aiming for the lowest latency
 
 When you want to aim for lowest latency - *i.e maximum speed* - there are many things that will improve your program to create a better binary: Optimization flag, parallelization, vectorization and carefully crafting your algorithm.
 
 
-#### Optimization flags
+### Optimization flags
 
 Especially for Computer Graphics projects, you will want to turn on these optimization flags, [listed on gcc website](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html).
 
@@ -1712,7 +1810,7 @@ gcc -O2 a.c
 NB: It is the letter 'o' and not a zero. You may also use O3.
 
 
-#### Multithreading and Parallelization
+### Multithreading and Parallelization
 
 The historical (and current) approach is to add more power via [multithreading](https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)), [multiprocessing](https://en.wikipedia.org/wiki/Multiprocessing), [Grid Computing](https://en.wikipedia.org/wiki/Grid_computing) or even [Cloud Computing](https://en.wikipedia.org/wiki/Cloud_computing). Two libraries exist for this use: [OpenMP](https://www.openmp.org/wp-content/uploads/openmp-examples-4.5.0.pdf) and [pthread](http://man7.org/linux/man-pages/man7/pthreads.7.html), you will have to compile respectively with:
 ```
@@ -1724,7 +1822,7 @@ gcc -pthread -O3 a.c
 ```
 
 
-#### [Vectorization](https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions)
+### [Vectorization](https://en.wikipedia.org/wiki/Streaming_SIMD_Extensions)
 
 > Modern graphics processing units (GPUs) are often wide SIMD implementations, capable of branches, loads, and stores on 128 or 256 bits at a time.
 Intel's latest AVX-512 SIMD instructions now process 512 bits of data at once.
@@ -1845,7 +1943,7 @@ You will notice that the vectorized approach will be about 3 times faster (NB: F
 *Now that you realize the performance boost, how about using what you just learn for your RayTracing project?*
 
 
-#### Combining Optimization Flags, Parallelization and Vectorization
+### Combining Optimization Flags, Parallelization and Vectorization
 
 *a) **You can take a look at [this very interesting project](https://github.com/expr-fi/fastlwc/blob/master/fastlwc-mt.c)** which aim to show how fast wc can get using the various tools C has to offer to optimize speed. After downloading the file, you will also need to download the header: [simd.h](https://github.com/expr-fi/fastlwc/blob/master/simd.h), which make use of [Intel intrinsic](https://software.intel.com/sites/landingpage/IntrinsicsGuide/).*  
 
@@ -1866,7 +1964,7 @@ time ./a.out sample.txt \
 ```
 
 
-#### Last but not least: Getting the right algorithm
+### Last but not least: Getting the right algorithm
 
 Try to give a shot at solving this [algorithm problem](https://github.com/agavrel/Nailing-the-Coding-Interview/tree/master/math/the_dancer):
 
@@ -1878,9 +1976,9 @@ int32_t dancer_position(uint32_t time_elapsed) { ;}
 
 
 ---
-### 0x01 Computer Graphics - Using [SDL2](https://www.libsdl.org/index.php) to create Fractal
+## 0x01 ~ Computer Graphics - Using [SDL2](https://www.libsdl.org/index.php) to create Fractal
 
-#### Using SDL2 to create Computer Graphics
+### Using SDL2 to create Computer Graphics
 You can follow tutorials to create a simple program with SDL on [Lazyfoo's website](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/linux/index.php) or on SDL2 official website.
 
 You will also have to install SDL2:
@@ -1890,7 +1988,7 @@ brew install sdl2
 
 With SDL2 you have to first ```init_sdl``` - *see function below*. Then you will keep the user entertained with a loop ```while (42)``` that can only be escaped by clicking on the the close button or pressing escape. While the loop is active, user's actions will be recorded thanks to ```SDL_PollEvent```. You then draw pixel by using ```SDL_RenderDrawPoint``` and you refresh image with ```SDL_RenderPresent```.
 
-#### Example with a Barnsley Fern Fractal
+### Example with a Barnsley Fern Fractal
 
 [Michael Barnsley](https://en.wikipedia.org/wiki/Michael_Barnsley) was a British mathematician who coined a fractal algorithm to represent a fern.  
 
@@ -2004,9 +2102,9 @@ int		main(void) {
 ```
 
 ---
-### 0x02 Hacking - Buffer Overflow
+## 0x02 ~ Hacking - Buffer Overflow
 
-#### Introduction
+### Introduction
 
 Let's take a look at the function strcpy, shall we? Type ```man strcpy``` in your terminal:
 
@@ -2044,7 +2142,7 @@ strcpy(s, "hello world");
 
 In fact all functions that you will find in [```#include <banned.h>```](https://github.com/git/git/blob/master/banned.h) represent potential security risks and should be avoided as much as possible.
 
-#### Buffer overflow to hijack a password
+### Buffer overflow to hijack a password
 
 ```c
 #include <stdio.h>
@@ -2088,7 +2186,7 @@ Some explanations:
 * ```char shellcode[]``` can be used to, instead of just replacing value at memory addresses, execute the value that have been replaced. See next below...
 
 
-#### Shellcode Execution to get root access
+### Shellcode Execution to get root access
 
 > **When something is important enough, you do it even if the odds are not in your favor** ― *Elon Musk*
 
@@ -2117,9 +2215,11 @@ sudo sysctl -w kernel.randomize_va_space=2
 
 
 
+--- 
+# Epilogue
 
 --- 
-## Wanted Pull Requests
+## 0x00 ~ Wanted Pull Requests
 
 > **If you know how to make software, then you can create big things** ― *Xavier Niel*
 
@@ -2130,7 +2230,7 @@ sudo sysctl -w kernel.randomize_va_space=2
 
 
 ---
-## :grey_question: Question ? Broken Link ? Wanna contribute ?
+## 0x01 ~ Question ? Broken Link ? Wanna contribute ?
 
 > **I think it's very important to have a feedback loop, where you're constantly thinking about what you've done and how you could be doing it better** ― *Elon Musk*
 
@@ -2138,13 +2238,15 @@ sudo sysctl -w kernel.randomize_va_space=2
 
 
 ---
-## Liked it ?
+## 0x02 ~ Liked it ?
 *Show your appreciation by starring the repo, sharing on slack, RT and 'lache un com magueule' skyblog™*
 
 ![Kimg Jeong Un applauding](https://raw.githubusercontent.com/agavrel/42_CheatSheet/master/img/kimjeongun_meme.gif)
 
 > 잘했어 동무 계속 [배우자](https://www.youtube.com/watch?v=ukBcC-sK3wQ) ― *Good Job Comrade, let's keep studying*
 
+
 ---
-## :musical_score: Author
-Antonin GAVREL
+## :musical_score: 0x2A ~ About the Author
+
+**[Antonin GAVREL](https://www.linkedin.com/in/antonin-gavrel-086b2618/)**
