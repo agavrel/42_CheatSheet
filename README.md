@@ -52,6 +52,8 @@
     * **[0x03 ~ Using flags for projects' options](#0x03--using-flags-for-projects-options)**  
     * **[0x04 ~ Using gcc flags for Makefile](#0x04--using-gcc-flags-for-makefile)**  
     * **[0x05 ~ Using preprocessor DEBUG macros](#0x05--using-preprocessor-debug-macros)**  
+	* **[0x06 ~ Branching Optimization](#0x06--branching-optimization)**
+	* **[0x07 ~ Reserved Keywords](#0x07--reserved-keywords)**  
 
 ---
 * **[3. Programmer Tools](#programmer-tools)**      
@@ -1371,6 +1373,60 @@ int main(void) {
 As a convention name should be capitalized with '_' to join words
 
 ---
+## 0x06 ~ Branching Optimization
+
+Often you will test that a specific value is reached or that a variable is set using if condition. But the order of the comparisons can improve efficiency of your program.  
+
+What would be wrong with the below function?
+```c
+
+int counter_to_star(int a, int b) {
+	while (42) {
+		if (((a + b) & 1) && a == 42) {
+			break;
+		}
+		a |= 1;
+		a *= b;
+		a %= 60;
+		b++;
+		n++;
+	}
+
+	return n;
+}
+```
+
+What is wrong is that the most unlikely condition ```a == 42``` is tested last, while it should be tested first. The most likely condition, that a + b is odd ```(a + b) & 1``` should be tested only if a == 42, and since 42 is even, you only need to test if b is odd:
+```
+if (a == 42 && (b & 1)) {
+	break;
+```
+
+
+```
+#include <unistd.h>
+
+#define DEBUG true
+
+int main(void) {
+	int a = 42;
+	if (a && a <)
+	return 0;
+}
+```
+
+---
+## 0x07 ~ Reserved Keywords
+
+Keyword | Meaning
+---|---
+**static** | *the function or variable can only be used within its file, it is somewhat similar to the concept of private*
+**inline** | *compiler will attempt to embed the function into the calling code instead of executing an actual call.*
+**const** | *will make the variable immutable* 
+**break; continue;** | *will respectively exit from the loop and go to the beginning of the loop*
+
+
+---
 # Programmer Tools
 
 ---
@@ -1686,6 +1742,7 @@ Title | How Interesting | Author
 Title | How Interesting | Author
 ---|---|---
 **[SDL2 Tutorial](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/linux/index.php)** | :two_hearts | *by mysterious Lazyfoo*
+**[The Book of Shaders](https://thebookofshaders.com/01/)** | :two_hearts | *by Patricio Gonzalez Vivo & Jen Lowe*
 **[Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root)** | :two_hearts: | attributed to John Carmack (Quake III)
 **[Game Engine Architecture](http://ce.eng.usc.ac.ir/files/1511334027376.pdf)** | :star::star::star::star::star: | *by Jason Gregory*
 **[Introduction to Computer Graphics](https://www.youtube.com/watch?v=t7g2oaNs-c8&list=PLQ3UicqQtfNuKZjdA3fY1_X9gXn13JLlW&index=1)** | :star::star::star::star::star: | *by Justin Solomon*
@@ -1730,7 +1787,7 @@ Title | How Interesting | Author
 **[Optimizing subroutines in assembly x86 language](https://www.agner.org/optimize/optimizing_assembly.pdf)** | :two_hearts: | *by Agner Fog*
 **[Online Compiler Explorer](https://godbolt.org/)** | :star::star::star::star::star: | *by Godbolt*
 **[Online Assembler and Disassembler](https://defuse.ca/online-x86-assembler.htm#disassembly)** | :star::star::star::star: | *by [Taylor Hornby](https://github.com/defuse)*
-**[A Guide to inline assembly for C and C++](https://www.ibm.com/developerworks/rational/library/inline-assembly-c-cpp-guide/) | :star::star::star::star: | *by Salma Elshatanoufy and William O'Farrell*
+**[A Guide to inline assembly for C and C++](https://www.ibm.com/developerworks/rational/library/inline-assembly-c-cpp-guide/)** | :star::star::star::star: | *by Salma Elshatanoufy and William O'Farrell*
 **[Tips for Golfing in x86/x64 Bytecode](https://codegolf.stackexchange.com/questions/132981/tips-for-golfing-in-x86-x64-machine-code)** | :star::star::star: | *by StackExchange*
 **[The Art of Assembly Language](http://www.staroceans.org/kernel-and-driver/The.Art.of.Assembly.Language.2nd.Edition.pdf)** | :star::star: | *by Randal Hyde*
 **[GDB Tutorial](https://www.cs.cmu.edu/~gilpin/tutorial/)** | :star::star: | *by Andrew Gilpin*
