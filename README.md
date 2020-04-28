@@ -25,6 +25,8 @@
         * **[If Brackets](#if-brackets)**  
         * **[Write Colorful Usage](#write-colorful-usage)**  
         * **[Function Pointers](#function-pointers)**  
+	* **[0x06 ~ Impossible is not C](#0x06--impossible-is-not-c)**  
+
 ---
 * **[1. Common Beginner Mistakes](#fire-common-beginner-mistakes)**  
     * **[0x00 ~ Array Overflow](#0x00--array-overflow)**  
@@ -63,6 +65,7 @@
     * **[0x03 ~ Productivity Gains](#0x03--productivity-gains)**  
     * **[0x04 ~ Add a a new binary in the PATH environment variable](#0x04--add-a-a-new-binary-in-the-path-environment-variable)**  
     * **[0x05 ~ Computer Graphics Libraries](#0x05--computer-graphics-libraries-ubuntu)**  
+
 ---
 * **[4. Curated list of Programming Learning Materials](#gem-curated-list-of-programming-learning-materials)**  
     * **[0x00 ~ C Knowledge](#0x00--c-knowledge)**  
@@ -77,6 +80,7 @@
     * **[0x09 ~ Functional Programing](#0x09--functional-programing-by-leonard-marquez)**  
     * **[0x0A ~ Misc](#0x0a--misc)**  
     * **[0x0B ~ Science-Fictions Masterpieces](#0x0b--science-fiction-masterpieces)**  
+
 ---
 * **[5. Tutorials](#tutorials)**  
     * **[0x00 ~ Optimization - Aiming for the lowest latency](#0x00--optimization---aiming-for-the-lowest-latency)**  
@@ -91,7 +95,8 @@
     * **[0x02 ~ Hacking - Buffer Overflow](#0x02--hacking---buffer-overflow)**  
         * **[Introduction](#introduction)**  
         * **[Buffer overflow to hijack a password](#buffer-overflow-to-hijack-a-password)**  
-        * **[Shellcode Execution to get root access](#shellcode-execution-to-get-root-access)** 
+        * **[Shellcode Execution to get root access](#shellcode-execution-to-get-root-access)**  
+
 ---
 * **[6. Epilogue]()** 
     * **[0x00 ~ Wanted PR](#0x00--wanted-pull-requests)**  
@@ -435,6 +440,50 @@ void			listen_keystroke(t_dlist **lst)
 	}
 }
 ```
+
+---
+## 0x06 ~ Impossible is not C
+
+### Negative index Array
+
+```c
+#include <limits.h>	// INT_MAX
+#include <stdio.h>	// printf
+
+int main(void) {
+	int x[2001];
+	int *y = &x[1000];
+
+	(void)x;
+	y[-10] = 5;
+	printf("%d\n", y[-10]);
+}
+```
+
+### It's just a pointer game
+
+Did you know ? Instead of writing array[index], you can write index[array]:
+```
+int ft_strlen(char *str) {
+	int i = 0;
+	while (i[str])
+		++i;
+
+	return i;
+}
+```
+
+Because this is understood by the compiler as pointer arithmetic:
+```
+int ft_strlen(char *str) {
+	int i = 0;
+	while (*(str+i))
+		++i;
+
+	return i;
+}
+```
+
 
 ---
 # :fire: Common Beginner Mistakes
@@ -1746,7 +1795,8 @@ Title | How Interesting | Author
 **[Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root)** | :two_hearts: | attributed to John Carmack (Quake III)
 **[Game Engine Architecture](http://ce.eng.usc.ac.ir/files/1511334027376.pdf)** | :star::star::star::star::star: | *by Jason Gregory*
 **[Introduction to Computer Graphics](https://www.youtube.com/watch?v=t7g2oaNs-c8&list=PLQ3UicqQtfNuKZjdA3fY1_X9gXn13JLlW&index=1)** | :star::star::star::star::star: | *by Justin Solomon*
-**[3d Fractal Flame Wisps](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses)** | :star::star::star: | *[by Yujie Shu](https://www.semanticscholar.org/author/Yujie-Shu/11523322)*
+**[Shaders Programming](https://www.hiteshsahu.com/blogs)** | :star::star::star::star: | *by [Hitesh Sahu](https://github.com/hiteshsahu)*
+**[3d Fractal Flame Wisps](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses)** | :star::star::star: | *by [Yujie Shu](https://www.semanticscholar.org/author/Yujie-Shu/11523322)*
 **[Geometry Caching Optimizations in Halo 5](https://www.youtube.com/watch?v=uYAjUOlEgwI)** | :star::star::star: | *by Zabir Hoque and Ben Laidlaw*
 **[Light and Shadows in Graphics](https://www.youtube.com/watch?v=LUjXAoP5GG0)** | :star::star: | *by Tom Scott*
 **[Screen Space Ambient Occlusion Tutorial](http://john-chapman-graphics.blogspot.com/2013/01/ssao-tutorial.html)** | :star::star: | *by Tom Scott*
