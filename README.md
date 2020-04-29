@@ -104,6 +104,7 @@
     * **[0x02 ~ Liked it ?](#0x02--liked-it-)**  
     * **[0x2A ~ About the Author](#musical_score-0x2a--about-the-author)**  
 
+*NB: Use CTRL + F or Command + F to quickly look for keywords.*
 
 ---
 # About 42 School
@@ -308,7 +309,7 @@ Next you should **study the different concepts in programming**, especially spen
 |Malloc|System|Algo, Memory, HashCollision|[The Good Old Manual](http://man7.org/linux/man-pages/man3/malloc.3.html)|
 |FDF|Computer Graphics|Parsing, Creativity|[Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm), [Use of Graphics Library](https://en.wikipedia.org/wiki/Graphics_library), [Trigonometry](https://en.wikipedia.org/wiki/Trigonometry), [Rotations](https://en.wikipedia.org/wiki/Rotation_(mathematics)), [3D Projection](https://en.wikipedia.org/wiki/3D_projection), [ARGB Color Space](https://en.wikipedia.org/wiki/RGBA_color_space)|
 |Fractol|Computer Graphics|Fractals, Mathematics, ARGB, HUV|[Mandelbrot Set](https://en.wikipedia.org/wiki/Mandelbrot_set)|
-|Wolfenstein 3d|Computer Graphics|Raytracing, Rotation|[About the original Wolfenstein 3d](https://en.wikipedia.org/wiki/Wolfenstein_3D)|
+|[Cube3d - Wolf3d](https://lodev.org/cgtutor/raycasting.html)|Computer Graphics|Ray Casting, Rotation|[About the original Wolfenstein 3d](https://en.wikipedia.org/wiki/Wolfenstein_3D)|
 |NmOtool|System|Symbol Table, .dll .so|[Implement List the symbols in a .so file](https://stackoverflow.com/questions/34732/how-do-i-list-the-symbols-in-a-so-file)
 |LibftAsm|System|x86 Assembly Instructions|[Refer to the Intel Bible](https://software.intel.com/en-us/articles/intel-sdm)
 |[RT](https://github.com/Chr0nos/rt)|Computer Graphics|Ray Tracing|Create a Scene of enlightened polygons 
@@ -463,7 +464,7 @@ int main(void) {
 ### It's just a pointer game
 
 Did you know ? Instead of writing array[index], you can write index[array]:
-```
+```c
 int ft_strlen(char *str) {
 	int i = 0;
 	while (i[str])
@@ -474,7 +475,7 @@ int ft_strlen(char *str) {
 ```
 
 Because this is understood by the compiler as pointer arithmetic:
-```
+```c
 int ft_strlen(char *str) {
 	int i = 0;
 	while (*(str+i))
@@ -482,6 +483,88 @@ int ft_strlen(char *str) {
 
 	return i;
 }
+```
+
+### Get function name, filename or even line number
+
+```__FILE__```, ```__FUNCTION__``` and ```__LINE__``` macros can be very helpful to display meaningful error messages for both users and developers:
+
+```c
+#include <stdbool.h>	// bool
+#include <unistd.h>		// write
+#include <stdlib.h>		// malloc
+#include <string.h>		// strlen
+#include <stdarg.h>		// va_list
+
+bool	ft_error_va(char *errmsg, ...) {
+	va_list		args;
+	char		*arg = errmsg;
+
+	write(2, errmsg, strlen(errmsg));
+	va_start(args, errmsg);
+	while (arg = va_arg(args, char*)) {
+		write(2, arg, strlen(arg));
+	}
+	write(2, "\n", 1);
+	va_end(args);
+	return false;
+}
+
+char	*ft_itoa(int n);
+
+bool	ft_error(char *errmsg, char *file, const char *function, int line) {
+	 return ft_error_va(errmsg, "File: ", __FILE__,  ", in function ", \
+	 (char *)function, ", line ", ft_itoa(line), NULL);
+}
+
+
+bool	dummy_function(void) {
+	 if (3 != 2)
+	 	return ft_error("Error with 3 != 2: ", __FILE__, __FUNCTION__, __LINE__);
+}
+
+int			main(void) {
+	if (!dummy_function())
+		return 1;
+	return 0;
+}
+
+char	*ft_itoa(int n)
+{
+	char	*s;
+	long	tmp;
+	int		length;
+
+	tmp = n;
+	length = (n <= 0 ? 2 : 1);
+	while (n && ++length)
+		n /= 10;
+	if (!(s = (char *)malloc(sizeof(char) * length)))
+		return (NULL);
+	s[--length] = '\0';
+	if (tmp <= 0)
+		s[0] = (tmp < 0 ? '-' : '0');
+	while (tmp)
+	{
+		s[--length] = (tmp < 0 ? -tmp : tmp) % 10 + '0';
+		tmp /= 10;
+	}
+	return (s);
+}
+```
+If you don't know what variadic functions are, ```#include <stdarg.h>```, you can check [my implementation of printf](https://github.com/agavrel/42-ft_printf/blob/master/srcs/ft_printf.c)
+
+### Setting values of a struct to 0 without using memset or bzero
+
+You can use either:
+```c
+t_mystruct mystruct = {};
+```
+
+or, to comply with 42 Norminette that forbid declaration and assignation on the same row:
+```c
+t_mystruct mystruct;
+(void)mystruct;
 ```
 
 
@@ -1779,6 +1862,7 @@ Title | How Interesting | Author
 **[Basic Linux Privilege Esclation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)** | :star::star::star: | *by g0tmi1k* 
 **[Network Protocol Fuzzing and Buffer Overflow](https://blog.own.sh/introduction-to-network-protocol-fuzzing-buffer-overflow-exploitation/) | :star::star::star::star: | *by Joey Lane*
 **[Secure Programming HOWTO](https://dwheeler.com/secure-programs/Secure-Programs-HOWTO.pdf)** | :star::star::star: | *by David A. Wheeler*
+**[Padding the struct](https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2019/october/padding-the-struct-how-a-compiler-optimization-can-disclose-stack-memory/)** | :star::star::star: | by *NCC Group*
 **[Efficiently Generating Python Hash Collisions](https://www.leeholmes.com/blog/2019/07/23/efficiently-generating-python-hash-collisions/)** | :star::star:
 **[Stochastic Process Wikipedia](https://en.wikipedia.org/wiki/Stochastic_process)** | :star::star:
 **[Gimli: a cross-platform permutation](https://eprint.iacr.org/2017/630.pdf)** | :star::star:
@@ -1795,6 +1879,7 @@ Title | How Interesting | Author
 **[Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root)** | :two_hearts: | attributed to John Carmack (Quake III)
 **[Game Engine Architecture](http://ce.eng.usc.ac.ir/files/1511334027376.pdf)** | :star::star::star::star::star: | *by Jason Gregory*
 **[Introduction to Computer Graphics](https://www.youtube.com/watch?v=t7g2oaNs-c8&list=PLQ3UicqQtfNuKZjdA3fY1_X9gXn13JLlW&index=1)** | :star::star::star::star::star: | *by Justin Solomon*
+**[RayCasting Tutorial + Source Code](https://lodev.org/cgtutor/raycasting.html)** | :star::star::star::star::star: | *by Lodev*
 **[Shaders Programming](https://www.hiteshsahu.com/blogs)** | :star::star::star::star: | *by [Hitesh Sahu](https://github.com/hiteshsahu)*
 **[3d Fractal Flame Wisps](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses)** | :star::star::star: | *by [Yujie Shu](https://www.semanticscholar.org/author/Yujie-Shu/11523322)*
 **[Geometry Caching Optimizations in Halo 5](https://www.youtube.com/watch?v=uYAjUOlEgwI)** | :star::star::star: | *by Zabir Hoque and Ben Laidlaw*
@@ -1819,7 +1904,8 @@ Title | How Interesting | Author
 Title | How Interesting | Author
 ---|---|---
 **[Optimizing software in C++](https://www.agner.org/optimize/optimizing_cpp.pdf)** | :two_hearts: | *by Agner Fog*
-**[Intel Intrinsics Guide](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)** *[What is it](https://en.wikipedia.org/wiki/Intrinsic_function)* | :star::star::star::star: | *Intel*
+**[Intel Intrinsics Guide](https://software.intel.com/sites/landingpage/IntrinsicsGuide/)** *[What is it](https://en.wikipedia.org/wiki/Intrinsic_function)* | :two_hearts: | *Intel*
+**[Software Performance and Indexing](https://lemire.me/en/#publications)** | :two_hearts: | *by [Daniel Lemire](https://github.com/lemire)*
 **["Low Latency C++ for Fun and Profit"](https://www.youtube.com/watch?v=BxfT9fiUsZ4)** | :star::star::star::star: | *by Carl Cook*
 **[Why I Created C++](https://www.youtube.com/watch?v=JBjjnqG0BP8)** | :star::star::star: | *Bjarne Stroustrup*
 **[CppCon 2018 “High-Radix Concurrent C++”](https://www.youtube.com/watch?v=75LcDvlEIYw)** | :star::star::star: | *Olivier Giroux*
