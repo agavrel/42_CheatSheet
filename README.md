@@ -15,6 +15,8 @@
         * **[List of Essential Items](#star-list-of-essential-items)**  
     * **[0x02 ~ Coding simple C programs](#0x02--coding-simple-c-programs)**  
         * **[First by installing a C compiler on your computer](#first-by-installing-a-c-compiler-on-your-computer)**  
+		* **[C Data Types](#c-data-types)**  
+		* **[Pointers](#pointers)**  
         * **[ft_putchar](#ft_putchar)**  
         * **[ft_strlen](#ft_strlen)**  
         * **[ft_putstr](#ft_putstr)**  
@@ -191,7 +193,49 @@ The piscine is the entrance exam that consists of **4 weeks fully dedicated to c
 * On Linux it is pretty straightforward since it is only installed and if not ```apt-get``` will make it easy.
 * On MAC it is not much more difficult, google how to do it.
 
+### C Data Types
+
+I will only list the main ones
+
+|Data Type|Bytes|Description|
+|-|-|-|
+|char|1|Used for text
+|bool|1|Used to return true or false, you will need the header <stdbool.h>
+|short|2|Half the size of an integer, used to optimize memory
+|int|4|Loop Counter, operations on integers
+|long|8|Twice the size of an integer, used when overflow is a problem
+|float|4|Used for computer graphics
+|double|8|Used for computer graphics, more precised than float but takes more memory
+|unsigned|.|Apply to char, short, int and long, means than it cannot have negative values
+
 You should then try to recode basic C functions
+
+### Pointers
+
+> [In computer science, a pointer is a programming language object that stores a memory address.](https://en.wikipedia.org/wiki/Pointer_(computer_programming))
+
+```c
+#include <stdio.h>
+
+int main(void) {
+	int a = 5;	// declaring an integer variable and assigning the value of 5
+	int *ptr;	// declaring a pointer to integer
+	int b;		// declaring an integer variable
+
+	ptr = &a;	// pointer ptr points to what is stored at the memory address of variable a
+	b = a;		// b will take the value and not the address
+
+	a = 42;		// b is still equal to 5, but ptr will return 42, which is the value now stored at a's location;
+
+	printf("a's value: %d, a's address: %p\n", a, &a);
+	printf("ptr's value: %d, ptr's address: %p\n", *ptr, ptr); 
+	printf("b's value: %d, b's address %p\n", b, &b);
+
+	return 0;
+}
+```
+**Note that on the second printf you will get the same as for a, notice that you have to dereference the pointer with * to get the value, and using the pointer alone (ptr) will give you the memory address.**
+
 
 ### ft_putchar
 
@@ -224,7 +268,7 @@ Once you understand well how to print a character, you should try to return the 
 
 int		ft_strlen(char *str) {
 	int i = 0;					// set variable i to 0
-	while (str[i] != NULL)		// while the char array does not reach a NULL character
+	while (str[i] != '\0')		// while the char array does not reach a NULL character
 		i++;					// increment i, equivalent of i = i + 1;
 
 	return i;					// return i variable to the caller function
@@ -257,7 +301,7 @@ This can be achieve by using and index that starts on the first character and is
 void	ft_putstr(char *str) {
 	int i = 0;
 
-	while(str[i] != NULL)
+	while(str[i] != '\0')
 		write(1, &str[i++], 1);
 }
 ```
@@ -313,6 +357,7 @@ Next you should **study the different concepts in programming**, especially spen
 |NmOtool|System|Symbol Table, .dll .so|[Implement List the symbols in a .so file](https://stackoverflow.com/questions/34732/how-do-i-list-the-symbols-in-a-so-file)
 |LibftAsm|System|x86 Assembly Instructions|[Refer to the Intel Bible](https://software.intel.com/en-us/articles/intel-sdm)
 |[RT](https://github.com/Chr0nos/rt)|Computer Graphics|Ray Tracing|Create a Scene of enlightened polygons 
+|[Scop](https://github.com/Gpinchon/Scop42)|Computer Graphics|Shading|Create a Shader
 |Particles System|Computer Graphics|Graphics Effects|[simulate certain kinds of "fuzzy" phenomena](https://en.wikipedia.org/wiki/Particle_system)
 
 ---
@@ -1809,7 +1854,7 @@ Title | How Interesting | Author
 **[Modern C](https://gforge.inria.fr/frs/download.php/file/38170/ModernC.pdf)** | :star::star::star: | *by Jens Gustedt*
 **[Duff's Device](http://www.lysator.liu.se/c/duffs-device.html)** | :star::star::star: | *by Tom Duff*
 **[Structure Packing](http://www.catb.org/esr/structure-packing/)** | :star::star::star: | *by Eric S. Raymond*
-**[Cello, High Level Programming to C](https://github.com/orangeduck/Cello)** | :Star::star::star: | *by Daniel Holden*
+**[Cello, High Level Programming to C](https://github.com/orangeduck/Cello)** | :star::star::star: | *by Daniel Holden*
 **[Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)** | :star: | *StackOverFlow*
 
 
@@ -1851,11 +1896,12 @@ Title | How Interesting | Author
 ---
 ## 0x04 ~ Hacking & Security
 
-> **Never underestimate the determination of a kid who is time-rich and cash-poor.** ― *Cory Doctorow, Little Brother*
+> **Never underestimate the determination of a kid who is time-rich and cash-poor** ― *Cory Doctorow, Little Brother*
 
 Title | How Interesting | Author
 ---|---|---
 **[Smashing The Stack For Fun And Profit](http://www-inst.eecs.berkeley.edu/~cs161/fa08/papers/stack_smashing.pdf)** | :two_hearts: | *by Aleph One*
+**[Violent Python - A Cookbook for Hackers, FA, PT and SE](https://repo.zenk-security.com/Programmation/Violent%20Python%20-%20A%20Cookbook%20for%20Hackers,%20Forensic%20Analysts,%20Penetration%20Testers%20and%20Security%20Enginners.pdf)** | :two_heats: | *by TJ O'Connor*
 **[Breaking the x86 Instruction Set](https://www.youtube.com/watch?v=KrksBdWcZgQ)** | :star::star::star::star::star: | *[by Domas](https://github.com/xoreaxeaxeax)*
 **[Buffer Overflow, Race Condition, Input Validation, Format String](http://www.cis.syr.edu/~wedu/Teaching/cis643/schedule.html)** | :star::star::star::star: | *by Wenliang (Kevin) Du*
 **[Meltdown](https://meltdownattack.com/meltdown.pdf)** | :star::star::star::star: | *by Lipp, Schwarz, Gruss, Prescher, Haas, Mangard, Kocher, Genkin, Yarom, and Hamburg*
@@ -1872,17 +1918,22 @@ Title | How Interesting | Author
 ---
 ## 0x05 ~ Computer Graphics
 
+> **Programming is not a zero-sum game. Teaching something to a fellow programmer doesn't take it away from you. I'm happy to share what I can, because I'm in it for the love of programming** ― *[John Carmack](https://en.wikipedia.org/wiki/John_Carmack)*
+
 Title | How Interesting | Author
 ---|---|---
-**[SDL2 Tutorial](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/linux/index.php)** | :two_hearts | *by mysterious Lazyfoo*
-**[The Book of Shaders](https://thebookofshaders.com/01/)** | :two_hearts | *by Patricio Gonzalez Vivo & Jen Lowe*
+**[SDL2 Tutorial](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/linux/index.php)** | :two_hearts: | *by mysterious Lazyfoo*
+**[The Book of Shaders](https://thebookofshaders.com/01/)** | :two_hearts: | *by Patricio Gonzalez Vivo & Jen Lowe*
 **[Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root)** | :two_hearts: | attributed to John Carmack (Quake III)
 **[Game Engine Architecture](http://ce.eng.usc.ac.ir/files/1511334027376.pdf)** | :star::star::star::star::star: | *by Jason Gregory*
 **[Introduction to Computer Graphics](https://www.youtube.com/watch?v=t7g2oaNs-c8&list=PLQ3UicqQtfNuKZjdA3fY1_X9gXn13JLlW&index=1)** | :star::star::star::star::star: | *by Justin Solomon*
 **[RayCasting Tutorial + Source Code](https://lodev.org/cgtutor/raycasting.html)** | :star::star::star::star::star: | *by Lodev*
 **[Shaders Programming](https://www.hiteshsahu.com/blogs)** | :star::star::star::star: | *by [Hitesh Sahu](https://github.com/hiteshsahu)*
+**[Coding Minecraft in two days](https://youtu.be/4O0_-1NaWnY)** *(source code)[https://github.com/jdah/minecraft-weekend]* | :star::star::star::star::star: | *by [Jdah](https://github.com/jdah)*
+**|[Moving Frostbite to Physically Based Rendering 3.0](https://seblagarde.files.wordpress.com/2015/07/course_notes_moving_frostbite_to_pbr_v32.pdf)** | :star::star::star::star: | *by Sebastien Lagarde and Charles de Rousiers*
 **[3d Fractal Flame Wisps](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2704&context=all_theses)** | :star::star::star: | *by [Yujie Shu](https://www.semanticscholar.org/author/Yujie-Shu/11523322)*
 **[Geometry Caching Optimizations in Halo 5](https://www.youtube.com/watch?v=uYAjUOlEgwI)** | :star::star::star: | *by Zabir Hoque and Ben Laidlaw*
+**[Physically-Based Shading at Disney](https://disney-animation.s3.amazonaws.com/library/s2012_pbs_disney_brdf_notes_v2.pdf)** | :star::star::star: | *by Brent Burley, Walt Disney Animation Studios*
 **[Light and Shadows in Graphics](https://www.youtube.com/watch?v=LUjXAoP5GG0)** | :star::star: | *by Tom Scott*
 **[Screen Space Ambient Occlusion Tutorial](http://john-chapman-graphics.blogspot.com/2013/01/ssao-tutorial.html)** | :star::star: | *by Tom Scott*
 **[Exponentiation by Squaring](https://en.wikipedia.org/wiki/Exponentiation_by_squaring)**  | :star: | *Wikipedia*
@@ -1969,7 +2020,7 @@ Format | Title | How Interesting | Author
 ---|---|---|---
 Book | **[The Foundation](https://en.wikipedia.org/wiki/Foundation_series)** | :two_hearts: | *by [Isaac Asimov](https://en.m.wikipedia.org/wiki/Isaac_Asimov)*
 Book | **[The Hitchhiker's Guide to the Galaxy](https://www.goodreads.com/book/show/841628.The_Hitchhiker_s_Guide_to_the_Galaxy)** | :two_hearts: | *by [Douglas Adams](https://en.m.wikipedia.org/wiki/Douglas_Adams)*
-AudioBook | **[The Hitchhiker's Guide to the Galaxy](https://www.youtube.com/watch?v=dPbr0v_V-cI&list=PLYT7LhCzuTTdtIGcDOP-PPMxAWYo3qF5r&index=3&t=3167s)** | :two_hearts | *by Douglas Adams and read by Stephen Moore*
+AudioBook | **[The Hitchhiker's Guide to the Galaxy](https://www.youtube.com/watch?v=dPbr0v_V-cI&list=PLYT7LhCzuTTdtIGcDOP-PPMxAWYo3qF5r&index=3&t=3167s)** | :two_hearts: | *by Douglas Adams and read by Stephen Moore*
 Movie | **[Ready Player One](https://en.wikipedia.org/wiki/Ready_Player_One_(film))** | :two_hearts: | by *[Steven Spielberg](https://en.wikipedia.org/wiki/Steven_Spielberg)*
 Movie | **[Matrix](https://en.wikipedia.org/wiki/The_Matrix)** | :two_hearts: | *by the Wachowskis*
 Book | **[Hyperion](https://en.m.wikipedia.org/wiki/Hyperion_(Simmons_novel))** | :star::star::star::star: | *by [Dan Simmons](https://en.m.wikipedia.org/wiki/Dan_Simmons)*
