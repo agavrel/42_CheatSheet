@@ -80,8 +80,9 @@
     * **[0x07 ~ C++ Optimization](#0x07--c-optimization)**  
     * **[0x08 ~ Assembly Optimization](#0x08--assembly-optimization)**  
     * **[0x09 ~ Functional Programing](#0x09--functional-programing-by-leonard-marquez)**  
-    * **[0x0A ~ Misc](#0x0a--misc)**  
-    * **[0x0B ~ Science-Fictions Masterpieces](#0x0b--science-fiction-masterpieces)**  
+	* **[0x0A ~ Computer Architecture](#0x0a--computer-architecture)**
+    * **[0x0B ~ Misc](#0x0b--misc)**  
+    * **[0x0C ~ Science-Fictions Masterpieces](#0x0c--science-fiction-masterpieces)**  
 
 ---
 * **[5. Tutorials](#tutorials)**  
@@ -90,7 +91,8 @@
         * **[Multithreading and Parallelization](#multithreading-and-parallelization)**  
         * **[Vectorization](#vectorization)**  
         * **[Combining Optimization Flags, Parallelization and Vectorization](#combining-optimization-flags-parallelization-and-vectorization)**  
-        * **[Last but not least: Getting the right algorithm](#last-but-not-least-getting-the-right-algorithm)**  
+        * **[The right algorithm](#the-right-algorithm)**  
+		* **[Exploring Compiler's Assembly Output](#exploring-compilers-assembly-output)**  
     * **[0x01 ~ Computer Graphics - Using SDL2 to create Fractal](#0x01--computer-graphics---using-sdl2-to-create-fractal)**  
         * **[Using SDL2 to create Computer Graphics](#using-sdl2-to-create-computer-graphics)**  
         * **[Example with a Barnsley Fern Fractal](#example-with-a-barnsley-fern-fractal)**  
@@ -1741,6 +1743,14 @@ nasm -f elf64 agavrel.s \
 ```
 Now each time you compile your file you will set the output, very efficient with a transparent editor.
 
+**Use the following script and give the .c file as argument:**
+```
+while inotifywait -e close_write $1; do \
+gcc $1 \
+&& ./a.out \
+; done
+```
+
 ---
 ### [Run Commands in Background](https://linuxize.com/post/how-to-run-linux-commands-in-background/)
 
@@ -1996,7 +2006,17 @@ Title | How Interesting | Author
 
 
 ---
-## 0x0A ~ Misc
+## 0x0A ~ Computer Architecture
+
+Title | How Interesting | Author
+---|---|---
+**[Digital Design and Computer Architecture](http://www.csit-sun.pub.ro/courses/cn2/Digital_design_book/Digital%20Design%20and%20Computer%20Architecture.pdf)** | :star::star::star::star: | **  
+**[X86 vs ARM](https://fossbytes.com/cpu-comparison-x86-arm-cpu-benchmark/amp/)** | :star::star::star: | *Fossbytes*  
+**[MIPS Processors](https://stackoverflow.com/questions/2635086/mips-processors-are-they-still-in-use-which-other-architecture-should-i-learn)** | :star::star: | *Stack Overflow*  
+
+
+---
+## 0x0B ~ Misc
 
 > **Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?** ― *Brian W. Kernighan*
 
@@ -2012,7 +2032,7 @@ Title | How Interesting | Author
 
 
 ---
-## 0x0B ~ Science-Fiction Masterpieces
+## 0x0C ~ Science-Fiction Masterpieces
 
 > **To succeed, planning alone is insufficient. One must improvise as well** ― *Isaac Asimov, Foundation*
 
@@ -2207,16 +2227,93 @@ time ./a.out sample.txt \
 && time wc sample.txt
 ```
 
+### The Right Algorithm
 
-### Last but not least: Getting the right algorithm
+**The right algorithm is usually the corner stone of an efficient program.**
 
-Try to give a shot at solving this [algorithm problem](https://github.com/agavrel/Nailing-the-Coding-Interview/tree/master/math/the_dancer):
+*How about solving this [algorithm problem](https://github.com/agavrel/Nailing-the-Coding-Interview/tree/master/math/the_dancer):*
 
 ```c
 int32_t dancer_position(uint32_t time_elapsed) { ;}
 ```
 
-**The right algorithm is usually the corner stone of an efficient program.**
+
+### Exploring Compiler's Assembly Output
+
+Let's take and example with the brilliant [UTF-8](https://en.wikipedia.org/wiki/UTF-8) implementation, especially at how continuation bytes are designed: 
+
+> continuation bytes start with 10 while single bytes start with 0 and longer lead bytes start with 11
+
+Let's say that you have to write a function that determines if the byte is a continuation one, you can think of many ways that would end with the same result. But they will have a different output in their assembly.
+
+
+You can retain the two first bits wwith ```& 0b11000000``` and then make sure that the first one is set and the second one is not with ```== 0b10000000``` :
+```c
+#include <stdbool.h>
+
+bool is_utf8_continuation_byte(char c) {
+	return ((c & 0b11000000) == 0b10000000);  
+}
+```
+
+Which corresponds to the following compiler output with ```gcc x86-64 9.3 with -O3 optimization flag``` :
+```asm
+and     edi, 192
+cmp     edi, 128
+sete    al
+```
+
+
+Another way would be to shift the bits to the right:
+```c
+bool is_utf8_continuation_byte(char c) {
+	return (!((((unsigned char)c >> 6) ^ 0b10)));
+}
+```
+Here I cast c into unsigned in order to be able to shift the MSB to the right with ```(unsigned char)c```  
+Then I shift it 6 times to the right with ``` >> 6``` because we do not care about the content of the 6 lowest bits.  
+Finally I xor the result by 0b10 with ```^ 0b10```, which corresponds to specification of a continuation byte as quoted before.
+As a number xored by itself gives 0, I use the exclamation mark ! to reverse the result from 0 to 1. (Else we would have to rename the function ```is_not_utf8_continuation_byte```)
+
+
+It is not producing the following output that you could imagine:
+```asm
+sar     edi, 6
+xor     edi, 2
+not		edi,
+```
+
+But the optimized version:
+```asm
+movzx   edi, dil
+sar     edi, 6
+cmp     edi, 2
+sete    al
+```
+It's even less efficient.
+
+
+Finally since the valid range 0b10111111 to 0b10000000 (corresponding to -128 to -65, both included), you can add 0b01000000 and check if the byte is negative:
+```c
+bool is_utf8_continuation_byte(char c) {
+	return (c + 0b01000000 < 0);
+}
+```
+
+In other word you compare to -64 and check if it is lower:
+```asm
+cmp     dil, -64
+setl    al
+```
+
+**To see the assembly output you can use the following command which will generate an assembly file with intel syntax (more readable than AT&T):**
+```
+gcc -O3 -S -masm=intel a.c && cat a.s
+```
+
+*or use the excellent [compiler explorer from godbolt](https://godbolt.org/)*
+
+**I hope that you liked this demonstration that shows that functions with same behaviors can produce different assembly output, hence being more or less efficient. If you want to build your program to be the most efficient you should explore the assembly code of functions in critical loops**
 
 
 ---
