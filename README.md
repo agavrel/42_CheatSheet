@@ -174,7 +174,7 @@ The piscine is the entrance exam that consists of **4 weeks fully dedicated to c
 
 ### :star: List of Essential Items
 
-> "Never give up on something that you can't go a day without thinking about." ― Winston Churchill
+> **Towels are extremely useful for cleaning up messes and drying off your body. You can set it on fire as a weapon, chase off enemies, and use it as a distress signal. Life is messy and sometimes dangerous. Space is even messier and more dangerous. Be like Arthur Dent and keep up with your towel** ― *[17 Life Lessons From HITCHHIKER’S GUIDE Hero Arthur Dent](https://nerdist.com/article/hitchhikers-guide-life-lessons-arthur-dent/?amp)*
 
 :sleeping_bed: Mattress or equivalent and Pillow  
 :electric_plug: Phone charger  
@@ -364,6 +364,8 @@ Next you should **study the different concepts in programming**, especially spen
 
 ---
 ## 0x04 ~ Choosing your Path
+
+> **Never give up on something that you can't go a day without thinking about** ― *Winston Churchill*
 
 ### How to choose your specialization
 
@@ -1537,6 +1539,8 @@ You can read the details about each flag on [gccgnu website](https://gcc.gnu.org
 ---
 ## 0x05 ~ Using preprocessor DEBUG macros
 
+> **Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?** ― *Brian W. Kernighan*
+
 You can improve the performance of your program by using what we call preprocessor macros
 ```c
 #include <unistd.h>
@@ -1731,6 +1735,8 @@ git add README.md \
 ---
 ## 0x03 ~ Productivity Gains 
 
+> **One of my most productive days was throwing away 1000 lines of code** ― *[Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson)*
+
 ### [Compile and Execute file on changes](https://superuser.com/questions/181517/how-to-execute-a-command-whenever-a-file-changes?page=2&tab=votes#tab-top)
 
 Create ou run the following script (necessite to download ```sudo apt-get install inotifywait```)
@@ -1871,6 +1877,10 @@ Title | How Interesting | Author
 ---
 ## 0x01 ~ Algorithm
 
+> **When in doubt, use bruteforce** ― *[Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson)*
+
+> **And now... don't rush... when you see a good move, you look for a better one** - *[by GM Varuzhan Akobian](https://en.wikipedia.org/wiki/Varuzhan_Akobian) in [Games of Magnus Carlsen and Tactics, 2013](https://www.youtube.com/watch?v=Na9g-RzSLuY&t=8m35s)*
+
 Title | How Interesting | Author
 ---|---|---
 **[Nailing the Coding Interview](https://github.com/agavrel/Nailing-the-Coding-Interview)** | :kr: | *by Antonin Gavrel*
@@ -1924,6 +1934,16 @@ Title | How Interesting | Author
 **[Gimli: a cross-platform permutation](https://eprint.iacr.org/2017/630.pdf)** | :star::star:
 **[LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w)** | :star::star:
 
+<details>
+
+<summary>*p/q2-q4*</summary>
+
+**[Forum cracks the vintage passwords of Ken Thompson and other Unix pioneers](https://arstechnica.com/information-technology/2019/10/forum-cracks-the-vintage-passwords-of-ken-thompson-and-other-unix-pioneers/)**  
+**[Most Common Chess Openings](https://www.thesprucecrafts.com/most-common-chess-openings-611517)**  
+**[Kasparov Miniature and Tactics/Endgames | Kids' Class - GM Varuzhan Akobian](https://www.youtube.com/watch?v=_B39II74Pkc)**  
+
+</details>
+
 
 ---
 ## 0x05 ~ Computer Graphics
@@ -1951,6 +1971,8 @@ Title | How Interesting | Author
 
 ---
 ## 0x06 ~ Computer Vision & AI
+
+> **It is through science that we prove, but through intuition that we discover** ― *[Henri Poincaré](https://en.wikipedia.org/wiki/Henri_Poincar%C3%A9)*
 
 Title | How Interesting | Author
 ---|---|---
@@ -2008,6 +2030,8 @@ Title | How Interesting | Author
 ---
 ## 0x0A ~ Computer Architecture
 
+> **And luckily right at that moment my wife went on a 3 weeks vacation to take my one year old (roughly) to visit my in-laws who were in California, this period long, 1 week, 1 week, 1 week... and we had Unix** ― *[Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson), [VCF East 2019](https://www.youtube.com/watch?v=EY6q5dv_B-o&t=23m11s)*
+
 Title | How Interesting | Author
 ---|---|---
 **[Digital Design and Computer Architecture](http://www.csit-sun.pub.ro/courses/cn2/Digital_design_book/Digital%20Design%20and%20Computer%20Architecture.pdf)** | :star::star::star::star: | **  
@@ -2018,12 +2042,15 @@ Title | How Interesting | Author
 ---
 ## 0x0B ~ Misc
 
-> **Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?** ― *Brian W. Kernighan*
+> **...and Unix is an example of a proper name, and, is not likely to be in the dictionary ever** ― *[Brian W. Kernighan](https://en.wikipedia.org/wiki/Brian_Kernighan) (1982)*
 
 Title | How Interesting | Author
 ---|---|---
+**[UNIX AT&T Archives film from 1982](https://www.youtube.com/watch?v=XvDZLjaCJuw)** | :two_hearts | *by Bell Laboratories*
 **[A Super Mario 64 decompilation](https://github.com/agavrel/sm64)** | :star::star::star::star::star: | *by a bunch of clever folks*
+**[The Go Programming Language](https://www.gopl.io/ch1.pdf)** | :star::star::star::star::star: |  *by Alan A. A. Donovan and Brian W. Kernighan*
 **[Vim 101 Quick Movement](https://medium.com/usevim/vim-101-quick-movement-c12889e759e0)** | :star::star::star::star: | *Alex R. Young*
+**[Software Version Control Visualization](https://github.com/acaudwell/Gource)** : :star::star::star::star: | *by [Andrew Caudwell](https://github.com/acaudwell)*
 **[Math for Game Programmers: Dark Secrets of the RNG](https://www.youtube.com/watch?v=J5qnnxFoBss)** | :star::star::star: | *by Shay Pierce*
 **[Clean Code](https://www.investigatii.md/uploads/resurse/Clean_Code.pdf)** | :star::star::star: | *by Robert C. Martin*
 **[Why Java Suck](https://tech.jonathangardner.net/wiki/Why_Java_Sucks)** | :star: | *by Jonathan Gardner*
