@@ -47,6 +47,7 @@
     * **[0x0D ~ Comparing Float and Double](#0x0d--comparing-float-and-double)**  
     * **[0x0E ~ Wrong usage of pointers](#0x0e--wrong-usage-of-pointers)**  
     * **[0x0F ~ Undefined Behavior](#0x0f--undefined-behavior)**  
+	* **[0x10 ~ Operator Precedence](#0x10--operator-precedence)**  
 
 ---
 * **[2. Clean Code](#snowflake-clean-code)**  
@@ -1242,6 +1243,63 @@ int main(int argc, char **argv) {
 
 
 ---
+## 0x10 ~ Operator Precedence
+
+Often you may write some code like:
+```c
+return !(a & b << 8);
+```
+
+This is bad because you ignore the rule of operator precedences, and should have written the return as:
+```c
+return !(a & (b << 8));
+```
+
+Another example with pointers:
+```c
+*s->a++;
+(*s)->a++;
+(*s->a)++;
+```
+
+Below you will find the full table of [operator precedence](https://en.cppreference.com/w/c/language/operator_precedence):
+
+Precedence | Operator | Description | Associativity
+---|---|---|---
+1|++ --|	Suffix/postfix increment and decrement|Left-to-right
+1|()|Function call|Left-to-right
+1|[]|Array subscripting|Left-to-right
+1|.|Structure and union member access|Left-to-right
+1|->|Structure and union member access through pointer|Left-to-right
+1|(type){list}|Compound literal(C99)|Left-to-right
+2|++ --|Prefix increment and decrement|Right-to-left
+2|+ -|	Unary plus and minus|Right-to-left
+2|! ~|	Logical NOT and bitwise NOT|Right-to-left
+2|(type)|Cast|Right-to-left
+2|*|	Indirection (dereference)|Right-to-left
+2|&|	Address-of|Right-to-left
+2|sizeof|Size-of|Right-to-left
+2|_Alignof|Alignment requirement(C11)|Right-to-left
+3|* / %||Left-to-right
+4|+ -||Left-to-right
+5|<< >>||Left-to-right
+6|< <=||Left-to-right
+7|> >=||Left-to-right
+8|== !=||Left-to-right
+9|&||Left-to-right
+10||Bitwise OR|Left-to-right
+11||Logical AND|Left-to-right
+12|\|\||logical OR|Left-to-right
+13|?:|Ternary conditional|Right-to-left
+14|	=|Assigment|Right-to-left
+14|+= -=|Assigment by sum and difference|Right-to-left
+14|*= /= %=|Assigment by product, quotient and remainder|Right-to-left
+14|<<= >>=|Assigment by bitwise left and right shift|Right-to-left
+14|&= ^= |=|Assigment by bitwise AND, XOR and OR|Right-to-left
+15|,|Comma|Left-to-right
+
+
+---
 # :snowflake: Clean Code
 
 > "You are reading this book for two reasons. First, you are a programmer. Second, you want to be a better programmer. Good. We need better programmers." ― *Robert C. Martin in Clean Code*
@@ -1849,7 +1907,9 @@ Then
 ---
 # :gem: Curated list of Programming Learning Materials
 
-*Only petty thieves would google "torrent" or "pdf" keywords, real Gentlemen would purchase a digital copy*
+*Only petty thieves would google the following material, adding "torrent" or "pdf" keywords, real Gentlemen would purchase a digital copy*  
+
+**NB: If you want to complain about a copyright enfringment, kindly raise an issue or send me an email and I will remove the offending link**  
 
 ---
 ## 0x00 ~ C Knowledge
@@ -1877,16 +1937,17 @@ Title | How Interesting | Author
 ---
 ## 0x01 ~ Algorithm
 
-> **When in doubt, use bruteforce** ― *[Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson)*
-
-> **And now... don't rush... when you see a good move, you look for a better one** - *[by GM Varuzhan Akobian](https://en.wikipedia.org/wiki/Varuzhan_Akobian) in [Games of Magnus Carlsen and Tactics, 2013](https://www.youtube.com/watch?v=Na9g-RzSLuY&t=8m35s)*
+> **When you see a good move, look for a better one** ― *[Emanuel Lasker](https://en.wikipedia.org/wiki/Emanuel_Lasker)*
 
 Title | How Interesting | Author
 ---|---|---
 **[Nailing the Coding Interview](https://github.com/agavrel/Nailing-the-Coding-Interview)** | :kr: | *by Antonin Gavrel*
 **[A curated list of Awesome Competitive Programming](https://codeforces.com/blog/entry/23054)** | :star::star::star::star: | *by Inishan (Jasmine Chen)*
 **[The Algorithm Design Manual](https://www.goodreads.com/book/show/425208.The_Algorithm_Design_Manual)** | :star::star::star::star: | *by Steven S. Skiena*
+**[Games of Magnus Carlsen and Tactics, 2013](https://www.youtube.com/watch?v=Na9g-RzSLuY&t=8m35s)** | :star::star::star::star: | *by [GM Varuzhan Akobian](https://en.wikipedia.org/wiki/Varuzhan_Akobian)*
 **[A tour of the top 5 sorting algorithms with Python code](https://medium.com/@george.seif94/a-tour-of-the-top-5-sorting-algorithms-with-python-code-43ea9aa02889)** | :star::star: | *by George Seif*
+
+> **Strategy requires thought, tactics require observation** ― *[Max Euwe](https://en.wikipedia.org/wiki/Max_Euwe)*
 
 
 ---
@@ -1943,6 +2004,8 @@ Title | How Interesting | Author
 **[Kasparov Miniature and Tactics/Endgames | Kids' Class - GM Varuzhan Akobian](https://www.youtube.com/watch?v=_B39II74Pkc)**  
 
 </details>
+
+> **When in doubt, use bruteforce** ― *[Ken Thompson](https://en.wikipedia.org/wiki/Ken_Thompson)*
 
 
 ---
@@ -2057,9 +2120,16 @@ Title | How Interesting | Author
 **[XOR Linked List – A Memory Efficient Doubly Linked List](http://en.wikipedia.org/wiki/XOR_linked_list)** | :star: | *Wikipedia* 
 **[XOR Linked List – C Implementation](https://stackoverflow.com/questions/3531972/c-code-for-xor-linked-list)** | :star: | *StackOverFlow*
 
+---
+## 0x0C ~ Mobile App Development
+
+Title | How Interesting | Author
+---|---|---
+**[Framework: Flutter Hello World](https://flutter.dev/docs/get-started/codelab)** | :two_hearts | *by Flutter Team (Google)*
+**[Images: About Webp](https://www.smashingmagazine.com/2019/10/speed-up-your-website-webp)** | :star::star: | *Suzanne Scacca*
 
 ---
-## 0x0C ~ Science-Fiction Masterpieces
+## 0x0D ~ Science-Fiction Masterpieces
 
 > **To succeed, planning alone is insufficient. One must improvise as well** ― *Isaac Asimov, Foundation*
 
@@ -2582,6 +2652,107 @@ sudo sysctl -w kernel.randomize_va_space=2
 {WIP}
 
 
+---
+## 0x03 ~ Chess Bitboard
+
+Often you will have programs where you want to represent data the following way:
+
+```c
+int	map[8][8];
+```
+
+While it looks like it is convenient, you can make it convenient using the right functions. But if you are using an integer to tell if the board is filled with pieces, you are wasting a lot of memory.
+
+```c++
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+void    print_binary(uint64_t n)
+{
+    uint64_t mask = 0;
+    for (mask = ~mask ^ (~mask >> 1); mask != 0; mask >>= 1)
+        putchar('0' + !!(n & mask));
+    putchar('\n');
+}
+
+void    fill_board(uint64_t board[12], uint64_t *used_cells)
+{
+    const uint64_t initial_pos[6] = {   0b0000000011111111000000000000000000000000000000001111111100000000, // most right is a1, most left is h8
+                                        0b1000000100000000000000000000000000000000000000000000000010000001,
+                                        0b0100001000000000000000000000000000000000000000000000000001000010,
+                                        0b0010010000000000000000000000000000000000000000000000000000100100,
+                                        0b0001000000000000000000000000000000000000000000000000000000001000,
+                                        0b0000100000000000000000000000000000000000000000000000000000010000
+    };
+    const uint64_t  color_mask[2] = {   0b0000000000000000000000000000000011111111111111111111111111111111,
+                                        0b1111111111111111111111111111111100000000000000000000000000000000
+    };
+
+	*used_cells = 0;
+    for (int i = 0; i < 12; i++) {
+        board[i] = (initial_pos[i >> 1]) & (color_mask[i & 1]);
+		*used_cells |= board[i];
+	}
+}
+
+void    display_board(uint64_t board[12])
+{
+    for (int i = 0; i < 12; i++)
+        print_binary(board[i]);
+}
+
+std::map<string, uint64_t>  fill_move() {
+    std::map<string, uint64_t>  move;
+
+    for (char r = '1'; r <= '8'; r++) {
+        for (char c = 'a'; c <= 'h'; c++) {
+            char cell[3] = {c, r, '\0'};
+            move[cell] = (1UL << (8 * (c - 'a'))) << (r - '1');
+        }
+    }
+    return move;
+}
+
+enum PIECE {
+    __PAWN_W = 0,
+    __PAWN_B,
+    __ROOK_W,
+    __ROOK_B,
+    KNIGHT_W,
+    KNIGHT_B,
+    BISHOP_W,
+    BISHOP_B,
+    _QUEEN_W,
+    _QUEEN_B,
+    __KING_W,
+    __KING_B = 11
+};
+
+
+int main()
+{    
+    uint64_t    board[12];
+	uint64_t	used_cells;
+    std::map<string, uint64_t> move = fill_move();
+
+    fill_board(board, &used_cells);
+    display_board(board);
+    
+    putchar('\n');
+    print_binary(board[__PAWN_W]);
+
+    if (board[__PAWN_W] & move["b4"]) // check if exist
+        board[__PAWN_W] ^=  ((move["b4"] | move["e4"]));
+    
+    print_binary(board[__PAWN_W]);
+    putchar('\n');
+
+    return 0;
+}
+```
+
 
 --- 
 # Epilogue
@@ -2604,6 +2775,21 @@ sudo sysctl -w kernel.randomize_va_space=2
 
 *Raise an issue or even better: submit a pull request*
 
+First fork the repository and clone it locally (you will be forgiven for this kind of git clone)
+
+Make the desired changed to the README.md file
+
+Then open the terminal containing your fork and enter:
+```
+git checkout -b agavrel
+git commit -am "[ADD] Interesting link about C Hash"
+git push --set-upstream origin agavrel
+```
+
+Go back to internet and you will see that you can submit a pull request.
+
+*I will personally review contributions*
+
 
 ---
 ## 0x02 ~ Liked it ?
@@ -2617,4 +2803,6 @@ sudo sysctl -w kernel.randomize_va_space=2
 ---
 ## :musical_score: 0x2A ~ About the Author
 
-**[Antonin GAVREL](https://www.linkedin.com/in/antonin-gavrel-086b2618/)**
+**Antonin GAVREL**
+
+*Feel free to reach me on [LinkedIn](https://www.linkedin.com/in/antonin-gavrel-086b2618/)*
