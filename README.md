@@ -240,39 +240,9 @@ You should then try to recode basic C functions
 
 **Pointer is a fundamental concept of C programming**.
 
-**You can think of your computer's memory as a contiguous array of bytes**. Each time that you make an innocent declaration and assignation such as **`int a = 5`**, this value is written into your computer's memory on 4 bytes (integer size)  (I simplify and avoid talking about [endianness](https://en.wikipedia.org/wiki/Endianness).
-This value will be written at a specific memory address, the stack (fast access memory) if no memory allocation, else it will be stored in the heap.
+**You can think of your computer's memory as a contiguous array of bytes**. Each time that you make an innocent declaration and assignation such as **`int a = 5`**, this value is written into your computer's memory on 4 bytes (integer size).
+This value will be written at a specific memory address, the stack (fast access memory) if no memory allocation, else it will be stored in the heap. This address also has a value!
 
-Little endian means that the value is stored in memory from left to right, big endian means it is stored from right to left.
-
-*[See this example with int a = 9](https://stackoverflow.com/questions/12791864/c-program-to-check-little-vs-big-endian/12792301#12792301):*
-
-```
-little endian: 
-
-       higher memory
-          ----->
-    +----+----+----+----+
-    |0x09|0x00|0x00|0x00|
-    +----+----+----+----+
-    |
-   &x = 0xff
-
-
-big endian:
-    +----+----+----+----+
-    |0x00|0x00|0x00|0x09|
-    +----+----+----+----+
-    |
-   &x
-```
-
-*To find out if your system is big or little endian you can use the [following function](https://stackoverflow.com/questions/4181951/how-to-check-whether-a-system-is-big-endian-or-little-endian/4181991):*
-```c
-int x = 9;
-
-if (*(char *)&x == 0x09) // we cast x as a byte to get its very first byte, it will return true (meaning little endian) if the first byte is equal to 9.
-```
 
 *Example illustrating the difference a pointer - a memory address pointing to value - and a value:*
 
@@ -307,6 +277,41 @@ ptr's value: 42, ptr's address: 0x7ffd99492f08  <-- they now match thanks to ptr
 
 **NB: On the second printf you will get the same as for a, notice that you have to dereference the pointer with * to get the value, and using the pointer alone (ptr) will give you the memory address.**
 
+
+#### [About Endianness](https://en.wikipedia.org/wiki/Endianness).
+
+Values are stored differently depending on the kind of system you are using.
+
+Little endian means that the value is stored in memory from left to right, big endian means it is stored from right to left.
+
+*[See this example with int a = 9](https://stackoverflow.com/questions/12791864/c-program-to-check-little-vs-big-endian/12792301#12792301):*
+
+```
+little endian: 
+
+       higher memory
+          ----->
+    +----+----+----+----+
+    |0x09|0x00|0x00|0x00|
+    +----+----+----+----+
+    |
+   &x = 0xff
+
+
+big endian:
+    +----+----+----+----+
+    |0x00|0x00|0x00|0x09|
+    +----+----+----+----+
+    |
+   &x
+```
+
+*To find out if your system is big or little endian you can use the [following function](https://stackoverflow.com/questions/4181951/how-to-check-whether-a-system-is-big-endian-or-little-endian/4181991):*
+```c
+int x = 9;
+
+if (*(char *)&x == 0x09) // we cast x as a byte to get its very first byte, it will return true (meaning little endian) if the first byte is equal to 9.
+```
 
 ### ft_putchar
 
