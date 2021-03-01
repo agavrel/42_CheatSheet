@@ -127,6 +127,27 @@ The name of the school, "42", is a tribute to [The Hitchhiker's Guide to the Gal
 
 > 42, or The Answer to the Ultimate Question of Life, The Universe, and Everything
 
+The supercomputer had this function ready:
+```c
+#include <stdio.h>
+
+#define true  1
+#define false 0
+
+int what_is_forty_two(void) {
+    int n = true << 1 | false; // n = 0b10;
+    while (__builtin_popcount(n) != 3) // stop when reaching 3 bits set
+        n |= n << 2;  // n adds two empty bits with << 2 (x4) and add itself with |
+    return (++n == '*') ? n : !!n * (n - 1); // you may simply return n;
+}
+
+int main(void) {
+    char *question = "What is the answer to Life, the Universe and Everything?\n";
+    printf("%sDeep Thought: %d\n", question, what_is_forty_two()); // %s print a string, and %d an integer
+    return 0;
+}
+```
+
 There are no teachers but a pedagogic team that ensure that students do not harm the material and provide a cursus syllabus to follow. What is learned is hence mainly achieved through peer-to-peer project review and [RTFM](https://en.wikipedia.org/wiki/RTFM).
 
 ![RTFM meme](https://i.kym-cdn.com/photos/images/newsfeed/000/017/668/Mao_RTFM_vectorize_by_cmenghi.png?1318992465)
@@ -217,6 +238,44 @@ You should then try to recode basic C functions
 
 > [In computer science, a pointer is a programming language object that stores a memory address.](https://en.wikipedia.org/wiki/Pointer_(computer_programming))
 
+**Pointer is a fundamental concept of C programming**.
+
+**You can think of your computer's memory as a contiguous array of bytes**. Each time that you make an innocent declaration and assignation such as **`int a = 5`**, this value is written into your computer's memory on 4 bytes (integer size)  (I simplify and avoid talking about [endianness](https://en.wikipedia.org/wiki/Endianness).
+This value will be written at a specific memory address, the stack (fast access memory) if no memory allocation, else it will be stored in the heap.
+
+Little endian means that the value is stored in memory from left to right, big endian means it is stored from right to left.
+
+*[See this example with int a = 9](https://stackoverflow.com/questions/12791864/c-program-to-check-little-vs-big-endian/12792301#12792301):*
+
+```
+little endian: 
+
+       higher memory
+          ----->
+    +----+----+----+----+
+    |0x09|0x00|0x00|0x00|
+    +----+----+----+----+
+    |
+   &x = 0xff
+
+
+big endian:
+    +----+----+----+----+
+    |0x00|0x00|0x00|0x09|
+    +----+----+----+----+
+    |
+   &x
+```
+
+*To find out if your system is big or little endian you can use the [following function](https://stackoverflow.com/questions/4181951/how-to-check-whether-a-system-is-big-endian-or-little-endian/4181991):*
+```c
+int x = 9;
+
+if (*(char *)&x == 0x09) // we cast x as a byte to get its very first byte, it will return true (meaning little endian) if the first byte is equal to 9.
+```
+
+*Example illustrating the difference a pointer - a memory address pointing to value - and a value:*
+
 ```c
 #include <stdio.h>
 
@@ -224,20 +283,29 @@ int main(void) {
 	int a = 5;	// declaring an integer variable and assigning the value of 5
 	int *ptr;	// declaring a pointer to integer
 	int b;		// declaring an integer variable
+    printf("ptr's value: %2d, ptr's address: %p\n\n", *ptr, ptr);
 
 	ptr = &a;	// pointer ptr points to what is stored at the memory address of variable a
 	b = a;		// b will take the value and not the address
-
 	a = 42;		// b is still equal to 5, but ptr will return 42, which is the value now stored at a's location;
-
-	printf("a's value: %d, a's address: %p\n", a, &a);
-	printf("ptr's value: %d, ptr's address: %p\n", *ptr, ptr); 
-	printf("b's value: %d, b's address %p\n", b, &b);
-
+	printf("  a's value: %2d,   a's address: %p\n", a, &a);
+	printf("ptr's value: %2d, ptr's address: %p\n", *ptr, ptr); // you will get the same as above, notice that you have to dereference the pointer with * to get the value, and using the pointer alone (ptr) will give you the memory address.
+	printf("  b's value: %2d,   b's address: %p\n", b, &b);
+	//printf("Size of ptr: %zu\n", sizeof(ptr)); // size of ptr in bytes, 8 on my system.
 	return 0;
 }
 ```
-**Note that on the second printf you will get the same as for a, notice that you have to dereference the pointer with * to get the value, and using the pointer alone (ptr) will give you the memory address.**
+
+You will get this kind of output:
+```
+ptr's value:  1, ptr's address: 0x7ffd99493000
+
+  a's value: 42,   a's address: 0x7ffd99492f08
+ptr's value: 42, ptr's address: 0x7ffd99492f08  <-- they now match thanks to ptr = &a
+  b's value:  5,   b's address: 0x7ffd99492f0c
+```
+
+**NB: On the second printf you will get the same as for a, notice that you have to dereference the pointer with * to get the value, and using the pointer alone (ptr) will give you the memory address.**
 
 
 ### ft_putchar
@@ -1931,6 +1999,7 @@ Title | How Interesting | Author
 **[Duff's Device](http://www.lysator.liu.se/c/duffs-device.html)** | :star::star::star: | *by Tom Duff*
 **[Structure Packing](http://www.catb.org/esr/structure-packing/)** | :star::star::star: | *by Eric S. Raymond*
 **[Cello, High Level Programming to C](https://github.com/orangeduck/Cello)** | :star::star::star: | *by Daniel Holden*
+**[Asynchronous Routines for C](https://hackaday.com/2019/09/24/asynchronous-routines-for-c/)** | :star::star::star | *by AI William*
 **[Are Global Variables Bad](https://stackoverflow.com/questions/484635/are-global-variables-bad)** | :star: | *StackOverFlow*
 
 
@@ -2073,7 +2142,7 @@ Title | How Interesting | Author
 **[Tips for Golfing in x86/x64 Bytecode](https://codegolf.stackexchange.com/questions/132981/tips-for-golfing-in-x86-x64-machine-code)** | :star::star::star: | *by StackExchange*
 **[The Art of Assembly Language](http://www.staroceans.org/kernel-and-driver/The.Art.of.Assembly.Language.2nd.Edition.pdf)** | :star::star: | *by Randal Hyde*
 **[GDB Tutorial](https://www.cs.cmu.edu/~gilpin/tutorial/)** | :star::star: | *by Andrew Gilpin*
-
+**[Examining Arm VS x86 Memory Models with Rust](https://www.nickwilcox.com/blog/arm_vs_x86_memory_model/)** | :two_hearts: | *by [Nick Wilcox](https://www.nickwilcox.com/blog/)*
 
 ---
 ## 0x09 ~ Functional Programing *[by Leonard Marquez](https://github.com/keuhdall)*
@@ -2109,7 +2178,7 @@ Title | How Interesting | Author
 
 Title | How Interesting | Author
 ---|---|---
-**[UNIX AT&T Archives film from 1982](https://www.youtube.com/watch?v=XvDZLjaCJuw)** | :two_hearts | *by Bell Laboratories*
+**[UNIX AT&T Archives film from 1982](https://www.youtube.com/watch?v=XvDZLjaCJuw)** | :two_hearts: | *by Bell Laboratories*
 **[A Super Mario 64 decompilation](https://github.com/agavrel/sm64)** | :star::star::star::star::star: | *by a bunch of clever folks*
 **[The Go Programming Language](https://www.gopl.io/ch1.pdf)** | :star::star::star::star::star: |  *by Alan A. A. Donovan and Brian W. Kernighan*
 **[Vim 101 Quick Movement](https://medium.com/usevim/vim-101-quick-movement-c12889e759e0)** | :star::star::star::star: | *Alex R. Young*
@@ -2125,7 +2194,7 @@ Title | How Interesting | Author
 
 Title | How Interesting | Author
 ---|---|---
-**[Framework: Flutter Hello World](https://flutter.dev/docs/get-started/codelab)** | :two_hearts | *by Flutter Team (Google)*
+**[Framework: Flutter Hello World](https://flutter.dev/docs/get-started/codelab)** | :two_hearts: | *by Flutter Team (Google)*
 **[Images: About Webp](https://www.smashingmagazine.com/2019/10/speed-up-your-website-webp)** | :star::star: | *Suzanne Scacca*
 
 ---
