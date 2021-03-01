@@ -194,6 +194,12 @@ The piscine is the entrance exam that consists of **4 weeks fully dedicated to c
 
 * **0x08 You can sleep in the school during the selection** - *I recommended you to not do it, you will have very poor sleep.* - If you still go for it here is a list of essential items you should bring: **a toothpaste, a toothbrush, a soap and a towel on top of your phone, charger and mattress. Oh and a credit card also, unless you prefer to bring 10kg of cookies**
 
+So whatever how dire the situation is looking (you failed all your days, exams etc), if you can keep your enthusiasm and your spirit up, you will eventually succeed !
+
+> **“Success is stumbling from failure to failure with no loss of enthusiasm.** ― *Winston Churchill*
+
+[I made a video on how to make sure that you succeed the entrance exam](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
 ### :star: List of Essential Items
 
 > **Towels are extremely useful for cleaning up messes and drying off your body. You can set it on fire as a weapon, chase off enemies, and use it as a distress signal. Life is messy and sometimes dangerous. Space is even messier and more dangerous. Be like Arthur Dent and keep up with your towel** ― *[17 Life Lessons From HITCHHIKER’S GUIDE Hero Arthur Dent](https://nerdist.com/article/hitchhikers-guide-life-lessons-arthur-dent/?amp)*
