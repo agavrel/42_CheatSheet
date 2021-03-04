@@ -29,7 +29,8 @@ unsigned multiply(unsigned multiplier, unsigned multiplicand) {
 
     do { // NB: LSB is the least significant bit of multiplier, (multiplier & 1)
 // The LSB of the multiplier register determines whether the multiplicand is added (if set) to the product register
-        result = add(result, multiplicand * (multiplier & 1));
+        if ((multiplier & 1)
+            result = add(result, multiplicand);
 // The left shift of the multiplicand has the effect of shifting the intermediate products to the left, just as when multiplying by paper and pencil.
         multiplier >>= 1;
 // The right shift of the multiplier prepares the next bit of the multiplier to examine in the following iteration
