@@ -19,54 +19,6 @@
 
 #include <assert.h>
 
-
-/*
-  //  RLimit dataLimit(RLIMIT_DATA);
-  //  dataLimit.set(8192 * 1024 * 10);  // in kB
-  //  clog << "soft: " << dataLimit.getCurrent() << " hard: " << dataLimit.getMax() << endl;
-#include <sys/resource.h>
-#include <iostream>
-
-
-
-class RLimit {
-public:
-    RLimit(int cmd) : mCmd(cmd) {
-    }
-
-    void set(rlim_t value) {
-        clog << "Setting " << mCmd << " to " << value << endl;
-        struct rlimit rlim;
-        rlim.rlim_cur = value;
-        rlim.rlim_max = value;
-        int ret = setrlimit(mCmd, &rlim);
-        if (ret) {
-            clog << "Error setting rlimit" << endl;
-        }
-    }
-
-    rlim_t getCurrent() {
-        struct rlimit rlim = {0, 0};
-        if (getrlimit(mCmd, &rlim)) {
-            clog << "Error in getrlimit" << endl;
-            return 0;
-        }
-        return rlim.rlim_cur;
-    }
-    rlim_t getMax() {
-        struct rlimit rlim = {0, 0};
-        if (getrlimit(mCmd, &rlim)) {
-            clog << "Error in getrlimit" << endl;
-            return 0;
-        }
-        return rlim.rlim_max;
-    }
-
-private:
-    int mCmd;
-};
-*/
-
 using namespace std;
 
 bool exist(const char *name)

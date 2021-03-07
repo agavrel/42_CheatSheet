@@ -1,6 +1,9 @@
 #include <stdio.h>
-#include <stdbool.h>
-
+#include <string.h>
+/// unsigned char saves space compared to integer
+#define bool    unsigned char
+#define true    1
+#define false   0
 // https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 void printPrimesRange(int lowerLevel, int n) {
     if (lowerLevel < 0 || n < lowerLevel) // handle misused of function
@@ -9,14 +12,18 @@ void printPrimesRange(int lowerLevel, int n) {
     memset(isPrime, true, n + 1);
     int cnt = 0; // NB: I use the counter only for the commas and final .\n, its optional.
 
-    if (lowerLevel <= 2 && n >= 2 && ++cnt) // only one even number can be prime: 2
+    if (lowerLevel <= 2 && n >= 2) { // only one even number can be prime: 2
+        ++cnt;
         printf("2");
+    }
     for (int i = 3; i <= n ; i+=2) { // after what only odd numbers can be prime numbers
         if (isPrime[i]) {
-            if (cnt++)
-                printf(", ");
-            printf("%d", i); // NB: it is better to print all at once if you can improve it
-            for (int j = i; j <= n; j+=i*2) // Eratosthenes' Algo, sieve all multiples of current prime, skipping even numbers
+            if (i >= lowerLevel) {
+                if (cnt++)
+                    printf(", ");
+                printf("%d", i); // NB: it is better to print all at once if you can improve it
+            }
+            for (int j = i * 3; j <= n; j+=i*2) // Eratosthenes' Algo, sieve all multiples of current prime, skipping even numbers
                 isPrime[j] = false;
         }
     }
