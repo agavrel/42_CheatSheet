@@ -58,6 +58,7 @@ void old_school(char *s) {
     s[n] = '\0';
 }
 
+
 void agavrel_style(char *s) {
     int n = 0;
     for (int i = 0; i < SIZE; i++) {
