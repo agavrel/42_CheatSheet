@@ -3,8 +3,13 @@
 #include <errno.h>
 #include <string.h>
 #include <time.h>
+#include <sys/resource.h>
 
 // gcc -O3 replace.c && ./a.out
+
+struct rusage usage;
+
+
 
 void replace(char *s, char from, char to, long n) {
     char eq;
@@ -38,6 +43,7 @@ void read_file_to_buffer(FILE *f, long length) {
         char to = '8';
         clock_t start, end;
         double cpu_time_used[2];
+
         for (int j = 0; j < 2; j++){
             start = clock();
             for (int i = 0; i < 0x20 + 26; i++) {
