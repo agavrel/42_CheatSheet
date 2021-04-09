@@ -1869,6 +1869,19 @@ git add README.md \
 **NB: Beware because it will destroy the previous commit with all what it implies**
 
 
+### Check file committed and unpushed yet
+
+```
+git diff --stat --cached origin/master
+```
+
+### Undo git add
+
+```
+git reset <file>
+```
+
+
 ---
 ## 0x03 ~ Productivity Gains 
 
@@ -1924,6 +1937,15 @@ To kill the process use:
 kill -9 ID
 ```
 Obviously replace ```ID``` in the above examples with the job ID you got from ```jobs -l```.
+
+
+---
+
+### Read first 8 bytes of a file
+
+```
+hexdump -C -n 8 filename
+```
 
 
 ---
@@ -1992,6 +2014,16 @@ Then
 
 ---
 ## 0x00 ~ C Knowledge
+
+```c
+#include <stdio.h>
+
+int f(int n) {*&n*=2;}
+
+int main(void) {
+    printf("%d\n", f(0b10101));
+}
+```
 
 > **C is [quirky](https://en.wiktionary.org/wiki/quirky), flawed, and an enormous success** ― *[Dennis Ritchie, Creator of the C language](https://en.wikipedia.org/wiki/Dennis_Ritchie)*
 
