@@ -1,9 +1,10 @@
-
 # 42 School Cheat Sheet by [agavrel](https://www.github.com/agavrel)
 
 ## :two_hearts: Intended for 42 alumni, current students and candidates
 
 > **Truth can only be found in one place: the code** – *Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship*
+
+A comprehensive guide to 50 years of evolution of strict C programming, a tribute to Dennis Ritchie's language
 
 ---
 # Table of Content
@@ -693,7 +694,7 @@ t_mystruct mystruct = {};
 or, to comply with 42 Norminette that forbid declaration and assignation on the same row:
 ```c
 t_mystruct mystruct;
-(void)mystruct;
+mystruct = (t_mystruct){};
 ```
 
 
@@ -1389,7 +1390,8 @@ Now some guidelines that should hopefully help your coding style
 ---
 ## 0x00 ~ Meaningful and Explicit Names
 
-> “Don’t comment bad code, rewrite it.” Brian W. Kernighan, The Elements of Programming Style
+> "The best programs are written so that computing machines can perform them quickly and so that human beings can understand them clearly." - 
+Donald Ervin Knuth
 
 I once met a developer who was using hp and mp instead of x and y for coordinates.  
 While being a very good reference to [JRPG]()... it is totally out of question to code like this.
@@ -1737,6 +1739,8 @@ int main(void) {
 
 ---
 ## 0x07 ~ Reserved Keywords
+
+> "Don’t comment bad code, rewrite it." - Brian W. Kernighan, The Elements of Programming Style
 
 Keyword | Meaning
 ---|---
@@ -2221,6 +2225,7 @@ Title | How Interesting | Author
 
 Title | How Interesting | Author
 ---|---|---
+**[AVIF for Next Generation Image Coding](https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4)** | :star::star::star::star::star: | *By Aditya Mavlankar, Jan De Cock, Cyril Concolato, Kyle Swanson, Anush Moorthy and Anne Aaron*
 **[UNIX AT&T Archives film from 1982](https://www.youtube.com/watch?v=XvDZLjaCJuw)** | :two_hearts: | *by Bell Laboratories*
 **[A Super Mario 64 decompilation](https://github.com/agavrel/sm64)** | :star::star::star::star::star: | *by a bunch of clever folks*
 **[The Go Programming Language](https://www.gopl.io/ch1.pdf)** | :star::star::star::star::star: |  *by Alan A. A. Donovan and Brian W. Kernighan*
@@ -2231,6 +2236,7 @@ Title | How Interesting | Author
 **[Why Java Suck](https://tech.jonathangardner.net/wiki/Why_Java_Sucks)** | :star: | *by Jonathan Gardner*
 **[XOR Linked List – A Memory Efficient Doubly Linked List](http://en.wikipedia.org/wiki/XOR_linked_list)** | :star: | *Wikipedia* 
 **[XOR Linked List – C Implementation](https://stackoverflow.com/questions/3531972/c-code-for-xor-linked-list)** | :star: | *StackOverFlow*
+
 
 ---
 ## 0x0C ~ Mobile App Development
