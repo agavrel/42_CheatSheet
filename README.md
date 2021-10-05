@@ -1755,8 +1755,8 @@ struct 	flags_t
 
 int	main(void) {
 	struct flags_t flags = {0};
-	t.a = 1;
-	if (t.a)
+	flags.a = 1;
+	if (flags.a)
 		write(1, "flag a is set\n", 14);
 	return 0;
 }
