@@ -220,7 +220,7 @@ So whatever how dire the situation is looking (you failed all your days, exams e
 > **시작이 반이다** ― *The beginning is half of the way (Korean proverb)* 
 
 ### First by installing a C compiler on your computer
-* On Windows it is a bit tricky, you will have to install [Mingw](http://www.mingw.org/)
+* On Windows it is a bit tricky, you will have to install [Mingw](https://www.mingw-w64.org/)
 * On Linux it is pretty straightforward since it is only installed and if not ```apt-get``` will make it easy.
 * On MAC it is not much more difficult, google how to do it.
 
