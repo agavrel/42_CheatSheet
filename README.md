@@ -472,7 +472,7 @@ int draw_lines(int len) { // NB: len is positive or equal to 0
 	while (i < len)
 	{
 		puts("Looping"); // NB: you will have to use your own function, ft_putstr, of course
-		draw_line(i);
+		draw_lines(i);
 		i++;
 	}
 }
@@ -485,7 +485,7 @@ int draw_lines(int len) {
 
 	i = -1;
 	while (++i < len && puts("Looping"))
-		draw_line(i);
+		draw_lines(i);
 }
 ```
 **Now 5 lines**
@@ -493,7 +493,7 @@ int draw_lines(int len) {
 ```c
 int draw_lines(int len) {
 	while (--len >= 0 && puts("Looping")) // it works
-		draw_line(len); // NB: make sure that drawing backward does not impact algo
+		draw_lines(len); // NB: make sure that drawing backward does not impact algo
 }
 ```
 **2 lines**
@@ -501,7 +501,7 @@ int draw_lines(int len) {
 ```c
 int draw_lines(int len, int i) { // If you really need to call from 0 to len then you can also have i passed as a parameter = -1
 	while (++i < len && puts("Looping"))
-		draw_line(i);
+		draw_lines(i);
 }
 ```
 **2 lines, with prototype modification (ugly)**
