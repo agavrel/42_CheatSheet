@@ -1,35 +1,39 @@
-<h1 align="center"><code>Chall01 / RGB to Hexadecimal </code></h1>
----
-### Instructions
-<sub>**Turn-in directory:** `chall01/`</sub><br />
-<sub>**Files to turn in:** `<xlogin>.c`</sub><br />
-<sub>**Language:** `C`</sub><br />
-<sub>**Prototype:** `char   *ft_rgb2hex(int r, int g, int b);`</sub>
+<h1 align="center"><code>Chall01 / RGB to Hexadecimal</code></h1>
 
-<sub>**Deadline:** 14.04.2020 - 13:42am</sub>
+---
+### 지시 사항
+<sub>**제출 폴더:** `chall01/`</sub><br />
+<sub>**제출 파일:** `<xlogin>.c`</sub><br />
+<sub>**언어:** `C`</sub><br />
+<sub>**프로토타입:** `char   *ft_rgb2hex(int r, int g, int b);`</sub>
+
+<sub>**마감:** 2020-04-14 13:42 (당시 원격 챌린지)</sub>
+
+> **참고:** 2020년 원격 챌린지 기준입니다. 현재 공식 과제와는 무관할 수 있습니다.
+
 <br /><br />
 
-### Subject
+### 주제
 <p align="center">
   <img width="350" height="350" src="https://www.sessions.edu/wp-content/themes/divi-child/color-calculator/wheel-5-ryb.png">
 </p>
 
-Given three integers between 0 and 255, corresponding to the red, green, and blue channel values of a color, return the hex string for that color with `#` as prefix.
+0 이상 255 이하의 정수 세 개가 빨강·초록·파랑 채널 값으로 주어질 때, 그 색에 해당하는 **hex 문자열**을 `#` 접두어와 함께 돌려주면 됩니다.
 
 <br /><br />
-### Examples
+### 예시
 
 ```
 strcmp(ft_rgb2hex(252, 186, 3), "#fcba03") == 0
 ...
 ```
 <br /><br />
-### Reward
+### 보상
 
- - The first one to submit a working solution will earn `10` or `420` points for their coalition.
- - Everyone else submitting a working solution *(not yet submitted)* will earn `3` or `126` points for their coalition.
- - Every participant that tried to solve the challenge and pushed a solution will earn `2` or `84` points for their coalition.
- - If you don't explain your solution you won't gain anything
+ - 가장 먼저 동작하는 솔루션을 낸 사람은 coalition에 `10` 또는 `420` 점.
+ - 그 외 **아직 제출되지 않은** 정답을 낸 사람은 `3` 또는 `126` 점.
+ - 시도했고 솔루션을 push한 참가자는 `2` 또는 `84` 점.
+ - **솔루션 설명을 쓰지 않으면 점수를 받지 못합니다.**
 
 <br /><br />
-Good luck!
+행운을 빌어요!

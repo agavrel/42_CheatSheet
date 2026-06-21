@@ -1,5 +1,7 @@
 # 42 School Cheat Sheet by [agavrel](https://www.github.com/agavrel)
 
+> 🌐 **Language / 언어:** English (this document) · [한국어 (Korean)](README.ko.md)
+
 ## :two_hearts: Intended for 42 alumni, current students and candidates
 
 > **Truth can only be found in one place: the code** – *Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship*

@@ -8,7 +8,7 @@ if len(sys.argv) < 3:
 
 topic = sys.argv[1]
 pattern = "### 0x[0-9a-f][0-9af] " + topic
-filename="README.md"
+filename="README.ko.md"
 s = r"cat "+ filename +" | grep -n '" + pattern + "' " + filename + " | awk -F ':' '/0/ {print$1}'"
 print(s)
 pattern = re.compile("###")
@@ -37,7 +37,7 @@ with open(filename, "w") as f:
 	f.write(contents)
 
 
-s = "grep -C 4 -F '" + sys.argv[2] + "' README.md"
+s = "grep -C 4 -F '" + sys.argv[2] + "' README.ko.md"
 print(s)
 os.system(s)
 
